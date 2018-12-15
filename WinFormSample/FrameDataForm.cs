@@ -178,13 +178,13 @@ namespace WinFormSample
                 VectorFinger[4] = fingers[4].StabilizedTipPosition;
 
                 //Finger 2 appui 1er Solution
-                int Finger2x = (int)VectorFinger[1].x;
-                int Finger2y = (int)VectorFinger[1].y;
-                Finger2xLabel.Text = Finger2x.ToString();
-                Finger2yLabel.Text = Finger2y.ToString();
-                float Angle = Finger2.AngleTo(Finger3);
-                int AngleEntier = (int)(Angle * 180.0f / (int)Math.PI);
-                label5.Text = AngleEntier.ToString();
+                //int Finger2x = (int)VectorFinger[1].x;
+                //int Finger2y = (int)VectorFinger[1].y;
+                //Finger2xLabel.Text = Finger2x.ToString();
+                //Finger2yLabel.Text = Finger2y.ToString();
+                //float Angle = Finger2.AngleTo(Finger3);
+                //int AngleEntier = (int)(Angle * 180.0f / (int)Math.PI);
+                //label5.Text = AngleEntier.ToString();
 
                 //Finger 2 appui 2eme solution
                 distanceToFinger[0] = (int)VectorFinger[0].DistanceTo(hand.PalmPosition);
@@ -414,7 +414,7 @@ namespace WinFormSample
 
             /* calcul de la courbure */
             rayonCourbure = (int) (Math.Pow((1+Math.Pow(dxdy,2)),3/2)/dxxdyy);
-            label18.Text = rayonCourbure.ToString();
+            //label18.Text = rayonCourbure.ToString();
             //return;
         }
     }
