@@ -15,6 +15,7 @@ namespace WinFormSample
    
     public partial class FrameDataForm : Form 
     {
+        int bite;
         public class MultiDimDictList : Dictionary<int, List<float>> { }
         MultiDimDictList myDicList = new MultiDimDictList();
         private byte[] imagedata = new byte[1];
