@@ -376,31 +376,45 @@ namespace WinFormSample
                 {
                     if (handRight!=null)
                     {
-                        for(int i = 0; i < 10; i++)
-                        {
-                            Leds[i].Invoke((MethodInvoker)(() => Leds[i].BackColor = Color.Red));
-                        }
                         
                         for (int i=0;i<fingersRight.Count;i++)
                         {
                             if (distanceToFinger[i] < MinPressureInt[i])
                             {
-                                
                                 Leds[i].Invoke((MethodInvoker)(() => Leds[i].BackColor = Color.Blue));
                             }
- 
-                            if (distanceToFinger[i] < MinPressureInt[i])
+                            else
                             {
-                                Note[i].PlaySync();
+                                Leds[i].Invoke((MethodInvoker)(() => Leds[i].BackColor = Color.Red));
                             }
-                            
                         }
                        
                     }
                 }
 
             });
-}
+
+            Task.Factory.StartNew(() => {
+                Thread.Sleep(1000);
+                while (true)
+                {
+                    if (handRight != null)
+                    {
+
+                        for (int i = 0; i < fingersRight.Count; i++)
+                        {
+                            if (distanceToFinger[i] < MinPressureInt[i])
+                            {
+                                Note[i].PlaySync();
+                            }
+
+                        }
+
+                    }
+                }
+
+            });
+        }
         int GetLenghtLisséRight(int i)
         {
             if(BufferLenghtRight[i].Count>0)
