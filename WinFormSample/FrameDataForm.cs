@@ -41,6 +41,7 @@ namespace WinFormSample
         SoundPlayer[] Note;
         Hand handRight = new Hand();
         Hand handLeft = new Hand();
+        Hand handTempo = new Hand();
         Vector[] VectorFinger;
         Vector Finger1,Finger2, Finger3, Finger4, Finger5, Finger6, Finger7, Finger8, Finger9, Finger10;
         Bone boneMetaCarpal, boneProximal, boneIntermediate, boneDistal;
@@ -368,27 +369,34 @@ namespace WinFormSample
         void SoundPlayed(object sender, EventArgs e)
         {
 
+
             Task.Factory.StartNew(() => {
+                Thread.Sleep(1000);
                 while(true)
                 {
-                    if (frame.Hands.Count> 0)
+                    if (handRight!=null)
                     {
+                        for(int i = 0; i < 10; i++)
+                        {
+                            Leds[i].Invoke((MethodInvoker)(() => Leds[i].BackColor = Color.Red));
+                        }
+                        
                         for (int i=0;i<fingersRight.Count;i++)
-            {
+                        {
                             if (distanceToFinger[i] < MinPressureInt[i])
                             {
-                                Leds[i].BackColor = Color.Blue;
+                                
+                                Leds[i].Invoke((MethodInvoker)(() => Leds[i].BackColor = Color.Blue));
                             }
-                            else
-                                Leds[i].BackColor = Color.Red;
-
+ 
                             if (distanceToFinger[i] < MinPressureInt[i])
                             {
                                 Note[i].PlaySync();
                             }
                             
                         }
-                }
+                       
+                    }
                 }
 
             });
@@ -416,6 +424,7 @@ namespace WinFormSample
             label16.BackColor= Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
             if (handRight!=null)
             {
+                handTempo = handRight;
 
                 for (int z = 0; z < fingersRight.Count ; z++)
                 {
@@ -436,7 +445,7 @@ namespace WinFormSample
                     else
                     {
                         BufferLenghtRight[z].Add(fingersRight[z].Length);
-                        MinPressureInt[z] = Math.Sqrt(Math.Pow(GetLenghtLisséRight(z), 2) + Math.Pow(handRight.PalmPosition.DistanceTo(fingersRight[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2));
+                        MinPressureInt[z] = Math.Sqrt(Math.Pow(GetLenghtLisséRight(z), 2) + Math.Pow(handTempo.PalmPosition.DistanceTo(fingersRight[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2));
                     }
                     LenghtLissé[z] = BufferLenghtRight[z].ConvertAll(Convert.ToInt32).Sum() / BufferLenghtRight[z].Count;
                     
