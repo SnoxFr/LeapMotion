@@ -15,17 +15,18 @@ namespace WinFormSample
    
     public partial class FrameDataForm : Form 
     {
-        int bite;
         public class MultiDimDictList : Dictionary<int, List<float>> { }
-        MultiDimDictList myDicList = new MultiDimDictList();
+        MultiDimDictList BufferLenghtRight = new MultiDimDictList();
+        MultiDimDictList BufferLenghtLeft = new MultiDimDictList();
         private byte[] imagedata = new byte[1];
         private Controller controller = new Controller();
         Bitmap bitmap = new Bitmap(640, 480, PixelFormat.Format8bppIndexed);
         private static System.Timers.Timer aTimer;
         private Random rnd = new Random();
         List<Hand> Hands= new List<Hand>() ;
-        List<Finger> fingers = new List<Finger>();
-   
+        List<Finger> fingersRight = new List<Finger>();
+        List<Finger> fingersLeft = new List<Finger>();
+
         Label[] Lenght;
         Label[] Position;
         Label[] CalcPressure;
@@ -38,7 +39,8 @@ namespace WinFormSample
         Label[] Labels;
         Label[] Leds;
         SoundPlayer[] Note;
-        Hand hand= new Hand();
+        Hand handRight = new Hand();
+        Hand handLeft = new Hand();
         Vector[] VectorFinger;
         Vector Finger1,Finger2, Finger3, Finger4, Finger5, Finger6, Finger7, Finger8, Finger9, Finger10;
         Bone boneMetaCarpal, boneProximal, boneIntermediate, boneDistal;
@@ -59,18 +61,14 @@ namespace WinFormSample
             Labels = new Label[] { Doigt1, Doigt2, Doigt3, Doigt4, Doigt5, Doigt6, Doigt7, Doigt8, Doigt9, Doigt10 };
             Leds = new Label[] { Led1, Led2, Led3, Led4, Led5, Led6, Led7, Led8, Led9, Led10 };
             VectorFinger = new Vector[] { Finger1, Finger2, Finger3, Finger4, Finger5,Finger6, Finger7, Finger8, Finger9, Finger1 };
-            MinPressure = new Label[] { Min1, Min2, Min3, Min4, Min5 };
+            MinPressure = new Label[] { Min1, Min2, Min3, Min4, Min5,Min6,Min7,Min8,Min9,Min10 };
             //Piano = new Vector[] { PianoDoigt1, PianoDoigt2 };
-
-
-
 
             SoundPlayer DO = new SoundPlayer();
             DO.SoundLocation = "C:\\Users\\LeapMotion\\Desktop\\DO.wav";
             DO.LoadAsync();
 
             SoundPlayer RE = new SoundPlayer();
-            
 
             SoundPlayer MI = new SoundPlayer();
             MI.SoundLocation = "C:\\Users\\LeapMotion\\Desktop\\MI.wav";
@@ -90,12 +88,17 @@ namespace WinFormSample
             RE.LoadAsync();
 
 
-            //Dictionnaire de longueurs lissées
-            myDicList.Add(0, new List<float>());
-            myDicList.Add(1, new List<float>());
-            myDicList.Add(2, new List<float>());
-            myDicList.Add(3, new List<float>());
-            myDicList.Add(4, new List<float>());
+            //Creation buffer droit
+            for (int i = 0; i < 5; i++)
+            {
+                BufferLenghtRight.Add(i, new List<float>());
+            }
+
+            //Creation buffer gauche
+            for (int i = 0; i < 5; i++)
+            {
+                BufferLenghtLeft.Add(i, new List<float>());
+            }
             controller.Config.SetFloat("InteractionBox.Width", 1300.0f);
             controller.Config.SetFloat("InteractionBox.Height", 600.0f);
 
@@ -141,8 +144,9 @@ namespace WinFormSample
 
         void newFrameHandler(object sender, FrameEventArgs eventArgs)
         {
-             frame = eventArgs.frame;
-            
+            frame = eventArgs.frame;
+            handRight = null;
+            handLeft = null;
 
             //The following are Label controls added in design view for the form
             displayFPS.Text = frame.CurrentFramesPerSecond.ToString();
@@ -152,96 +156,139 @@ namespace WinFormSample
 
             if (frame.Hands.Count>0)
                 {
-            
-                
+
                 Hands = frame.Hands;
-                hand = Hands[0];
-                Confidence.Text = hand.Confidence.ToString();
-                
-                // Get the hand's normal vector and direction
-                Vector normal = hand.PalmNormal;
-                Vector direction = hand.Direction;
-                float yaw= direction.Yaw * 180.0f / (int)Math.PI;
-                float pitch = (direction.Pitch * 180.0f / (int)Math.PI);
-                float roll = normal.Roll * 180.0f / (int)Math.PI;
-                // Calculate the hand's pitch, roll, and yaw angles
-                //Yaw.Text = yaw.ToString();
-                //Pitch.Text = pitch.ToString();
-                //Roll.Text = roll.ToString();
-                //Get Fingers Vector
-                fingers = hand.Fingers;
+                foreach(Hand e in Hands)
+                    {
+                    if(e.IsLeft)
+                    {
+                        handLeft = e;
+                        fingersLeft= e.Fingers;
 
-                VectorFinger[0] = fingers[0].StabilizedTipPosition;
-                VectorFinger[1] = fingers[1].StabilizedTipPosition;
-                VectorFinger[2] = fingers[2].StabilizedTipPosition;
-                VectorFinger[3] = fingers[3].StabilizedTipPosition;
-                VectorFinger[4] = fingers[4].StabilizedTipPosition;
+                    }
+                    if (e.IsRight)
+                    {
+                        handRight = e;
+                        fingersRight = e.Fingers;
 
-                //Finger 2 appui 1er Solution
-                //int Finger2x = (int)VectorFinger[1].x;
-                //int Finger2y = (int)VectorFinger[1].y;
-                //Finger2xLabel.Text = Finger2x.ToString();
-                //Finger2yLabel.Text = Finger2y.ToString();
-                //float Angle = Finger2.AngleTo(Finger3);
-                //int AngleEntier = (int)(Angle * 180.0f / (int)Math.PI);
-                //label5.Text = AngleEntier.ToString();
+                    }
 
-                //Finger 2 appui 2eme solution
-                distanceToFinger[0] = (int)VectorFinger[0].DistanceTo(hand.PalmPosition);
-                distanceToFinger[1] = (int)VectorFinger[1].DistanceTo(hand.PalmPosition);
-                distanceToFinger[2] = (int)VectorFinger[2].DistanceTo(hand.PalmPosition);
-                distanceToFinger[3] = (int)VectorFinger[3].DistanceTo(hand.PalmPosition);
-                distanceToFinger[4] = (int)VectorFinger[4].DistanceTo(hand.PalmPosition);
-
-                 boneMetaCarpal = fingers[0].Bone(Bone.BoneType.TYPE_METACARPAL);
-                 boneProximal = fingers[0].Bone(Bone.BoneType.TYPE_PROXIMAL);
-                 boneIntermediate = fingers[0].Bone(Bone.BoneType.TYPE_INTERMEDIATE);
-                 boneDistal = fingers[0].Bone(Bone.BoneType.TYPE_DISTAL);
-                bool isInto = true;
-                PianoDoigt1 = Test.NormalizePoint(VectorFinger[0], isInto);
-                PianoDoigt2 = Test.NormalizePoint(VectorFinger[1], isInto);
-                PianoDoigt3 = Test.NormalizePoint(VectorFinger[2], isInto);
-                PianoDoigt4 = Test.NormalizePoint(VectorFinger[3], isInto);
-                PianoDoigt5 = Test.NormalizePoint(VectorFinger[4], isInto);
-
-                for (int x = 0; x < 16; x++)
-                {
-                    Position[x].BackColor = Color.LightGray;
                 }
-                for (int x=0 ; x<16; x++)
+
+                if (handRight != null)
                 {
-                if(PianoDoigt1.x>(x/16f) && PianoDoigt1.x<((x+1)/16f))
-                {
-                     Position[x].BackColor = Color.Green;
-                }
+                    //Confidence.Text = hand.Confidence.ToString();
+
+                    // Get the hand's normal vector and direction
+                    //Vector normal = handRight.PalmNormal;
+                    //Vector direction = handRight.Direction;
+                    //float yaw= direction.Yaw * 180.0f / (int)Math.PI;
+                    //float pitch = (direction.Pitch * 180.0f / (int)Math.PI);
+                    //float roll = normal.Roll * 180.0f / (int)Math.PI;
+                    // Calculate the hand's pitch, roll, and yaw angles
+                    //Yaw.Text = yaw.ToString();
+                    //Pitch.Text = pitch.ToString();
+                    //Roll.Text = roll.ToString();
+                    //Get Fingers Vector
+                    //for (int i=0; i<)
+
+                    VectorFinger[0] = fingersRight[0].StabilizedTipPosition;
+                    VectorFinger[1] = fingersRight[1].StabilizedTipPosition;
+                    VectorFinger[2] = fingersRight[2].StabilizedTipPosition;
+                    VectorFinger[3] = fingersRight[3].StabilizedTipPosition;
+                    VectorFinger[4] = fingersRight[4].StabilizedTipPosition;
                     
-                if (PianoDoigt2.x > (x / 16f) && PianoDoigt2.x < ((x + 1) / 16f))
-                {
-                     Position[x].BackColor = Color.Red;
-                }
 
-                if (PianoDoigt3.x > (x / 16f) && PianoDoigt3.x < ((x + 1) / 16f))
-                {
-                    Position[x].BackColor = Color.Blue;
-                }
-                if (PianoDoigt4.x > (x / 16f) && PianoDoigt4.x < ((x + 1) / 16f))
-                {
-                    Position[x].BackColor = Color.Orange;
-                }
-                if (PianoDoigt5.x > (x / 16f) && PianoDoigt5.x < ((x + 1) / 16f))
-                {
-                    Position[x].BackColor = Color.Purple;
-                }
+                    //Finger 2 appui 1er Solution
+                    //int Finger2x = (int)VectorFinger[1].x;
+                    //int Finger2y = (int)VectorFinger[1].y;
+                    //Finger2xLabel.Text = Finger2x.ToString();
+                    //Finger2yLabel.Text = Finger2y.ToString();
+                    //float Angle = Finger2.AngleTo(Finger3);
+                    //int AngleEntier = (int)(Angle * 180.0f / (int)Math.PI);
+                    //label5.Text = AngleEntier.ToString();
 
+                    //Finger 2 appui 2eme solution
+                    distanceToFinger[0] = (int)VectorFinger[0].DistanceTo(handRight.PalmPosition);
+                    distanceToFinger[1] = (int)VectorFinger[1].DistanceTo(handRight.PalmPosition);
+                    distanceToFinger[2] = (int)VectorFinger[2].DistanceTo(handRight.PalmPosition);
+                    distanceToFinger[3] = (int)VectorFinger[3].DistanceTo(handRight.PalmPosition);
+                    distanceToFinger[4] = (int)VectorFinger[4].DistanceTo(handRight.PalmPosition);
+
+                   
+
+                    bool isInto = true;
+                    PianoDoigt1 = Test.NormalizePoint(VectorFinger[0], isInto);
+                    PianoDoigt2 = Test.NormalizePoint(VectorFinger[1], isInto);
+                    PianoDoigt3 = Test.NormalizePoint(VectorFinger[2], isInto);
+                    PianoDoigt4 = Test.NormalizePoint(VectorFinger[3], isInto);
+                    PianoDoigt5 = Test.NormalizePoint(VectorFinger[4], isInto);
+
+                    for (int x = 0; x < 16; x++)
+                    {
+                        Position[x].BackColor = Color.LightGray;
+                    }
+                    for (int x = 0; x < 16; x++)
+                    {
+                        if (PianoDoigt1.x > (x / 16f) && PianoDoigt1.x < ((x + 1) / 16f))
+                        {
+                            Position[x].BackColor = Color.Green;
+                        }
+
+                        if (PianoDoigt2.x > (x / 16f) && PianoDoigt2.x < ((x + 1) / 16f))
+                        {
+                            Position[x].BackColor = Color.Red;
+                        }
+
+                        if (PianoDoigt3.x > (x / 16f) && PianoDoigt3.x < ((x + 1) / 16f))
+                        {
+                            Position[x].BackColor = Color.Blue;
+                        }
+                        if (PianoDoigt4.x > (x / 16f) && PianoDoigt4.x < ((x + 1) / 16f))
+                        {
+                            Position[x].BackColor = Color.Orange;
+                        }
+                        if (PianoDoigt5.x > (x / 16f) && PianoDoigt5.x < ((x + 1) / 16f))
+                        {
+                            Position[x].BackColor = Color.Purple;
+                        }
+
+                    }
+
+                    for (int i = 0; i < fingersRight.Count; i++)
+                    {
+
+                        Labels[i].Text = distanceToFinger[i].ToString();
+
+                        Lenght[i].Text = LenghtLissé[i].ToString();
+                        MinPressure[i].Text = ((int)MinPressureInt[i]).ToString();
+
+                    }
                 }
-               
-                for (int i = 0; i < fingers.Count; i++)
+                if(handLeft!=null)
                 {
 
-                    Labels[i].Text = distanceToFinger[i].ToString();
+                    VectorFinger[5] = fingersLeft[0].StabilizedTipPosition;
+                    VectorFinger[6] = fingersLeft[1].StabilizedTipPosition;
+                    VectorFinger[7] = fingersLeft[2].StabilizedTipPosition;
+                    VectorFinger[8] = fingersLeft[3].StabilizedTipPosition;
+                    VectorFinger[9] = fingersLeft[4].StabilizedTipPosition;
 
-                    Lenght[i].Text = LenghtLissé[i].ToString();
-                    MinPressure[i].Text = ((int)MinPressureInt[i]).ToString();
+                    distanceToFinger[5] = (int)VectorFinger[5].DistanceTo(handLeft.PalmPosition);
+                    distanceToFinger[6] = (int)VectorFinger[6].DistanceTo(handLeft.PalmPosition);
+                    distanceToFinger[7] = (int)VectorFinger[7].DistanceTo(handLeft.PalmPosition);
+                    distanceToFinger[8] = (int)VectorFinger[8].DistanceTo(handLeft.PalmPosition);
+                    distanceToFinger[9] = (int)VectorFinger[9].DistanceTo(handLeft.PalmPosition);
+
+                    for (int i = 5; i < fingersLeft.Count+5; i++)
+                    {
+
+                        Labels[i].Text = distanceToFinger[i].ToString();
+
+                        Lenght[i].Text = LenghtLissé[i].ToString();
+                        MinPressure[i].Text = ((int)MinPressureInt[i]).ToString();
+
+                    }
 
                 }
             }
@@ -326,7 +373,7 @@ namespace WinFormSample
                 {
                     if (frame.Hands.Count> 0)
                     {
-                        for (int i=0;i<fingers.Count;i++)
+                        for (int i=0;i<fingersRight.Count;i++)
             {
                             if (distanceToFinger[i] < MinPressureInt[i])
                             {
@@ -346,46 +393,92 @@ namespace WinFormSample
 
             });
 }
-        int GetLenghtLissé(int i)
+        int GetLenghtLisséRight(int i)
         {
-            if(myDicList[i].Count>0)
+            if(BufferLenghtRight[i].Count>0)
             {
-                return myDicList[i].ConvertAll(Convert.ToInt32).Sum() / myDicList[i].Count;
+                return BufferLenghtRight[i].ConvertAll(Convert.ToInt32).Sum() / BufferLenghtRight[i].Count;
             }
             else
-                return myDicList[i].ConvertAll(Convert.ToInt32).Sum() / 1;
+                return BufferLenghtRight[i].ConvertAll(Convert.ToInt32).Sum() / 1;
+        }
+        int GetLenghtLisséLeft(int i)
+        {
+            if (BufferLenghtLeft[i].Count > 0)
+            {
+                return BufferLenghtLeft[i].ConvertAll(Convert.ToInt32).Sum() / BufferLenghtLeft[i].Count;
+            }
+            else
+                return BufferLenghtLeft[i].ConvertAll(Convert.ToInt32).Sum() / 1;
         }
         void Lissage(Object source, System.Timers.ElapsedEventArgs e)
         {  
             label16.BackColor= Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
-            if (frame.Hands.Count > 0)
+            if (handRight!=null)
             {
 
-                for (int z = 0; z < fingers.Count; z++)
+                for (int z = 0; z < fingersRight.Count ; z++)
                 {
         
-                    if (myDicList[z].Count > 20)
+                    if (BufferLenghtRight[z].Count > 20)
                     {
-                        myDicList[z].RemoveAt(0);
+                        BufferLenghtRight[z].RemoveAt(0);
                     }
+                    //Calcul spécial pour le pouce
                     if (z == 0)
                     {
-                        myDicList[z].Add( boneProximal.Center.DistanceTo(boneIntermediate.Center) + boneIntermediate.Center.DistanceTo(boneDistal.Center));
-                        MinPressureInt[z] = GetLenghtLissé(z);
+                        boneProximal = fingersRight[0].Bone(Bone.BoneType.TYPE_PROXIMAL);
+                        boneIntermediate = fingersRight[0].Bone(Bone.BoneType.TYPE_INTERMEDIATE);
+                        boneDistal = fingersRight[0].Bone(Bone.BoneType.TYPE_DISTAL);
+                        BufferLenghtRight[z].Add( boneProximal.Center.DistanceTo(boneIntermediate.Center) + boneIntermediate.Center.DistanceTo(boneDistal.Center));
+                        MinPressureInt[z] = GetLenghtLisséRight(z);
                     }
                     else
                     {
-                        myDicList[z].Add(fingers[z].Length);
-                        MinPressureInt[z] = Math.Sqrt(Math.Pow(GetLenghtLissé(z), 2) + Math.Pow(hand.PalmPosition.DistanceTo(fingers[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2));
+                        BufferLenghtRight[z].Add(fingersRight[z].Length);
+                        MinPressureInt[z] = Math.Sqrt(Math.Pow(GetLenghtLisséRight(z), 2) + Math.Pow(handRight.PalmPosition.DistanceTo(fingersRight[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2));
                     }
-                    LenghtLissé[z] = myDicList[z].ConvertAll(Convert.ToInt32).Sum() / myDicList[z].Count;
+                    LenghtLissé[z] = BufferLenghtRight[z].ConvertAll(Convert.ToInt32).Sum() / BufferLenghtRight[z].Count;
                     
                 }
             }
             else
                 for(int z=0;z<5;z++)
                 {
-                    myDicList[z].Clear();
+                    BufferLenghtRight[z].Clear();
+                }
+            if (handLeft != null)
+            {
+
+                for (int z = 0; z < fingersLeft.Count; z++)
+                {
+
+                    if (BufferLenghtLeft[z].Count > 20)
+                    {
+                        BufferLenghtLeft[z].RemoveAt(0);
+                    }
+                    //Calcul spécial pour le pouce
+                    if (z == 0)
+                    {
+                        boneProximal = fingersLeft[0].Bone(Bone.BoneType.TYPE_PROXIMAL);
+                        boneIntermediate = fingersLeft[0].Bone(Bone.BoneType.TYPE_INTERMEDIATE);
+                        boneDistal = fingersLeft[0].Bone(Bone.BoneType.TYPE_DISTAL);
+                        BufferLenghtLeft[z].Add(boneProximal.Center.DistanceTo(boneIntermediate.Center) + boneIntermediate.Center.DistanceTo(boneDistal.Center));
+                        MinPressureInt[z + 5] = GetLenghtLisséLeft(z);
+                    }
+                    else
+                    {
+                        BufferLenghtLeft[z].Add(fingersLeft[z].Length);
+                        MinPressureInt[z+5] = Math.Sqrt(Math.Pow(GetLenghtLisséLeft(z), 2) + Math.Pow(handLeft.PalmPosition.DistanceTo(fingersLeft[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2));
+                    }
+                    LenghtLissé[z+5] = BufferLenghtLeft[z].ConvertAll(Convert.ToInt32).Sum() / BufferLenghtLeft[z].Count;
+
+                }
+            }
+            else
+                for (int z = 0; z < 5; z++)
+                {
+                    BufferLenghtLeft[z].Clear();
                 }
         }
 
