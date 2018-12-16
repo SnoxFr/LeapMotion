@@ -110,15 +110,18 @@ namespace WinFormSample
             this.displayHandCount = new System.Windows.Forms.Label();
             this.displayFPS = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Slider = new System.Windows.Forms.TrackBar();
+            this.label5 = new System.Windows.Forms.Label();
             this.visualStudioTabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.displayImages)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Slider)).BeginInit();
             this.SuspendLayout();
             // 
             // visualStudioTabControl1
             // 
-            this.visualStudioTabControl1.ActiveColor = System.Drawing.Color.Turquoise;
+            this.visualStudioTabControl1.ActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.visualStudioTabControl1.AllowDrop = true;
             this.visualStudioTabControl1.BackTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.visualStudioTabControl1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -127,7 +130,7 @@ namespace WinFormSample
             this.visualStudioTabControl1.Controls.Add(this.tabPage4);
             this.visualStudioTabControl1.Controls.Add(this.tabPage3);
             this.visualStudioTabControl1.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.visualStudioTabControl1.HorizontalLineColor = System.Drawing.Color.Turquoise;
+            this.visualStudioTabControl1.HorizontalLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.visualStudioTabControl1.ItemSize = new System.Drawing.Size(240, 16);
             this.visualStudioTabControl1.Location = new System.Drawing.Point(2, -1);
             this.visualStudioTabControl1.Name = "visualStudioTabControl1";
@@ -142,6 +145,8 @@ namespace WinFormSample
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.tabPage4.Controls.Add(this.label5);
+            this.tabPage4.Controls.Add(this.Slider);
             this.tabPage4.Controls.Add(this.Position1);
             this.tabPage4.Controls.Add(this.Min6);
             this.tabPage4.Controls.Add(this.label29);
@@ -990,8 +995,9 @@ namespace WinFormSample
             // label23
             // 
             this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.label23.Font = new System.Drawing.Font("Segoe UI", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Turquoise;
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label23.Location = new System.Drawing.Point(565, 266);
             this.label23.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label23.Name = "label23";
@@ -1142,7 +1148,7 @@ namespace WinFormSample
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Turquoise;
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label22.Location = new System.Drawing.Point(469, 211);
             this.label22.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label22.Name = "label22";
@@ -1180,7 +1186,7 @@ namespace WinFormSample
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI Black", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Turquoise;
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label20.Location = new System.Drawing.Point(410, 154);
             this.label20.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label20.Name = "label20";
@@ -1271,6 +1277,29 @@ namespace WinFormSample
             this.label1.TabIndex = 17;
             this.label1.Text = "FPS:";
             // 
+            // Slider
+            // 
+            this.Slider.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Slider.LargeChange = 50;
+            this.Slider.Location = new System.Drawing.Point(307, 440);
+            this.Slider.Maximum = 30;
+            this.Slider.Name = "Slider";
+            this.Slider.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Slider.Size = new System.Drawing.Size(399, 90);
+            this.Slider.SmallChange = 3;
+            this.Slider.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(23, 440);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(143, 37);
+            this.label5.TabIndex = 133;
+            this.label5.Text = "Sensibility:";
+            // 
             // FrameDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1289,6 +1318,7 @@ namespace WinFormSample
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.displayImages)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Slider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1382,5 +1412,7 @@ namespace WinFormSample
         private Label lenght4;
         private Label label20;
         private Label lenght5;
+        private TrackBar Slider;
+        private Label label5;
     }
 }

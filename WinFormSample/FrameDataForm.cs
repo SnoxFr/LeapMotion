@@ -35,6 +35,7 @@ namespace WinFormSample
         double[] MinPressureInt = new double[10];
         Frame frame = new Frame();
         int[] distanceToFinger = new int[10];
+        int SliderValue = 0;
         Device device;
         Label[] Labels;
         Label[] Leds;
@@ -148,6 +149,7 @@ namespace WinFormSample
             frame = eventArgs.frame;
             handRight = null;
             handLeft = null;
+            SliderValue = Slider.Value;
 
             //The following are Label controls added in design view for the form
             displayFPS.Text = frame.CurrentFramesPerSecond.ToString();
@@ -215,8 +217,6 @@ namespace WinFormSample
                     distanceToFinger[2] = (int)VectorFinger[2].DistanceTo(handRight.PalmPosition);
                     distanceToFinger[3] = (int)VectorFinger[3].DistanceTo(handRight.PalmPosition);
                     distanceToFinger[4] = (int)VectorFinger[4].DistanceTo(handRight.PalmPosition);
-
-                   
 
                     bool isInto = true;
                     PianoDoigt1 = Test.NormalizePoint(VectorFinger[0], isInto);
@@ -436,6 +436,7 @@ namespace WinFormSample
         void Lissage(Object source, System.Timers.ElapsedEventArgs e)
         {  
             label16.BackColor= Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+
             if (handRight!=null)
             {
                 handTempo = handRight;
@@ -454,12 +455,12 @@ namespace WinFormSample
                         boneIntermediate = fingersRight[0].Bone(Bone.BoneType.TYPE_INTERMEDIATE);
                         boneDistal = fingersRight[0].Bone(Bone.BoneType.TYPE_DISTAL);
                         BufferLenghtRight[z].Add( boneProximal.Center.DistanceTo(boneIntermediate.Center) + boneIntermediate.Center.DistanceTo(boneDistal.Center));
-                        MinPressureInt[z] = GetLenghtLisséRight(z);
+                        MinPressureInt[z] = GetLenghtLisséRight(z)*((100f+ SliderValue) /100f);
                     }
                     else
                     {
                         BufferLenghtRight[z].Add(fingersRight[z].Length);
-                        MinPressureInt[z] = Math.Sqrt(Math.Pow(GetLenghtLisséRight(z), 2) + Math.Pow(handTempo.PalmPosition.DistanceTo(fingersRight[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2));
+                        MinPressureInt[z] = ((100f + SliderValue) /100f )* (Math.Sqrt(Math.Pow(GetLenghtLisséRight(z), 2) + Math.Pow(handTempo.PalmPosition.DistanceTo(fingersRight[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2)));
                     }
                     LenghtLissé[z] = BufferLenghtRight[z].ConvertAll(Convert.ToInt32).Sum() / BufferLenghtRight[z].Count;
                     
