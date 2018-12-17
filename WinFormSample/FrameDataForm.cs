@@ -150,6 +150,7 @@ namespace WinFormSample
             handRight = null;
             handLeft = null;
             SliderValue = Slider.Value;
+            label7.Text = ((distanceToFinger[4] - MinPressureInt[4]) / (93 - MinPressureInt[4])).ToString();
 
             //The following are Label controls added in design view for the form
             displayFPS.Text = frame.CurrentFramesPerSecond.ToString();
@@ -381,14 +382,38 @@ namespace WinFormSample
                         {
                             if (distanceToFinger[i] < MinPressureInt[i])
                             {
-                                Leds[i].Invoke((MethodInvoker)(() => Leds[i].BackColor = Color.Blue));
+                                Leds[i].Invoke((MethodInvoker)(() => Leds[i].BackColor = Color.White));
                             }
                             else
                             {
-                                Leds[i].Invoke((MethodInvoker)(() => Leds[i].BackColor = Color.Red));
+                            Leds[i].Invoke((MethodInvoker)(() => Leds[i].BackColor = Color.FromArgb(28,28,28)));
                             }
                         }
                        
+                    }
+                }
+
+            });
+
+            Task.Factory.StartNew(() => {
+                Thread.Sleep(1000);
+                while (true)
+                {
+                    if (handLeft != null)
+                    {
+
+                        for (int i = 0; i < fingersLeft.Count; i++)
+                        {
+                            if (distanceToFinger[i+5] < MinPressureInt[i+5])
+                            {
+                                Leds[i+5].Invoke((MethodInvoker)(() => Leds[i+5].BackColor = Color.White));
+                            }
+                            else
+                            {
+                                Leds[i+5].Invoke((MethodInvoker)(() => Leds[i+5].BackColor = Color.FromArgb(28, 28, 28)));
+                            }
+                        }
+
                     }
                 }
 
@@ -460,7 +485,7 @@ namespace WinFormSample
                     else
                     {
                         BufferLenghtRight[z].Add(fingersRight[z].Length);
-                        MinPressureInt[z] = ((100f + SliderValue) /100f )* (Math.Sqrt(Math.Pow(GetLenghtLisséRight(z), 2) + Math.Pow(handTempo.PalmPosition.DistanceTo(fingersRight[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2)));
+                        MinPressureInt[z] = ((100f + SliderValue) /100f)* (Math.Sqrt(Math.Pow(GetLenghtLisséRight(z), 2) + Math.Pow(handTempo.PalmPosition.DistanceTo(fingersRight[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2)));
                     }
                     LenghtLissé[z] = BufferLenghtRight[z].ConvertAll(Convert.ToInt32).Sum() / BufferLenghtRight[z].Count;
                     
@@ -488,12 +513,12 @@ namespace WinFormSample
                         boneIntermediate = fingersLeft[0].Bone(Bone.BoneType.TYPE_INTERMEDIATE);
                         boneDistal = fingersLeft[0].Bone(Bone.BoneType.TYPE_DISTAL);
                         BufferLenghtLeft[z].Add(boneProximal.Center.DistanceTo(boneIntermediate.Center) + boneIntermediate.Center.DistanceTo(boneDistal.Center));
-                        MinPressureInt[z + 5] = GetLenghtLisséLeft(z);
+                        MinPressureInt[z + 5] = GetLenghtLisséLeft(z) * ((100f + SliderValue) / 100f);
                     }
                     else
                     {
                         BufferLenghtLeft[z].Add(fingersLeft[z].Length);
-                        MinPressureInt[z+5] = Math.Sqrt(Math.Pow(GetLenghtLisséLeft(z), 2) + Math.Pow(handLeft.PalmPosition.DistanceTo(fingersLeft[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2));
+                        MinPressureInt[z+5] = ((100f + SliderValue) / 100f)*Math.Sqrt(Math.Pow(GetLenghtLisséLeft(z), 2) + Math.Pow(handLeft.PalmPosition.DistanceTo(fingersLeft[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2));
                     }
                     LenghtLissé[z+5] = BufferLenghtLeft[z].ConvertAll(Convert.ToInt32).Sum() / BufferLenghtLeft[z].Count;
 
