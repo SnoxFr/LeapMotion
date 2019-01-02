@@ -25,6 +25,9 @@ namespace WinFormSample
         {
             this.visualStudioTabControl1 = new VisualStudioTabControl.VisualStudioTabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Slider = new System.Windows.Forms.TrackBar();
@@ -108,18 +111,14 @@ namespace WinFormSample
             this.label20 = new System.Windows.Forms.Label();
             this.lenght5 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.displayImages = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.displayHandCount = new System.Windows.Forms.Label();
             this.displayFPS = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.visualStudioTabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Slider)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.displayImages)).BeginInit();
             this.SuspendLayout();
             // 
             // visualStudioTabControl1
@@ -135,7 +134,7 @@ namespace WinFormSample
             this.visualStudioTabControl1.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.visualStudioTabControl1.HorizontalLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.visualStudioTabControl1.ItemSize = new System.Drawing.Size(240, 16);
-            this.visualStudioTabControl1.Location = new System.Drawing.Point(2, -1);
+            this.visualStudioTabControl1.Location = new System.Drawing.Point(1, 0);
             this.visualStudioTabControl1.Name = "visualStudioTabControl1";
             this.visualStudioTabControl1.SelectedIndex = 0;
             this.visualStudioTabControl1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -148,6 +147,7 @@ namespace WinFormSample
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.tabPage4.Controls.Add(this.label10);
             this.tabPage4.Controls.Add(this.label9);
             this.tabPage4.Controls.Add(this.label8);
             this.tabPage4.Controls.Add(this.label7);
@@ -240,12 +240,47 @@ namespace WinFormSample
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Main";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label10.Location = new System.Drawing.Point(1554, 312);
+            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(342, 29);
+            this.label10.TabIndex = 137;
+            this.label10.Text = "Test de conditionnement 0 à 1:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.Location = new System.Drawing.Point(519, 450);
+            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 32);
+            this.label9.TabIndex = 136;
+            this.label9.Text = "+30%";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(237, 450);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 32);
+            this.label8.TabIndex = 135;
+            this.label8.Text = "+0%";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(1899, 395);
+            this.label7.ForeColor = System.Drawing.Color.Turquoise;
+            this.label7.Location = new System.Drawing.Point(1940, 312);
             this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 29);
@@ -268,7 +303,7 @@ namespace WinFormSample
             // 
             this.Slider.Cursor = System.Windows.Forms.Cursors.Default;
             this.Slider.LargeChange = 50;
-            this.Slider.Location = new System.Drawing.Point(281, 422);
+            this.Slider.Location = new System.Drawing.Point(231, 402);
             this.Slider.Maximum = 30;
             this.Slider.Name = "Slider";
             this.Slider.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -291,12 +326,12 @@ namespace WinFormSample
             // Min6
             // 
             this.Min6.AutoSize = true;
-            this.Min6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Min6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min6.Location = new System.Drawing.Point(1184, 262);
+            this.Min6.Location = new System.Drawing.Point(1185, 197);
             this.Min6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min6.Name = "Min6";
-            this.Min6.Size = new System.Drawing.Size(65, 29);
+            this.Min6.Size = new System.Drawing.Size(91, 39);
             this.Min6.TabIndex = 132;
             this.Min6.Text = "Min6";
             this.Min6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -327,12 +362,12 @@ namespace WinFormSample
             // Min7
             // 
             this.Min7.AutoSize = true;
-            this.Min7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Min7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min7.Location = new System.Drawing.Point(1051, 262);
+            this.Min7.Location = new System.Drawing.Point(1052, 197);
             this.Min7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min7.Name = "Min7";
-            this.Min7.Size = new System.Drawing.Size(65, 29);
+            this.Min7.Size = new System.Drawing.Size(91, 39);
             this.Min7.TabIndex = 131;
             this.Min7.Text = "Min7";
             this.Min7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -363,12 +398,12 @@ namespace WinFormSample
             // Min8
             // 
             this.Min8.AutoSize = true;
-            this.Min8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Min8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min8.Location = new System.Drawing.Point(901, 262);
+            this.Min8.Location = new System.Drawing.Point(902, 197);
             this.Min8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min8.Name = "Min8";
-            this.Min8.Size = new System.Drawing.Size(65, 29);
+            this.Min8.Size = new System.Drawing.Size(91, 39);
             this.Min8.TabIndex = 130;
             this.Min8.Text = "Min8";
             this.Min8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -412,12 +447,12 @@ namespace WinFormSample
             // Min9
             // 
             this.Min9.AutoSize = true;
-            this.Min9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Min9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min9.Location = new System.Drawing.Point(763, 260);
+            this.Min9.Location = new System.Drawing.Point(764, 195);
             this.Min9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min9.Name = "Min9";
-            this.Min9.Size = new System.Drawing.Size(65, 29);
+            this.Min9.Size = new System.Drawing.Size(91, 39);
             this.Min9.TabIndex = 129;
             this.Min9.Text = "Min9";
             this.Min9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -448,12 +483,12 @@ namespace WinFormSample
             // Min10
             // 
             this.Min10.AutoSize = true;
-            this.Min10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Min10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min10.Location = new System.Drawing.Point(624, 262);
+            this.Min10.Location = new System.Drawing.Point(625, 197);
             this.Min10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min10.Name = "Min10";
-            this.Min10.Size = new System.Drawing.Size(78, 29);
+            this.Min10.Size = new System.Drawing.Size(110, 39);
             this.Min10.TabIndex = 128;
             this.Min10.Text = "Min10";
             this.Min10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -497,12 +532,12 @@ namespace WinFormSample
             // lenght6
             // 
             this.lenght6.AutoSize = true;
-            this.lenght6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lenght6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght6.Location = new System.Drawing.Point(1183, 205);
+            this.lenght6.Location = new System.Drawing.Point(1194, 239);
             this.lenght6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght6.Name = "lenght6";
-            this.lenght6.Size = new System.Drawing.Size(123, 38);
+            this.lenght6.Size = new System.Drawing.Size(92, 29);
             this.lenght6.TabIndex = 122;
             this.lenght6.Text = "lenght6";
             this.lenght6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -544,12 +579,12 @@ namespace WinFormSample
             // lenght7
             // 
             this.lenght7.AutoSize = true;
-            this.lenght7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lenght7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght7.Location = new System.Drawing.Point(1045, 205);
+            this.lenght7.Location = new System.Drawing.Point(1056, 239);
             this.lenght7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght7.Name = "lenght7";
-            this.lenght7.Size = new System.Drawing.Size(123, 38);
+            this.lenght7.Size = new System.Drawing.Size(92, 29);
             this.lenght7.TabIndex = 121;
             this.lenght7.Text = "lenght7";
             this.lenght7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -580,12 +615,12 @@ namespace WinFormSample
             // lenght8
             // 
             this.lenght8.AutoSize = true;
-            this.lenght8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lenght8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght8.Location = new System.Drawing.Point(900, 204);
+            this.lenght8.Location = new System.Drawing.Point(911, 238);
             this.lenght8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght8.Name = "lenght8";
-            this.lenght8.Size = new System.Drawing.Size(123, 38);
+            this.lenght8.Size = new System.Drawing.Size(92, 29);
             this.lenght8.TabIndex = 120;
             this.lenght8.Text = "lenght8";
             this.lenght8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -605,12 +640,12 @@ namespace WinFormSample
             // lenght9
             // 
             this.lenght9.AutoSize = true;
-            this.lenght9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lenght9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght9.Location = new System.Drawing.Point(762, 204);
+            this.lenght9.Location = new System.Drawing.Point(773, 238);
             this.lenght9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght9.Name = "lenght9";
-            this.lenght9.Size = new System.Drawing.Size(123, 38);
+            this.lenght9.Size = new System.Drawing.Size(92, 29);
             this.lenght9.TabIndex = 119;
             this.lenght9.Text = "lenght9";
             this.lenght9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -630,12 +665,12 @@ namespace WinFormSample
             // lenght10
             // 
             this.lenght10.AutoSize = true;
-            this.lenght10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lenght10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght10.Location = new System.Drawing.Point(617, 204);
+            this.lenght10.Location = new System.Drawing.Point(628, 238);
             this.lenght10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght10.Name = "lenght10";
-            this.lenght10.Size = new System.Drawing.Size(141, 38);
+            this.lenght10.Size = new System.Drawing.Size(105, 29);
             this.lenght10.TabIndex = 118;
             this.lenght10.Text = "lenght10";
             this.lenght10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1040,7 +1075,7 @@ namespace WinFormSample
             this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.label23.Font = new System.Drawing.Font("Segoe UI", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label23.Location = new System.Drawing.Point(518, 255);
+            this.label23.Location = new System.Drawing.Point(519, 190);
             this.label23.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(77, 32);
@@ -1062,12 +1097,12 @@ namespace WinFormSample
             // Min5
             // 
             this.Min5.AutoSize = true;
-            this.Min5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Min5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min5.Location = new System.Drawing.Point(1898, 262);
+            this.Min5.Location = new System.Drawing.Point(1899, 197);
             this.Min5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min5.Name = "Min5";
-            this.Min5.Size = new System.Drawing.Size(65, 29);
+            this.Min5.Size = new System.Drawing.Size(91, 39);
             this.Min5.TabIndex = 91;
             this.Min5.Text = "Min5";
             this.Min5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1087,12 +1122,12 @@ namespace WinFormSample
             // Min4
             // 
             this.Min4.AutoSize = true;
-            this.Min4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Min4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min4.Location = new System.Drawing.Point(1765, 262);
+            this.Min4.Location = new System.Drawing.Point(1766, 197);
             this.Min4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min4.Name = "Min4";
-            this.Min4.Size = new System.Drawing.Size(65, 29);
+            this.Min4.Size = new System.Drawing.Size(91, 39);
             this.Min4.TabIndex = 90;
             this.Min4.Text = "Min4";
             this.Min4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1112,12 +1147,12 @@ namespace WinFormSample
             // Min3
             // 
             this.Min3.AutoSize = true;
-            this.Min3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Min3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min3.Location = new System.Drawing.Point(1615, 260);
+            this.Min3.Location = new System.Drawing.Point(1616, 195);
             this.Min3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min3.Name = "Min3";
-            this.Min3.Size = new System.Drawing.Size(65, 29);
+            this.Min3.Size = new System.Drawing.Size(91, 39);
             this.Min3.TabIndex = 89;
             this.Min3.Text = "Min3";
             this.Min3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1137,12 +1172,12 @@ namespace WinFormSample
             // Min2
             // 
             this.Min2.AutoSize = true;
-            this.Min2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Min2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min2.Location = new System.Drawing.Point(1477, 262);
+            this.Min2.Location = new System.Drawing.Point(1478, 197);
             this.Min2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min2.Name = "Min2";
-            this.Min2.Size = new System.Drawing.Size(65, 29);
+            this.Min2.Size = new System.Drawing.Size(91, 39);
             this.Min2.TabIndex = 88;
             this.Min2.Text = "Min2";
             this.Min2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1150,12 +1185,12 @@ namespace WinFormSample
             // lenght1
             // 
             this.lenght1.AutoSize = true;
-            this.lenght1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lenght1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght1.Location = new System.Drawing.Point(1331, 204);
+            this.lenght1.Location = new System.Drawing.Point(1342, 238);
             this.lenght1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght1.Name = "lenght1";
-            this.lenght1.Size = new System.Drawing.Size(123, 38);
+            this.lenght1.Size = new System.Drawing.Size(92, 29);
             this.lenght1.TabIndex = 63;
             this.lenght1.Text = "lenght1";
             this.lenght1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1163,12 +1198,12 @@ namespace WinFormSample
             // Min1
             // 
             this.Min1.AutoSize = true;
-            this.Min1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Min1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min1.Location = new System.Drawing.Point(1338, 260);
+            this.Min1.Location = new System.Drawing.Point(1339, 195);
             this.Min1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min1.Name = "Min1";
-            this.Min1.Size = new System.Drawing.Size(65, 29);
+            this.Min1.Size = new System.Drawing.Size(91, 39);
             this.Min1.TabIndex = 87;
             this.Min1.Text = "Min1";
             this.Min1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1176,12 +1211,12 @@ namespace WinFormSample
             // lenght2
             // 
             this.lenght2.AutoSize = true;
-            this.lenght2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lenght2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght2.Location = new System.Drawing.Point(1476, 204);
+            this.lenght2.Location = new System.Drawing.Point(1487, 238);
             this.lenght2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght2.Name = "lenght2";
-            this.lenght2.Size = new System.Drawing.Size(123, 38);
+            this.lenght2.Size = new System.Drawing.Size(92, 29);
             this.lenght2.TabIndex = 64;
             this.lenght2.Text = "lenght2";
             this.lenght2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1191,7 +1226,7 @@ namespace WinFormSample
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label22.Location = new System.Drawing.Point(430, 203);
+            this.label22.Location = new System.Drawing.Point(430, 238);
             this.label22.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(170, 32);
@@ -1201,12 +1236,12 @@ namespace WinFormSample
             // lenght3
             // 
             this.lenght3.AutoSize = true;
-            this.lenght3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lenght3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght3.Location = new System.Drawing.Point(1614, 204);
+            this.lenght3.Location = new System.Drawing.Point(1625, 238);
             this.lenght3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght3.Name = "lenght3";
-            this.lenght3.Size = new System.Drawing.Size(123, 38);
+            this.lenght3.Size = new System.Drawing.Size(92, 29);
             this.lenght3.TabIndex = 65;
             this.lenght3.Text = "lenght3";
             this.lenght3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1214,12 +1249,12 @@ namespace WinFormSample
             // lenght4
             // 
             this.lenght4.AutoSize = true;
-            this.lenght4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lenght4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght4.Location = new System.Drawing.Point(1759, 205);
+            this.lenght4.Location = new System.Drawing.Point(1770, 239);
             this.lenght4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght4.Name = "lenght4";
-            this.lenght4.Size = new System.Drawing.Size(123, 38);
+            this.lenght4.Size = new System.Drawing.Size(92, 29);
             this.lenght4.TabIndex = 66;
             this.lenght4.Text = "lenght4";
             this.lenght4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1239,12 +1274,12 @@ namespace WinFormSample
             // lenght5
             // 
             this.lenght5.AutoSize = true;
-            this.lenght5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lenght5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght5.Location = new System.Drawing.Point(1898, 205);
+            this.lenght5.Location = new System.Drawing.Point(1909, 239);
             this.lenght5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght5.Name = "lenght5";
-            this.lenght5.Size = new System.Drawing.Size(123, 38);
+            this.lenght5.Size = new System.Drawing.Size(92, 29);
             this.lenght5.TabIndex = 67;
             this.lenght5.Text = "lenght5";
             this.lenght5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1252,7 +1287,6 @@ namespace WinFormSample
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.tabPage3.Controls.Add(this.displayImages);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.displayHandCount);
             this.tabPage3.Controls.Add(this.displayFPS);
@@ -1264,16 +1298,6 @@ namespace WinFormSample
             this.tabPage3.Size = new System.Drawing.Size(2099, 696);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Rendu";
-            // 
-            // displayImages
-            // 
-            this.displayImages.Location = new System.Drawing.Point(793, 42);
-            this.displayImages.Margin = new System.Windows.Forms.Padding(6);
-            this.displayImages.Name = "displayImages";
-            this.displayImages.Size = new System.Drawing.Size(837, 631);
-            this.displayImages.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.displayImages.TabIndex = 6;
-            this.displayImages.TabStop = false;
             // 
             // label2
             // 
@@ -1319,28 +1343,6 @@ namespace WinFormSample
             this.label1.TabIndex = 17;
             this.label1.Text = "FPS:";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(275, 470);
-            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 32);
-            this.label8.TabIndex = 135;
-            this.label8.Text = "+0%";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(570, 470);
-            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 32);
-            this.label9.TabIndex = 136;
-            this.label9.Text = "+30%";
-            // 
             // FrameDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -1359,7 +1361,6 @@ namespace WinFormSample
             ((System.ComponentModel.ISupportInitialize)(this.Slider)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.displayImages)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1368,7 +1369,6 @@ namespace WinFormSample
 
         private VisualStudioTabControl.VisualStudioTabControl visualStudioTabControl1;
         private TabPage tabPage3;
-        private PictureBox displayImages;
         private Label label2;
         private Label displayHandCount;
         private Label displayFPS;
@@ -1458,5 +1458,6 @@ namespace WinFormSample
         private Label label7;
         private Label label9;
         private Label label8;
+        private Label label10;
     }
 }

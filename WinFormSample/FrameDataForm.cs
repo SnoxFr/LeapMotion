@@ -20,7 +20,6 @@ namespace WinFormSample
         MultiDimDictList BufferLenghtLeft = new MultiDimDictList();
         private byte[] imagedata = new byte[1];
         private Controller controller = new Controller();
-        Bitmap bitmap = new Bitmap(640, 480, PixelFormat.Format8bppIndexed);
         private static System.Timers.Timer aTimer;
         private Random rnd = new Random();
         List<Hand> Hands= new List<Hand>() ;
@@ -47,6 +46,7 @@ namespace WinFormSample
         Vector Finger1,Finger2, Finger3, Finger4, Finger5, Finger6, Finger7, Finger8, Finger9, Finger10;
         Bone boneMetaCarpal, boneProximal, boneIntermediate, boneDistal;
         InteractionBox Test;
+        int CptLissage=1;
         //Vector[] Piano;
         Vector PianoDoigt1,PianoDoigt2, PianoDoigt3, PianoDoigt4, PianoDoigt5,
             PianoDoigt6, PianoDoigt7, PianoDoigt8, PianoDoigt9, PianoDoigt10;
@@ -122,13 +122,7 @@ namespace WinFormSample
             controller.DeviceLost+= isDisconnected;
             controller.DeviceFailure += OnDeviceFailure;
             
-            //set greyscale palette for image Bitmap object
-            ColorPalette grayscale = bitmap.Palette;
-            for (int i = 0; i < 256; i++)
-            {
-                grayscale.Entries[i] = Color.FromArgb((int)255, i, i, i);
-            }
-            bitmap.Palette = grayscale;
+           
         }
         void isConnected( object sender, InternalFrameEventArgs eventArgs)
         {
@@ -150,8 +144,21 @@ namespace WinFormSample
             handRight = null;
             handLeft = null;
             SliderValue = Slider.Value;
-            label7.Text = ((distanceToFinger[4] - MinPressureInt[4]) / (93 - MinPressureInt[4])).ToString();
 
+            // Conditionnement de 0 à 1
+            int tempo=0;
+
+            if(distanceToFinger[4]>tempo && distanceToFinger[4]<100)
+            {
+                CptLissage = CptLissage + 1;
+                if(CptLissage>10)
+                {
+                    CptLissage=0;
+                    tempo = distanceToFinger[4];
+                }
+
+            }
+            label7.Text = Math.Round(Math.Abs(((distanceToFinger[4] - MinPressureInt[4]) / (93 - MinPressureInt[4]) - 1)),3).ToString();
             //The following are Label controls added in design view for the form
             displayFPS.Text = frame.CurrentFramesPerSecond.ToString();
             displayHandCount.Text = frame.Hands.Count.ToString();
@@ -307,13 +314,7 @@ namespace WinFormSample
 
         void onImageReady(object sender, ImageEventArgs e)
         {
-            Rectangle lockArea = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
-            BitmapData bitmapData = bitmap.LockBits(lockArea, ImageLockMode.WriteOnly, PixelFormat.Format8bppIndexed);
-            byte[] rawImageData = imagedata;
-            System.Runtime.InteropServices.Marshal.Copy(rawImageData, 0, bitmapData.Scan0, e.image.Width * e.image.Height * 2 * e.image.BytesPerPixel);
-            bitmap.UnlockBits(bitmapData);
-            displayImages.Image = bitmap;
-            
+
             //State
             Device device = controller.Devices[0];
             //Smudged
