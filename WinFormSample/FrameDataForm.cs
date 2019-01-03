@@ -68,12 +68,9 @@ namespace WinFormSample
             if (args[1].Equals("Release"))
             {
                 ModeDebug = false;
-                Visible = false;
+                SliderValue = Int32.Parse(args[2]);
                 
             }
-
-            Slider.Value = 10;
-                //Int32.Parse(args[2]);
 
             InitializeComponent();
             Vector size = new Vector(200f,1f,1f);
@@ -143,6 +140,8 @@ namespace WinFormSample
             controller.InternalFrameReady += isConnected;
             controller.DeviceLost+= isDisconnected;
             controller.DeviceFailure += OnDeviceFailure;
+            Slider.ValueChanged += SliderChanged;
+
  
         }
         void isConnected( object sender, InternalFrameEventArgs eventArgs)
@@ -158,6 +157,10 @@ namespace WinFormSample
         {
             ConnectionUSB.BackColor = Color.Red;
         }
+        void SliderChanged(object sender, EventArgs e)
+        {
+            SliderValue = Slider.Value;
+        }
 
 
         void newFrameHandler(object sender, FrameEventArgs eventArgs)
@@ -166,7 +169,6 @@ namespace WinFormSample
             frame = eventArgs.frame;
             handRight = null;
             handLeft = null;
-            SliderValue = Slider.Value;
 
             // Conditionnement de 0 à 1
             int tempo=0;
