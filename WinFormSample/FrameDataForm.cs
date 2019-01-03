@@ -603,7 +603,6 @@ namespace WinFormSample
                     BufferLenghtLeft[z].Clear();
                     Leds[z+5].BackColor = Color.Red;
                     Labels[z + 5].Text = "×";
-                    Labels[z + 5].TextAlign = ContentAlignment.MiddleCenter;
                 }
         }
 
