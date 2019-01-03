@@ -567,6 +567,9 @@ namespace WinFormSample
                 {
                     BufferLenghtRight[z].Clear();
                     Leds[z].BackColor = Color.Red;
+                    Labels[z].Text = "×";
+                    MinPressure[z].Text = "×";
+                    Lenght[z].Text = "×";
 
                 }
             if (handLeft != null)
@@ -603,6 +606,8 @@ namespace WinFormSample
                     BufferLenghtLeft[z].Clear();
                     Leds[z+5].BackColor = Color.Red;
                     Labels[z + 5].Text = "×";
+                    MinPressure[z+5].Text= "×";
+                    Lenght[z + 5].Text = "×";
                 }
         }
 
