@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Threading;
+using System.Configuration;
 
 namespace WinFormSample
 {
@@ -52,25 +53,6 @@ namespace WinFormSample
             PianoDoigt6, PianoDoigt7, PianoDoigt8, PianoDoigt9, PianoDoigt10;
         public FrameDataForm()
         {
-            string[] args = Environment.GetCommandLineArgs();
-
-            if (args.Length == 1)
-            {
-                Console.WriteLine("Too few arguments");
-                System.Environment.Exit(1);
-            }
-            if (args[1].Equals("Debug"))
-            {
-                ModeDebug = true ;
-            }
-            
-            
-            if (args[1].Equals("Release"))
-            {
-                ModeDebug = false;
-                SliderValue = Int32.Parse(args[2]);
-                
-            }
 
             InitializeComponent();
             Vector size = new Vector(200f,1f,1f);
@@ -142,7 +124,57 @@ namespace WinFormSample
             controller.DeviceFailure += OnDeviceFailure;
             Slider.ValueChanged += SliderChanged;
 
- 
+            string[] args = Environment.GetCommandLineArgs();
+
+            if (args.Length == 1)
+            {
+                Console.WriteLine("Too few arguments");
+                System.Environment.Exit(1);
+            }
+            if (args.Length>3)
+            {
+                Console.WriteLine("Too much arguments");
+                System.Environment.Exit(1);
+            }
+            if (args[1].Equals("Debug"))
+            {
+                ModeDebug = true;
+            }
+
+            else if (args[1].Equals("Release"))
+            {
+                ModeDebug = false;
+            }
+            else
+            {
+                Console.WriteLine("Argument 1 incorrect");
+                System.Environment.Exit(1);
+            }
+            if(args.Length==3)
+            {
+                if (Int32.TryParse(args[2] , out int args2Int))
+                {
+                    if(args2Int>=0 && args2Int<=30)
+                    {
+                        Slider.Value = args2Int;
+                        Console.WriteLine(args2Int);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Argument 2 incorrect Value");
+                        System.Environment.Exit(1);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Argument 2 incorrect type");
+                    System.Environment.Exit(1);
+                }
+
+            }
+            Slider.Value = Int32.Parse(ConfigurationManager.AppSettings["LastSliderValue"]);
+
+
         }
         void isConnected( object sender, InternalFrameEventArgs eventArgs)
         {
@@ -160,6 +192,11 @@ namespace WinFormSample
         void SliderChanged(object sender, EventArgs e)
         {
             SliderValue = Slider.Value;
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.AppSettings.Settings["LastSliderValue"].Value = Slider.Value.ToString();
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSettings");
+
         }
 
 
