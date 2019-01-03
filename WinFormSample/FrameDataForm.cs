@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Windows.Forms;
 using System.Media;
 using System.Linq;
@@ -12,7 +11,7 @@ using System.Threading;
 
 namespace WinFormSample
 {
-   
+
     public partial class FrameDataForm : Form 
     {
         public class MultiDimDictList : Dictionary<int, List<float>> { }
@@ -47,11 +46,35 @@ namespace WinFormSample
         Bone boneMetaCarpal, boneProximal, boneIntermediate, boneDistal;
         InteractionBox Test;
         int CptLissage=1;
+        bool ModeDebug = false;
         //Vector[] Piano;
         Vector PianoDoigt1,PianoDoigt2, PianoDoigt3, PianoDoigt4, PianoDoigt5,
             PianoDoigt6, PianoDoigt7, PianoDoigt8, PianoDoigt9, PianoDoigt10;
         public FrameDataForm()
         {
+            string[] args = Environment.GetCommandLineArgs();
+
+            if (args.Length == 1)
+            {
+                Console.WriteLine("Too few arguments");
+                System.Environment.Exit(1);
+            }
+            if (args[1].Equals("Debug"))
+            {
+                ModeDebug = true ;
+            }
+            
+            
+            if (args[1].Equals("Release"))
+            {
+                ModeDebug = false;
+                Visible = false;
+                
+            }
+
+            Slider.Value = 10;
+                //Int32.Parse(args[2]);
+
             InitializeComponent();
             Vector size = new Vector(200f,1f,1f);
             //Vector center = new Vector();
@@ -103,7 +126,6 @@ namespace WinFormSample
             }
             controller.Config.SetFloat("InteractionBox.Width", 1300.0f);
             controller.Config.SetFloat("InteractionBox.Height", 600.0f);
-
             //Configuration du Timer
             aTimer = new System.Timers.Timer();
             aTimer.Interval=1000;
@@ -121,8 +143,7 @@ namespace WinFormSample
             controller.InternalFrameReady += isConnected;
             controller.DeviceLost+= isDisconnected;
             controller.DeviceFailure += OnDeviceFailure;
-            
-           
+ 
         }
         void isConnected( object sender, InternalFrameEventArgs eventArgs)
         {
@@ -130,6 +151,7 @@ namespace WinFormSample
             {
                 ConnectionUSB.BackColor = Color.Green;
             }
+            
 
         }
         void isDisconnected(object sender, DeviceEventArgs eventArgs)
@@ -140,6 +162,7 @@ namespace WinFormSample
 
         void newFrameHandler(object sender, FrameEventArgs eventArgs)
         {
+            this.Visible = ModeDebug;
             frame = eventArgs.frame;
             handRight = null;
             handLeft = null;
