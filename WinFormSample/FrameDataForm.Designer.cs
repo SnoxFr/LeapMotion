@@ -364,7 +364,7 @@ namespace WinFormSample
             this.Min7.AutoSize = true;
             this.Min7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min7.Location = new System.Drawing.Point(1052, 197);
+            this.Min7.Location = new System.Drawing.Point(1034, 195);
             this.Min7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min7.Name = "Min7";
             this.Min7.Size = new System.Drawing.Size(91, 39);
@@ -400,7 +400,7 @@ namespace WinFormSample
             this.Min8.AutoSize = true;
             this.Min8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min8.Location = new System.Drawing.Point(902, 197);
+            this.Min8.Location = new System.Drawing.Point(896, 199);
             this.Min8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min8.Name = "Min8";
             this.Min8.Size = new System.Drawing.Size(91, 39);
@@ -449,7 +449,7 @@ namespace WinFormSample
             this.Min9.AutoSize = true;
             this.Min9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min9.Location = new System.Drawing.Point(764, 195);
+            this.Min9.Location = new System.Drawing.Point(759, 195);
             this.Min9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min9.Name = "Min9";
             this.Min9.Size = new System.Drawing.Size(91, 39);
@@ -485,7 +485,7 @@ namespace WinFormSample
             this.Min10.AutoSize = true;
             this.Min10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min10.Location = new System.Drawing.Point(625, 197);
+            this.Min10.Location = new System.Drawing.Point(603, 199);
             this.Min10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min10.Name = "Min10";
             this.Min10.Size = new System.Drawing.Size(110, 39);
@@ -534,7 +534,7 @@ namespace WinFormSample
             this.lenght6.AutoSize = true;
             this.lenght6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght6.Location = new System.Drawing.Point(1194, 239);
+            this.lenght6.Location = new System.Drawing.Point(1184, 241);
             this.lenght6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght6.Name = "lenght6";
             this.lenght6.Size = new System.Drawing.Size(92, 29);
@@ -581,7 +581,7 @@ namespace WinFormSample
             this.lenght7.AutoSize = true;
             this.lenght7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght7.Location = new System.Drawing.Point(1056, 239);
+            this.lenght7.Location = new System.Drawing.Point(1036, 239);
             this.lenght7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght7.Name = "lenght7";
             this.lenght7.Size = new System.Drawing.Size(92, 29);
@@ -617,7 +617,7 @@ namespace WinFormSample
             this.lenght8.AutoSize = true;
             this.lenght8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght8.Location = new System.Drawing.Point(911, 238);
+            this.lenght8.Location = new System.Drawing.Point(895, 238);
             this.lenght8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght8.Name = "lenght8";
             this.lenght8.Size = new System.Drawing.Size(92, 29);
@@ -642,7 +642,7 @@ namespace WinFormSample
             this.lenght9.AutoSize = true;
             this.lenght9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght9.Location = new System.Drawing.Point(773, 238);
+            this.lenght9.Location = new System.Drawing.Point(761, 238);
             this.lenght9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght9.Name = "lenght9";
             this.lenght9.Size = new System.Drawing.Size(92, 29);
@@ -665,12 +665,12 @@ namespace WinFormSample
             // lenght10
             // 
             this.lenght10.AutoSize = true;
-            this.lenght10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lenght10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght10.Location = new System.Drawing.Point(628, 238);
+            this.lenght10.Location = new System.Drawing.Point(605, 239);
             this.lenght10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght10.Name = "lenght10";
-            this.lenght10.Size = new System.Drawing.Size(105, 29);
+            this.lenght10.Size = new System.Drawing.Size(148, 39);
             this.lenght10.TabIndex = 118;
             this.lenght10.Text = "lenght10";
             this.lenght10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -836,12 +836,12 @@ namespace WinFormSample
             this.Doigt1.AutoSize = true;
             this.Doigt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Doigt1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt1.Location = new System.Drawing.Point(1331, 148);
+            this.Doigt1.Location = new System.Drawing.Point(1314, 157);
             this.Doigt1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Doigt1.Name = "Doigt1";
-            this.Doigt1.Size = new System.Drawing.Size(129, 38);
+            this.Doigt1.Size = new System.Drawing.Size(120, 38);
             this.Doigt1.TabIndex = 35;
-            this.Doigt1.Text = "Doigt 1:";
+            this.Doigt1.Text = "Doigt 1";
             this.Doigt1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label51
@@ -861,7 +861,7 @@ namespace WinFormSample
             this.Doigt2.AutoSize = true;
             this.Doigt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Doigt2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt2.Location = new System.Drawing.Point(1476, 148);
+            this.Doigt2.Location = new System.Drawing.Point(1468, 157);
             this.Doigt2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Doigt2.Name = "Doigt2";
             this.Doigt2.Size = new System.Drawing.Size(111, 38);
@@ -886,7 +886,7 @@ namespace WinFormSample
             this.Doigt3.AutoSize = true;
             this.Doigt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Doigt3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt3.Location = new System.Drawing.Point(1614, 146);
+            this.Doigt3.Location = new System.Drawing.Point(1607, 157);
             this.Doigt3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Doigt3.Name = "Doigt3";
             this.Doigt3.Size = new System.Drawing.Size(111, 38);
@@ -911,7 +911,7 @@ namespace WinFormSample
             this.Doigt4.AutoSize = true;
             this.Doigt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Doigt4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt4.Location = new System.Drawing.Point(1759, 148);
+            this.Doigt4.Location = new System.Drawing.Point(1763, 157);
             this.Doigt4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Doigt4.Name = "Doigt4";
             this.Doigt4.Size = new System.Drawing.Size(111, 38);
@@ -924,7 +924,7 @@ namespace WinFormSample
             this.Doigt6.AutoSize = true;
             this.Doigt6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Doigt6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt6.Location = new System.Drawing.Point(1183, 150);
+            this.Doigt6.Location = new System.Drawing.Point(1175, 159);
             this.Doigt6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Doigt6.Name = "Doigt6";
             this.Doigt6.Size = new System.Drawing.Size(111, 38);
@@ -937,7 +937,7 @@ namespace WinFormSample
             this.Doigt5.AutoSize = true;
             this.Doigt5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Doigt5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt5.Location = new System.Drawing.Point(1898, 150);
+            this.Doigt5.Location = new System.Drawing.Point(1890, 159);
             this.Doigt5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Doigt5.Name = "Doigt5";
             this.Doigt5.Size = new System.Drawing.Size(111, 38);
@@ -950,7 +950,7 @@ namespace WinFormSample
             this.Doigt7.AutoSize = true;
             this.Doigt7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Doigt7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt7.Location = new System.Drawing.Point(1045, 148);
+            this.Doigt7.Location = new System.Drawing.Point(1026, 157);
             this.Doigt7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Doigt7.Name = "Doigt7";
             this.Doigt7.Size = new System.Drawing.Size(111, 38);
@@ -975,7 +975,7 @@ namespace WinFormSample
             this.Doigt8.AutoSize = true;
             this.Doigt8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Doigt8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt8.Location = new System.Drawing.Point(900, 146);
+            this.Doigt8.Location = new System.Drawing.Point(892, 157);
             this.Doigt8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Doigt8.Name = "Doigt8";
             this.Doigt8.Size = new System.Drawing.Size(111, 38);
@@ -1000,7 +1000,7 @@ namespace WinFormSample
             this.Doigt9.AutoSize = true;
             this.Doigt9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Doigt9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt9.Location = new System.Drawing.Point(762, 148);
+            this.Doigt9.Location = new System.Drawing.Point(754, 157);
             this.Doigt9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Doigt9.Name = "Doigt9";
             this.Doigt9.Size = new System.Drawing.Size(111, 38);
@@ -1037,7 +1037,7 @@ namespace WinFormSample
             this.Doigt10.AutoSize = true;
             this.Doigt10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Doigt10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt10.Location = new System.Drawing.Point(617, 148);
+            this.Doigt10.Location = new System.Drawing.Point(591, 157);
             this.Doigt10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Doigt10.Name = "Doigt10";
             this.Doigt10.Size = new System.Drawing.Size(129, 38);
@@ -1075,7 +1075,7 @@ namespace WinFormSample
             this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.label23.Font = new System.Drawing.Font("Segoe UI", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label23.Location = new System.Drawing.Point(519, 190);
+            this.label23.Location = new System.Drawing.Point(502, 202);
             this.label23.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(77, 32);
@@ -1099,7 +1099,7 @@ namespace WinFormSample
             this.Min5.AutoSize = true;
             this.Min5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min5.Location = new System.Drawing.Point(1899, 197);
+            this.Min5.Location = new System.Drawing.Point(1897, 197);
             this.Min5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min5.Name = "Min5";
             this.Min5.Size = new System.Drawing.Size(91, 39);
@@ -1149,7 +1149,7 @@ namespace WinFormSample
             this.Min3.AutoSize = true;
             this.Min3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min3.Location = new System.Drawing.Point(1616, 195);
+            this.Min3.Location = new System.Drawing.Point(1616, 197);
             this.Min3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min3.Name = "Min3";
             this.Min3.Size = new System.Drawing.Size(91, 39);
@@ -1174,7 +1174,7 @@ namespace WinFormSample
             this.Min2.AutoSize = true;
             this.Min2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min2.Location = new System.Drawing.Point(1478, 197);
+            this.Min2.Location = new System.Drawing.Point(1473, 194);
             this.Min2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min2.Name = "Min2";
             this.Min2.Size = new System.Drawing.Size(91, 39);
@@ -1187,7 +1187,7 @@ namespace WinFormSample
             this.lenght1.AutoSize = true;
             this.lenght1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght1.Location = new System.Drawing.Point(1342, 238);
+            this.lenght1.Location = new System.Drawing.Point(1326, 238);
             this.lenght1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght1.Name = "lenght1";
             this.lenght1.Size = new System.Drawing.Size(92, 29);
@@ -1200,7 +1200,7 @@ namespace WinFormSample
             this.Min1.AutoSize = true;
             this.Min1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Min1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min1.Location = new System.Drawing.Point(1339, 195);
+            this.Min1.Location = new System.Drawing.Point(1324, 194);
             this.Min1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Min1.Name = "Min1";
             this.Min1.Size = new System.Drawing.Size(91, 39);
@@ -1213,7 +1213,7 @@ namespace WinFormSample
             this.lenght2.AutoSize = true;
             this.lenght2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght2.Location = new System.Drawing.Point(1487, 238);
+            this.lenght2.Location = new System.Drawing.Point(1475, 238);
             this.lenght2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght2.Name = "lenght2";
             this.lenght2.Size = new System.Drawing.Size(92, 29);
@@ -1226,7 +1226,7 @@ namespace WinFormSample
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label22.Location = new System.Drawing.Point(430, 238);
+            this.label22.Location = new System.Drawing.Point(409, 236);
             this.label22.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(170, 32);
@@ -1238,7 +1238,7 @@ namespace WinFormSample
             this.lenght3.AutoSize = true;
             this.lenght3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght3.Location = new System.Drawing.Point(1625, 238);
+            this.lenght3.Location = new System.Drawing.Point(1614, 239);
             this.lenght3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght3.Name = "lenght3";
             this.lenght3.Size = new System.Drawing.Size(92, 29);
@@ -1264,7 +1264,7 @@ namespace WinFormSample
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI Black", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label20.Location = new System.Drawing.Point(376, 148);
+            this.label20.Location = new System.Drawing.Point(356, 163);
             this.label20.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(223, 32);
@@ -1276,7 +1276,7 @@ namespace WinFormSample
             this.lenght5.AutoSize = true;
             this.lenght5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght5.Location = new System.Drawing.Point(1909, 239);
+            this.lenght5.Location = new System.Drawing.Point(1896, 239);
             this.lenght5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght5.Name = "lenght5";
             this.lenght5.Size = new System.Drawing.Size(92, 29);

@@ -198,8 +198,6 @@ namespace WinFormSample
             ConfigurationManager.RefreshSection("appSettings");
 
         }
-
-
         void newFrameHandler(object sender, FrameEventArgs eventArgs)
         {
             this.Visible = ModeDebug;
@@ -226,7 +224,6 @@ namespace WinFormSample
             displayHandCount.Text = frame.Hands.Count.ToString();
             controller.RequestImages(frame.Id, Leap.Image.ImageType.DEFAULT, imagedata);
             device = controller.Devices[0];
-
             if (frame.Hands.Count>0)
                 {
 
@@ -336,9 +333,16 @@ namespace WinFormSample
 
                     }
                 }
+                else
+                {
+                    for(int i=0;i<5;i++)
+                    {
+                        Leds[i].BackColor = Color.Red;
+                    }
+                    
+                }
                 if(handLeft!=null)
                 {
-
                     VectorFinger[5] = fingersLeft[0].StabilizedTipPosition;
                     VectorFinger[6] = fingersLeft[1].StabilizedTipPosition;
                     VectorFinger[7] = fingersLeft[2].StabilizedTipPosition;
@@ -362,16 +366,20 @@ namespace WinFormSample
                     }
 
                 }
+                
             }
         }
        
         void onImageRequestFailed(object sender, ImageRequestFailedEventArgs e)
         {
-            if (e.reason == Leap.Image.RequestFailureReason.Insufficient_Buffer)
+            if (ModeDebug)
             {
-                imagedata = new byte[e.requiredBufferSize];
+                if (e.reason == Leap.Image.RequestFailureReason.Insufficient_Buffer)
+                {
+                    imagedata = new byte[e.requiredBufferSize];
+                }
+                Console.WriteLine("Image request failed: " + e.message);
             }
-            Console.WriteLine("Image request failed: " + e.message);
         }
 
         void onImageReady(object sender, ImageEventArgs e)
@@ -558,6 +566,8 @@ namespace WinFormSample
                 for(int z=0;z<5;z++)
                 {
                     BufferLenghtRight[z].Clear();
+                    Leds[z].BackColor = Color.Red;
+
                 }
             if (handLeft != null)
             {
@@ -591,6 +601,9 @@ namespace WinFormSample
                 for (int z = 0; z < 5; z++)
                 {
                     BufferLenghtLeft[z].Clear();
+                    Leds[z+5].BackColor = Color.Red;
+                    Labels[z + 5].Text = "×";
+                    Labels[z + 5].TextAlign = ContentAlignment.MiddleCenter;
                 }
         }
 
