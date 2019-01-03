@@ -69,27 +69,27 @@ namespace WinFormSample
             //Piano = new Vector[] { PianoDoigt1, PianoDoigt2 };
 
             SoundPlayer DO = new SoundPlayer();
-            DO.SoundLocation = "C:\\Users\\LeapMotion\\Desktop\\DO.wav";
+            DO.SoundLocation = ".\\Sons\\DO.wav";
             DO.LoadAsync();
 
             SoundPlayer RE = new SoundPlayer();
+            RE.SoundLocation = ".\\Sons\\RE.wav";
+            RE.LoadAsync();
 
             SoundPlayer MI = new SoundPlayer();
-            MI.SoundLocation = "C:\\Users\\LeapMotion\\Desktop\\MI.wav";
+            MI.SoundLocation = ".\\Sons\\MI.wav";
             MI.LoadAsync();
 
             SoundPlayer FA = new SoundPlayer();
-            FA.SoundLocation = "C:\\Users\\LeapMotion\\Desktop\\FA.wav";
+            FA.SoundLocation = ".\\Sons\\FA.wav";
             FA.LoadAsync();
 
             SoundPlayer SOL = new SoundPlayer();
-            SOL.SoundLocation = "C:\\Users\\LeapMotion\\Desktop\\SOL.wav";
-            SOL.LoadAsync();
 
             Note = new SoundPlayer[] { DO, RE, MI, FA, SOL };
-            RE.SoundLocation = "C:\\Users\\LeapMotion\\Desktop\\RE.wav";
-            Note[1].LoadCompleted += new AsyncCompletedEventHandler(SoundPlayed);
-            RE.LoadAsync();
+            SOL.SoundLocation = ".\\Sons\\SOL.wav";
+            Note[4].LoadCompleted += new AsyncCompletedEventHandler(SoundPlayed);
+            SOL.LoadAsync();
 
 
             //Creation buffer droit
