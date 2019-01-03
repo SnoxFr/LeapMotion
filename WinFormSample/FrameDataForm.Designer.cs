@@ -99,7 +99,6 @@ namespace WinFormSample
             this.Position10 = new System.Windows.Forms.Label();
             this.Position11 = new System.Windows.Forms.Label();
             this.Position16 = new System.Windows.Forms.Label();
-            this.Position15 = new System.Windows.Forms.Label();
             this.Position14 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
@@ -116,11 +115,14 @@ namespace WinFormSample
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.ConnectionUSB = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label12 = new System.Windows.Forms.Label();
             this.visualStudioTabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Slider)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // visualStudioTabControl1
@@ -149,6 +151,7 @@ namespace WinFormSample
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.tabPage4.Controls.Add(this.tableLayoutPanel2);
             this.tabPage4.Controls.Add(this.tableLayoutPanel1);
             this.tabPage4.Controls.Add(this.label10);
             this.tabPage4.Controls.Add(this.label9);
@@ -156,22 +159,6 @@ namespace WinFormSample
             this.tabPage4.Controls.Add(this.label7);
             this.tabPage4.Controls.Add(this.label5);
             this.tabPage4.Controls.Add(this.Slider);
-            this.tabPage4.Controls.Add(this.Position1);
-            this.tabPage4.Controls.Add(this.Position2);
-            this.tabPage4.Controls.Add(this.Position3);
-            this.tabPage4.Controls.Add(this.Position4);
-            this.tabPage4.Controls.Add(this.Position5);
-            this.tabPage4.Controls.Add(this.Position6);
-            this.tabPage4.Controls.Add(this.Position7);
-            this.tabPage4.Controls.Add(this.Position8);
-            this.tabPage4.Controls.Add(this.Position9);
-            this.tabPage4.Controls.Add(this.Position13);
-            this.tabPage4.Controls.Add(this.Position12);
-            this.tabPage4.Controls.Add(this.Position10);
-            this.tabPage4.Controls.Add(this.Position11);
-            this.tabPage4.Controls.Add(this.Position16);
-            this.tabPage4.Controls.Add(this.Position15);
-            this.tabPage4.Controls.Add(this.Position14);
             this.tabPage4.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage4.Location = new System.Drawing.Point(4, 20);
             this.tabPage4.Name = "tabPage4";
@@ -1013,7 +1000,7 @@ namespace WinFormSample
             // 
             this.Position1.AutoSize = true;
             this.Position1.BackColor = System.Drawing.Color.Silver;
-            this.Position1.Location = new System.Drawing.Point(281, 602);
+            this.Position1.Location = new System.Drawing.Point(6, 0);
             this.Position1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Position1.MinimumSize = new System.Drawing.Size(92, 10);
             this.Position1.Name = "Position1";
@@ -1025,7 +1012,7 @@ namespace WinFormSample
             // 
             this.Position2.AutoSize = true;
             this.Position2.BackColor = System.Drawing.Color.Silver;
-            this.Position2.Location = new System.Drawing.Point(384, 602);
+            this.Position2.Location = new System.Drawing.Point(214, 0);
             this.Position2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Position2.MinimumSize = new System.Drawing.Size(92, 10);
             this.Position2.Name = "Position2";
@@ -1037,7 +1024,7 @@ namespace WinFormSample
             // 
             this.Position3.AutoSize = true;
             this.Position3.BackColor = System.Drawing.Color.Silver;
-            this.Position3.Location = new System.Drawing.Point(487, 602);
+            this.Position3.Location = new System.Drawing.Point(318, 0);
             this.Position3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Position3.MinimumSize = new System.Drawing.Size(92, 10);
             this.Position3.Name = "Position3";
@@ -1049,7 +1036,7 @@ namespace WinFormSample
             // 
             this.Position4.AutoSize = true;
             this.Position4.BackColor = System.Drawing.Color.Silver;
-            this.Position4.Location = new System.Drawing.Point(593, 602);
+            this.Position4.Location = new System.Drawing.Point(422, 0);
             this.Position4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Position4.MinimumSize = new System.Drawing.Size(92, 10);
             this.Position4.Name = "Position4";
@@ -1061,7 +1048,7 @@ namespace WinFormSample
             // 
             this.Position5.AutoSize = true;
             this.Position5.BackColor = System.Drawing.Color.Silver;
-            this.Position5.Location = new System.Drawing.Point(696, 602);
+            this.Position5.Location = new System.Drawing.Point(526, 0);
             this.Position5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Position5.MinimumSize = new System.Drawing.Size(92, 10);
             this.Position5.Name = "Position5";
@@ -1073,7 +1060,7 @@ namespace WinFormSample
             // 
             this.Position6.AutoSize = true;
             this.Position6.BackColor = System.Drawing.Color.Silver;
-            this.Position6.Location = new System.Drawing.Point(798, 602);
+            this.Position6.Location = new System.Drawing.Point(630, 0);
             this.Position6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Position6.MinimumSize = new System.Drawing.Size(92, 10);
             this.Position6.Name = "Position6";
@@ -1085,7 +1072,7 @@ namespace WinFormSample
             // 
             this.Position7.AutoSize = true;
             this.Position7.BackColor = System.Drawing.Color.Silver;
-            this.Position7.Location = new System.Drawing.Point(901, 602);
+            this.Position7.Location = new System.Drawing.Point(734, 0);
             this.Position7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Position7.MinimumSize = new System.Drawing.Size(92, 10);
             this.Position7.Name = "Position7";
@@ -1097,7 +1084,7 @@ namespace WinFormSample
             // 
             this.Position8.AutoSize = true;
             this.Position8.BackColor = System.Drawing.Color.Silver;
-            this.Position8.Location = new System.Drawing.Point(1004, 602);
+            this.Position8.Location = new System.Drawing.Point(838, 0);
             this.Position8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Position8.MinimumSize = new System.Drawing.Size(92, 10);
             this.Position8.Name = "Position8";
@@ -1109,7 +1096,7 @@ namespace WinFormSample
             // 
             this.Position9.AutoSize = true;
             this.Position9.BackColor = System.Drawing.Color.Silver;
-            this.Position9.Location = new System.Drawing.Point(1106, 602);
+            this.Position9.Location = new System.Drawing.Point(942, 0);
             this.Position9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Position9.MinimumSize = new System.Drawing.Size(92, 10);
             this.Position9.Name = "Position9";
@@ -1121,7 +1108,7 @@ namespace WinFormSample
             // 
             this.Position13.AutoSize = true;
             this.Position13.BackColor = System.Drawing.Color.Silver;
-            this.Position13.Location = new System.Drawing.Point(1517, 602);
+            this.Position13.Location = new System.Drawing.Point(1358, 0);
             this.Position13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Position13.MinimumSize = new System.Drawing.Size(92, 10);
             this.Position13.Name = "Position13";
@@ -1133,7 +1120,7 @@ namespace WinFormSample
             // 
             this.Position12.AutoSize = true;
             this.Position12.BackColor = System.Drawing.Color.Silver;
-            this.Position12.Location = new System.Drawing.Point(1414, 602);
+            this.Position12.Location = new System.Drawing.Point(1254, 0);
             this.Position12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Position12.MinimumSize = new System.Drawing.Size(92, 10);
             this.Position12.Name = "Position12";
@@ -1145,7 +1132,7 @@ namespace WinFormSample
             // 
             this.Position10.AutoSize = true;
             this.Position10.BackColor = System.Drawing.Color.Silver;
-            this.Position10.Location = new System.Drawing.Point(1209, 602);
+            this.Position10.Location = new System.Drawing.Point(1046, 0);
             this.Position10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Position10.MinimumSize = new System.Drawing.Size(92, 10);
             this.Position10.Name = "Position10";
@@ -1157,7 +1144,7 @@ namespace WinFormSample
             // 
             this.Position11.AutoSize = true;
             this.Position11.BackColor = System.Drawing.Color.Silver;
-            this.Position11.Location = new System.Drawing.Point(1312, 602);
+            this.Position11.Location = new System.Drawing.Point(1150, 0);
             this.Position11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Position11.MinimumSize = new System.Drawing.Size(92, 10);
             this.Position11.Name = "Position11";
@@ -1168,32 +1155,20 @@ namespace WinFormSample
             // Position16
             // 
             this.Position16.AutoSize = true;
-            this.Position16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.Position16.Location = new System.Drawing.Point(1825, 602);
+            this.Position16.BackColor = System.Drawing.Color.Silver;
+            this.Position16.Location = new System.Drawing.Point(1566, 0);
             this.Position16.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Position16.MinimumSize = new System.Drawing.Size(92, 10);
             this.Position16.Name = "Position16";
             this.Position16.Size = new System.Drawing.Size(92, 35);
-            this.Position16.TabIndex = 99;
+            this.Position16.TabIndex = 100;
             this.Position16.UseCompatibleTextRendering = true;
-            // 
-            // Position15
-            // 
-            this.Position15.AutoSize = true;
-            this.Position15.BackColor = System.Drawing.Color.Silver;
-            this.Position15.Location = new System.Drawing.Point(1722, 602);
-            this.Position15.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Position15.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Position15.Name = "Position15";
-            this.Position15.Size = new System.Drawing.Size(92, 35);
-            this.Position15.TabIndex = 100;
-            this.Position15.UseCompatibleTextRendering = true;
             // 
             // Position14
             // 
             this.Position14.AutoSize = true;
             this.Position14.BackColor = System.Drawing.Color.Silver;
-            this.Position14.Location = new System.Drawing.Point(1620, 602);
+            this.Position14.Location = new System.Drawing.Point(1462, 0);
             this.Position14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Position14.MinimumSize = new System.Drawing.Size(92, 10);
             this.Position14.Name = "Position14";
@@ -1384,6 +1359,60 @@ namespace WinFormSample
             this.ConnectionUSB.Size = new System.Drawing.Size(92, 25);
             this.ConnectionUSB.TabIndex = 94;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 16;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position3, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position4, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position5, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position6, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position7, 6, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position8, 7, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position13, 12, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position16, 14, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position9, 8, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position14, 13, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position12, 11, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position10, 9, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position11, 10, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(170, 637);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1865, 89);
+            this.tableLayoutPanel2.TabIndex = 139;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Silver;
+            this.label12.Location = new System.Drawing.Point(110, 0);
+            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label12.MinimumSize = new System.Drawing.Size(92, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(92, 35);
+            this.label12.TabIndex = 102;
+            this.label12.UseCompatibleTextRendering = true;
+            // 
             // FrameDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -1404,6 +1433,8 @@ namespace WinFormSample
             ((System.ComponentModel.ISupportInitialize)(this.Slider)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1443,9 +1474,8 @@ namespace WinFormSample
         private Label Led7;
         private Label Position11;
         private Label Led8;
-        private Label Position16;
         private Label Led9;
-        private Label Position15;
+        private Label Position16;
         private Label Led10;
         private Label Position14;
         private Label label49;
@@ -1503,5 +1533,7 @@ namespace WinFormSample
         private Label label4;
         private Label label3;
         private Label ConnectionUSB;
+        private TableLayoutPanel tableLayoutPanel2;
+        private Label label12;
     }
 }

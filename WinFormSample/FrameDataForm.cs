@@ -61,7 +61,7 @@ namespace WinFormSample
 
             Lenght = new Label[] { lenght1, lenght2, lenght3, lenght4, lenght5, lenght6, lenght7, lenght8, lenght9, lenght10 };
             Position = new Label[] { Position1, Position2, Position3, Position4, Position5, Position6, Position7, Position8,
-                Position9, Position10, Position11, Position12, Position13, Position14, Position15, Position16 };
+                Position9, Position10, Position11, Position12, Position13, Position14, Position16, Position16 };
             Labels = new Label[] { Doigt1, Doigt2, Doigt3, Doigt4, Doigt5, Doigt6, Doigt7, Doigt8, Doigt9, Doigt10 };
             Leds = new Label[] { Led1, Led2, Led3, Led4, Led5, Led6, Led7, Led8, Led9, Led10 };
             VectorFinger = new Vector[] { Finger1, Finger2, Finger3, Finger4, Finger5,Finger6, Finger7, Finger8, Finger9, Finger1 };
