@@ -25,6 +25,24 @@ namespace WinFormSample
         {
             this.visualStudioTabControl1 = new VisualStudioTabControl.VisualStudioTabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Position1 = new System.Windows.Forms.Label();
+            this.Position2 = new System.Windows.Forms.Label();
+            this.Position3 = new System.Windows.Forms.Label();
+            this.Position4 = new System.Windows.Forms.Label();
+            this.Position5 = new System.Windows.Forms.Label();
+            this.Position6 = new System.Windows.Forms.Label();
+            this.Position7 = new System.Windows.Forms.Label();
+            this.Position8 = new System.Windows.Forms.Label();
+            this.Position13 = new System.Windows.Forms.Label();
+            this.Position16 = new System.Windows.Forms.Label();
+            this.Position9 = new System.Windows.Forms.Label();
+            this.Position14 = new System.Windows.Forms.Label();
+            this.Position12 = new System.Windows.Forms.Label();
+            this.Position10 = new System.Windows.Forms.Label();
+            this.Position11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lenght5 = new System.Windows.Forms.Label();
             this.Min5 = new System.Windows.Forms.Label();
@@ -85,26 +103,7 @@ namespace WinFormSample
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Slider = new System.Windows.Forms.TrackBar();
-            this.Position1 = new System.Windows.Forms.Label();
-            this.Position2 = new System.Windows.Forms.Label();
-            this.Position3 = new System.Windows.Forms.Label();
-            this.Position4 = new System.Windows.Forms.Label();
-            this.Position5 = new System.Windows.Forms.Label();
-            this.Position6 = new System.Windows.Forms.Label();
-            this.Position7 = new System.Windows.Forms.Label();
-            this.Position8 = new System.Windows.Forms.Label();
-            this.Position9 = new System.Windows.Forms.Label();
-            this.Position13 = new System.Windows.Forms.Label();
-            this.Position12 = new System.Windows.Forms.Label();
-            this.Position10 = new System.Windows.Forms.Label();
-            this.Position11 = new System.Windows.Forms.Label();
-            this.Position16 = new System.Windows.Forms.Label();
-            this.Position14 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.displayHandCount = new System.Windows.Forms.Label();
-            this.displayFPS = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.FailureReason = new System.Windows.Forms.Label();
@@ -115,14 +114,16 @@ namespace WinFormSample
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.ConnectionUSB = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.displayHandCount = new System.Windows.Forms.Label();
+            this.displayFPS = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.visualStudioTabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Slider)).BeginInit();
             this.tabPage3.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // visualStudioTabControl1
@@ -166,6 +167,254 @@ namespace WinFormSample
             this.tabPage4.Size = new System.Drawing.Size(2329, 927);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Main";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 17;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.label13, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position3, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position4, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position5, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position6, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position7, 6, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position8, 7, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position13, 12, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position16, 14, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position9, 8, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position14, 13, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position12, 11, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position10, 9, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Position11, 10, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(170, 637);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1865, 89);
+            this.tableLayoutPanel2.TabIndex = 139;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Silver;
+            this.label13.Location = new System.Drawing.Point(214, 0);
+            this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label13.MinimumSize = new System.Drawing.Size(92, 10);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(92, 35);
+            this.label13.TabIndex = 103;
+            this.label13.UseCompatibleTextRendering = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Silver;
+            this.label12.Location = new System.Drawing.Point(110, 0);
+            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label12.MinimumSize = new System.Drawing.Size(92, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(92, 35);
+            this.label12.TabIndex = 102;
+            this.label12.UseCompatibleTextRendering = true;
+            // 
+            // Position1
+            // 
+            this.Position1.AutoSize = true;
+            this.Position1.BackColor = System.Drawing.Color.Silver;
+            this.Position1.Location = new System.Drawing.Point(6, 0);
+            this.Position1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Position1.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Position1.Name = "Position1";
+            this.Position1.Size = new System.Drawing.Size(92, 35);
+            this.Position1.TabIndex = 78;
+            this.Position1.UseCompatibleTextRendering = true;
+            // 
+            // Position2
+            // 
+            this.Position2.AutoSize = true;
+            this.Position2.BackColor = System.Drawing.Color.Silver;
+            this.Position2.Location = new System.Drawing.Point(318, 0);
+            this.Position2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Position2.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Position2.Name = "Position2";
+            this.Position2.Size = new System.Drawing.Size(92, 35);
+            this.Position2.TabIndex = 79;
+            this.Position2.UseCompatibleTextRendering = true;
+            // 
+            // Position3
+            // 
+            this.Position3.AutoSize = true;
+            this.Position3.BackColor = System.Drawing.Color.Silver;
+            this.Position3.Location = new System.Drawing.Point(422, 0);
+            this.Position3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Position3.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Position3.Name = "Position3";
+            this.Position3.Size = new System.Drawing.Size(92, 35);
+            this.Position3.TabIndex = 80;
+            this.Position3.UseCompatibleTextRendering = true;
+            // 
+            // Position4
+            // 
+            this.Position4.AutoSize = true;
+            this.Position4.BackColor = System.Drawing.Color.Silver;
+            this.Position4.Location = new System.Drawing.Point(526, 0);
+            this.Position4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Position4.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Position4.Name = "Position4";
+            this.Position4.Size = new System.Drawing.Size(92, 35);
+            this.Position4.TabIndex = 81;
+            this.Position4.UseCompatibleTextRendering = true;
+            // 
+            // Position5
+            // 
+            this.Position5.AutoSize = true;
+            this.Position5.BackColor = System.Drawing.Color.Silver;
+            this.Position5.Location = new System.Drawing.Point(630, 0);
+            this.Position5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Position5.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Position5.Name = "Position5";
+            this.Position5.Size = new System.Drawing.Size(92, 35);
+            this.Position5.TabIndex = 82;
+            this.Position5.UseCompatibleTextRendering = true;
+            // 
+            // Position6
+            // 
+            this.Position6.AutoSize = true;
+            this.Position6.BackColor = System.Drawing.Color.Silver;
+            this.Position6.Location = new System.Drawing.Point(734, 0);
+            this.Position6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Position6.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Position6.Name = "Position6";
+            this.Position6.Size = new System.Drawing.Size(92, 35);
+            this.Position6.TabIndex = 83;
+            this.Position6.UseCompatibleTextRendering = true;
+            // 
+            // Position7
+            // 
+            this.Position7.AutoSize = true;
+            this.Position7.BackColor = System.Drawing.Color.Silver;
+            this.Position7.Location = new System.Drawing.Point(838, 0);
+            this.Position7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Position7.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Position7.Name = "Position7";
+            this.Position7.Size = new System.Drawing.Size(92, 35);
+            this.Position7.TabIndex = 84;
+            this.Position7.UseCompatibleTextRendering = true;
+            // 
+            // Position8
+            // 
+            this.Position8.AutoSize = true;
+            this.Position8.BackColor = System.Drawing.Color.Silver;
+            this.Position8.Location = new System.Drawing.Point(942, 0);
+            this.Position8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Position8.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Position8.Name = "Position8";
+            this.Position8.Size = new System.Drawing.Size(92, 35);
+            this.Position8.TabIndex = 85;
+            this.Position8.UseCompatibleTextRendering = true;
+            // 
+            // Position13
+            // 
+            this.Position13.AutoSize = true;
+            this.Position13.BackColor = System.Drawing.Color.Silver;
+            this.Position13.Location = new System.Drawing.Point(1462, 0);
+            this.Position13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Position13.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Position13.Name = "Position13";
+            this.Position13.Size = new System.Drawing.Size(92, 35);
+            this.Position13.TabIndex = 95;
+            this.Position13.UseCompatibleTextRendering = true;
+            // 
+            // Position16
+            // 
+            this.Position16.AutoSize = true;
+            this.Position16.BackColor = System.Drawing.Color.Silver;
+            this.Position16.Location = new System.Drawing.Point(1670, 0);
+            this.Position16.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Position16.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Position16.Name = "Position16";
+            this.Position16.Size = new System.Drawing.Size(92, 35);
+            this.Position16.TabIndex = 100;
+            this.Position16.UseCompatibleTextRendering = true;
+            // 
+            // Position9
+            // 
+            this.Position9.AutoSize = true;
+            this.Position9.BackColor = System.Drawing.Color.Silver;
+            this.Position9.Location = new System.Drawing.Point(1046, 0);
+            this.Position9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Position9.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Position9.Name = "Position9";
+            this.Position9.Size = new System.Drawing.Size(92, 35);
+            this.Position9.TabIndex = 94;
+            this.Position9.UseCompatibleTextRendering = true;
+            // 
+            // Position14
+            // 
+            this.Position14.AutoSize = true;
+            this.Position14.BackColor = System.Drawing.Color.Silver;
+            this.Position14.Location = new System.Drawing.Point(1566, 0);
+            this.Position14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Position14.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Position14.Name = "Position14";
+            this.Position14.Size = new System.Drawing.Size(92, 35);
+            this.Position14.TabIndex = 101;
+            this.Position14.UseCompatibleTextRendering = true;
+            // 
+            // Position12
+            // 
+            this.Position12.AutoSize = true;
+            this.Position12.BackColor = System.Drawing.Color.Silver;
+            this.Position12.Location = new System.Drawing.Point(1358, 0);
+            this.Position12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Position12.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Position12.Name = "Position12";
+            this.Position12.Size = new System.Drawing.Size(92, 35);
+            this.Position12.TabIndex = 96;
+            this.Position12.UseCompatibleTextRendering = true;
+            // 
+            // Position10
+            // 
+            this.Position10.AutoSize = true;
+            this.Position10.BackColor = System.Drawing.Color.Silver;
+            this.Position10.Location = new System.Drawing.Point(1150, 0);
+            this.Position10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Position10.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Position10.Name = "Position10";
+            this.Position10.Size = new System.Drawing.Size(92, 35);
+            this.Position10.TabIndex = 97;
+            this.Position10.UseCompatibleTextRendering = true;
+            // 
+            // Position11
+            // 
+            this.Position11.AutoSize = true;
+            this.Position11.BackColor = System.Drawing.Color.Silver;
+            this.Position11.Location = new System.Drawing.Point(1254, 0);
+            this.Position11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Position11.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Position11.Name = "Position11";
+            this.Position11.Size = new System.Drawing.Size(92, 35);
+            this.Position11.TabIndex = 98;
+            this.Position11.UseCompatibleTextRendering = true;
             // 
             // tableLayoutPanel1
             // 
@@ -996,186 +1245,6 @@ namespace WinFormSample
             this.Slider.SmallChange = 3;
             this.Slider.TabIndex = 10;
             // 
-            // Position1
-            // 
-            this.Position1.AutoSize = true;
-            this.Position1.BackColor = System.Drawing.Color.Silver;
-            this.Position1.Location = new System.Drawing.Point(6, 0);
-            this.Position1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Position1.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Position1.Name = "Position1";
-            this.Position1.Size = new System.Drawing.Size(92, 35);
-            this.Position1.TabIndex = 78;
-            this.Position1.UseCompatibleTextRendering = true;
-            // 
-            // Position2
-            // 
-            this.Position2.AutoSize = true;
-            this.Position2.BackColor = System.Drawing.Color.Silver;
-            this.Position2.Location = new System.Drawing.Point(214, 0);
-            this.Position2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Position2.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Position2.Name = "Position2";
-            this.Position2.Size = new System.Drawing.Size(92, 35);
-            this.Position2.TabIndex = 79;
-            this.Position2.UseCompatibleTextRendering = true;
-            // 
-            // Position3
-            // 
-            this.Position3.AutoSize = true;
-            this.Position3.BackColor = System.Drawing.Color.Silver;
-            this.Position3.Location = new System.Drawing.Point(318, 0);
-            this.Position3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Position3.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Position3.Name = "Position3";
-            this.Position3.Size = new System.Drawing.Size(92, 35);
-            this.Position3.TabIndex = 80;
-            this.Position3.UseCompatibleTextRendering = true;
-            // 
-            // Position4
-            // 
-            this.Position4.AutoSize = true;
-            this.Position4.BackColor = System.Drawing.Color.Silver;
-            this.Position4.Location = new System.Drawing.Point(422, 0);
-            this.Position4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Position4.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Position4.Name = "Position4";
-            this.Position4.Size = new System.Drawing.Size(92, 35);
-            this.Position4.TabIndex = 81;
-            this.Position4.UseCompatibleTextRendering = true;
-            // 
-            // Position5
-            // 
-            this.Position5.AutoSize = true;
-            this.Position5.BackColor = System.Drawing.Color.Silver;
-            this.Position5.Location = new System.Drawing.Point(526, 0);
-            this.Position5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Position5.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Position5.Name = "Position5";
-            this.Position5.Size = new System.Drawing.Size(92, 35);
-            this.Position5.TabIndex = 82;
-            this.Position5.UseCompatibleTextRendering = true;
-            // 
-            // Position6
-            // 
-            this.Position6.AutoSize = true;
-            this.Position6.BackColor = System.Drawing.Color.Silver;
-            this.Position6.Location = new System.Drawing.Point(630, 0);
-            this.Position6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Position6.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Position6.Name = "Position6";
-            this.Position6.Size = new System.Drawing.Size(92, 35);
-            this.Position6.TabIndex = 83;
-            this.Position6.UseCompatibleTextRendering = true;
-            // 
-            // Position7
-            // 
-            this.Position7.AutoSize = true;
-            this.Position7.BackColor = System.Drawing.Color.Silver;
-            this.Position7.Location = new System.Drawing.Point(734, 0);
-            this.Position7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Position7.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Position7.Name = "Position7";
-            this.Position7.Size = new System.Drawing.Size(92, 35);
-            this.Position7.TabIndex = 84;
-            this.Position7.UseCompatibleTextRendering = true;
-            // 
-            // Position8
-            // 
-            this.Position8.AutoSize = true;
-            this.Position8.BackColor = System.Drawing.Color.Silver;
-            this.Position8.Location = new System.Drawing.Point(838, 0);
-            this.Position8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Position8.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Position8.Name = "Position8";
-            this.Position8.Size = new System.Drawing.Size(92, 35);
-            this.Position8.TabIndex = 85;
-            this.Position8.UseCompatibleTextRendering = true;
-            // 
-            // Position9
-            // 
-            this.Position9.AutoSize = true;
-            this.Position9.BackColor = System.Drawing.Color.Silver;
-            this.Position9.Location = new System.Drawing.Point(942, 0);
-            this.Position9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Position9.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Position9.Name = "Position9";
-            this.Position9.Size = new System.Drawing.Size(92, 35);
-            this.Position9.TabIndex = 94;
-            this.Position9.UseCompatibleTextRendering = true;
-            // 
-            // Position13
-            // 
-            this.Position13.AutoSize = true;
-            this.Position13.BackColor = System.Drawing.Color.Silver;
-            this.Position13.Location = new System.Drawing.Point(1358, 0);
-            this.Position13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Position13.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Position13.Name = "Position13";
-            this.Position13.Size = new System.Drawing.Size(92, 35);
-            this.Position13.TabIndex = 95;
-            this.Position13.UseCompatibleTextRendering = true;
-            // 
-            // Position12
-            // 
-            this.Position12.AutoSize = true;
-            this.Position12.BackColor = System.Drawing.Color.Silver;
-            this.Position12.Location = new System.Drawing.Point(1254, 0);
-            this.Position12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Position12.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Position12.Name = "Position12";
-            this.Position12.Size = new System.Drawing.Size(92, 35);
-            this.Position12.TabIndex = 96;
-            this.Position12.UseCompatibleTextRendering = true;
-            // 
-            // Position10
-            // 
-            this.Position10.AutoSize = true;
-            this.Position10.BackColor = System.Drawing.Color.Silver;
-            this.Position10.Location = new System.Drawing.Point(1046, 0);
-            this.Position10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Position10.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Position10.Name = "Position10";
-            this.Position10.Size = new System.Drawing.Size(92, 35);
-            this.Position10.TabIndex = 97;
-            this.Position10.UseCompatibleTextRendering = true;
-            // 
-            // Position11
-            // 
-            this.Position11.AutoSize = true;
-            this.Position11.BackColor = System.Drawing.Color.Silver;
-            this.Position11.Location = new System.Drawing.Point(1150, 0);
-            this.Position11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Position11.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Position11.Name = "Position11";
-            this.Position11.Size = new System.Drawing.Size(92, 35);
-            this.Position11.TabIndex = 98;
-            this.Position11.UseCompatibleTextRendering = true;
-            // 
-            // Position16
-            // 
-            this.Position16.AutoSize = true;
-            this.Position16.BackColor = System.Drawing.Color.Silver;
-            this.Position16.Location = new System.Drawing.Point(1566, 0);
-            this.Position16.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Position16.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Position16.Name = "Position16";
-            this.Position16.Size = new System.Drawing.Size(92, 35);
-            this.Position16.TabIndex = 100;
-            this.Position16.UseCompatibleTextRendering = true;
-            // 
-            // Position14
-            // 
-            this.Position14.AutoSize = true;
-            this.Position14.BackColor = System.Drawing.Color.Silver;
-            this.Position14.Location = new System.Drawing.Point(1462, 0);
-            this.Position14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Position14.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Position14.Name = "Position14";
-            this.Position14.Size = new System.Drawing.Size(92, 35);
-            this.Position14.TabIndex = 101;
-            this.Position14.UseCompatibleTextRendering = true;
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
@@ -1200,50 +1269,6 @@ namespace WinFormSample
             this.tabPage3.Size = new System.Drawing.Size(2329, 927);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Rendu";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(1326, 3);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 25);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Hand Count:";
-            // 
-            // displayHandCount
-            // 
-            this.displayHandCount.AutoSize = true;
-            this.displayHandCount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.displayHandCount.Location = new System.Drawing.Point(1448, 3);
-            this.displayHandCount.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.displayHandCount.Name = "displayHandCount";
-            this.displayHandCount.Size = new System.Drawing.Size(123, 25);
-            this.displayHandCount.TabIndex = 19;
-            this.displayHandCount.Text = "Hand Count:";
-            // 
-            // displayFPS
-            // 
-            this.displayFPS.AutoSize = true;
-            this.displayFPS.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.displayFPS.Location = new System.Drawing.Point(845, 3);
-            this.displayFPS.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.displayFPS.Name = "displayFPS";
-            this.displayFPS.Size = new System.Drawing.Size(64, 25);
-            this.displayFPS.TabIndex = 16;
-            this.displayFPS.Text = "label3";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(788, 3);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 25);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "FPS:";
             // 
             // label29
             // 
@@ -1359,59 +1384,49 @@ namespace WinFormSample
             this.ConnectionUSB.Size = new System.Drawing.Size(92, 25);
             this.ConnectionUSB.TabIndex = 94;
             // 
-            // tableLayoutPanel2
+            // label2
             // 
-            this.tableLayoutPanel2.ColumnCount = 16;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.label12, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Position1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Position2, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Position3, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Position4, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Position5, 4, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Position6, 5, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Position7, 6, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Position8, 7, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Position13, 12, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Position16, 14, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Position9, 8, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Position14, 13, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Position12, 11, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Position10, 9, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Position11, 10, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(170, 637);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1865, 89);
-            this.tableLayoutPanel2.TabIndex = 139;
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(1326, 3);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 25);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Hand Count:";
             // 
-            // label12
+            // displayHandCount
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Silver;
-            this.label12.Location = new System.Drawing.Point(110, 0);
-            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label12.MinimumSize = new System.Drawing.Size(92, 10);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(92, 35);
-            this.label12.TabIndex = 102;
-            this.label12.UseCompatibleTextRendering = true;
+            this.displayHandCount.AutoSize = true;
+            this.displayHandCount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.displayHandCount.Location = new System.Drawing.Point(1448, 3);
+            this.displayHandCount.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.displayHandCount.Name = "displayHandCount";
+            this.displayHandCount.Size = new System.Drawing.Size(123, 25);
+            this.displayHandCount.TabIndex = 19;
+            this.displayHandCount.Text = "Hand Count:";
+            // 
+            // displayFPS
+            // 
+            this.displayFPS.AutoSize = true;
+            this.displayFPS.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.displayFPS.Location = new System.Drawing.Point(845, 3);
+            this.displayFPS.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.displayFPS.Name = "displayFPS";
+            this.displayFPS.Size = new System.Drawing.Size(64, 25);
+            this.displayFPS.TabIndex = 16;
+            this.displayFPS.Text = "label3";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(788, 3);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 25);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "FPS:";
             // 
             // FrameDataForm
             // 
@@ -1428,13 +1443,13 @@ namespace WinFormSample
             this.visualStudioTabControl1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Slider)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1535,5 +1550,6 @@ namespace WinFormSample
         private Label ConnectionUSB;
         private TableLayoutPanel tableLayoutPanel2;
         private Label label12;
+        private Label label13;
     }
 }

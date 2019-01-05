@@ -15,20 +15,32 @@ namespace WinFormSample
 
     public partial class FrameDataForm : Form 
     {
+        //Déclaration de mon dictionnaire qui sert de Buffer de longueur pour les doigts
+        //Premier champ le numéro du doigt
+        //Deuxième champ la longueur du doigt
         public class MultiDimDictList : Dictionary<int, List<float>> { }
+
+        //Dictionnaire de la main droigte
         MultiDimDictList BufferLenghtRight = new MultiDimDictList();
+        //Dictionnaire de la main gauche 
         MultiDimDictList BufferLenghtLeft = new MultiDimDictList();
         private byte[] imagedata = new byte[1];
+        //Instanciation de l'objet controller (Leap Motion)
         private Controller controller = new Controller();
+        //Instanciation du timer /1s 
         private static System.Timers.Timer aTimer;
         private Random rnd = new Random();
+        //Liste des mains vue dans la Frame 
         List<Hand> Hands= new List<Hand>() ;
+        // Liste des doigts de la main droite 
         List<Finger> fingersRight = new List<Finger>();
+        //Liste des doigts de la main gauche 
         List<Finger> fingersLeft = new List<Finger>();
 
+        //Tableau des labels de longeurs des doigts lissé
         Label[] Lenght;
+        //Distance entre 
         Label[] Position;
-        Label[] CalcPressure;
         Label[] MinPressure;
         int[] LenghtLissé = new int[10];
         double[] MinPressureInt = new double[10];
@@ -37,18 +49,24 @@ namespace WinFormSample
         int SliderValue = 0;
         Device device;
         Label[] Labels;
+        //Leds d'appui des doigts par rapport au seuil 
         Label[] Leds;
+        //Tableau contenant les objets player des notes du piano 
         SoundPlayer[] Note;
+        //Objet Hand qui permet de stocker la main droigt / gauche pendant les traitements 
         Hand handRight = new Hand();
         Hand handLeft = new Hand();
+        //Même fonction 
         Hand handTempo = new Hand();
+
+        //Tableau stockant les l'ensemble des doigts de type Vector
         Vector[] VectorFinger;
+        //Instanciation des Vector de l'ensemble des doigts 
         Vector Finger1,Finger2, Finger3, Finger4, Finger5, Finger6, Finger7, Finger8, Finger9, Finger10;
         Bone boneMetaCarpal, boneProximal, boneIntermediate, boneDistal;
         InteractionBox Test;
         int CptLissage=1;
         bool ModeDebug = false;
-        //Vector[] Piano;
         Vector PianoDoigt1,PianoDoigt2, PianoDoigt3, PianoDoigt4, PianoDoigt5,
             PianoDoigt6, PianoDoigt7, PianoDoigt8, PianoDoigt9, PianoDoigt10;
         public FrameDataForm()
@@ -307,7 +325,6 @@ namespace WinFormSample
                         {
                             Position[x].BackColor = Color.Red;
                         }
-
                         if (PianoDoigt3.x > (x / 16f) && PianoDoigt3.x < ((x + 1) / 16f))
                         {
                             Position[x].BackColor = Color.Blue;
