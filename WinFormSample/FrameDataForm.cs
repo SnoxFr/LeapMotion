@@ -20,10 +20,10 @@ namespace WinFormSample
         //Deuxième champ la longueur du doigt
         public class MultiDimDictList : Dictionary<int, List<float>> { }
 
-        //Dictionnaire de la main droigte
+        //Dictionnaire de la main droite / gauche
         MultiDimDictList BufferLenghtRight = new MultiDimDictList();
-        //Dictionnaire de la main gauche 
         MultiDimDictList BufferLenghtLeft = new MultiDimDictList();
+
         private byte[] imagedata = new byte[1];
         //Instanciation de l'objet controller (Leap Motion)
         private Controller controller = new Controller();
@@ -32,23 +32,33 @@ namespace WinFormSample
         private Random rnd = new Random();
         //Liste des mains vue dans la Frame 
         List<Hand> Hands= new List<Hand>() ;
-        // Liste des doigts de la main droite 
+
+        // Liste des doigts de la main droite / gauche 
         List<Finger> fingersRight = new List<Finger>();
-        //Liste des doigts de la main gauche 
         List<Finger> fingersLeft = new List<Finger>();
 
-        //Tableau des labels de longeurs des doigts lissé
+        //Tableau des labels de longeurs des doigts lissés
         Label[] Lenght;
-        //Distance entre 
+        //Tableau des Leds de position des doigts (16 positions)
         Label[] Position;
+        //Tableau des Labels de seuil minimales d'appui 
         Label[] MinPressure;
+        //Tableau des Lables de distances entre le bout des doigts et le centre de la paume
+        Label[] DistanceToPalm;
+
+        //Tableau des longueurs des doigts lissé 
         int[] LenghtLissé = new int[10];
+        //Tableau des seuils minimales d'appui pour chaque doigt
         double[] MinPressureInt = new double[10];
-        Frame frame = new Frame();
+        //Tableau des distances entre le bout des doigts et le centre de la paume
         int[] distanceToFinger = new int[10];
+
+        //Intanciation de l'objet frame (Une image traité par le sdk)
+        Frame frame = new Frame();
         int SliderValue = 0;
+        //Intanciation de l'objet device 
         Device device;
-        Label[] Labels;
+
         //Leds d'appui des doigts par rapport au seuil 
         Label[] Leds;
         //Tableau contenant les objets player des notes du piano 
@@ -66,7 +76,9 @@ namespace WinFormSample
         Bone boneMetaCarpal, boneProximal, boneIntermediate, boneDistal;
         InteractionBox Test;
         int CptLissage=1;
+        //Indique si l'appli est instancié en mode debug ou non
         bool ModeDebug = false;
+        //Déclaration des vecteurs pour le positionnement (16 positions)
         Vector PianoDoigt1,PianoDoigt2, PianoDoigt3, PianoDoigt4, PianoDoigt5,
             PianoDoigt6, PianoDoigt7, PianoDoigt8, PianoDoigt9, PianoDoigt10;
         public FrameDataForm()
@@ -80,30 +92,11 @@ namespace WinFormSample
             Lenght = new Label[] { lenght1, lenght2, lenght3, lenght4, lenght5, lenght6, lenght7, lenght8, lenght9, lenght10 };
             Position = new Label[] { Position1, Position2, Position3, Position4, Position5, Position6, Position7, Position8,
                 Position9, Position10, Position11, Position12, Position13, Position14, Position16, Position16 };
-            Labels = new Label[] { Doigt1, Doigt2, Doigt3, Doigt4, Doigt5, Doigt6, Doigt7, Doigt8, Doigt9, Doigt10 };
+            DistanceToPalm = new Label[] { Doigt1, Doigt2, Doigt3, Doigt4, Doigt5, Doigt6, Doigt7, Doigt8, Doigt9, Doigt10 };
             Leds = new Label[] { Led1, Led2, Led3, Led4, Led5, Led6, Led7, Led8, Led9, Led10 };
             VectorFinger = new Vector[] { Finger1, Finger2, Finger3, Finger4, Finger5,Finger6, Finger7, Finger8, Finger9, Finger1 };
             MinPressure = new Label[] { Min1, Min2, Min3, Min4, Min5,Min6,Min7,Min8,Min9,Min10 };
-            //Piano = new Vector[] { PianoDoigt1, PianoDoigt2 };
-
-            //SoundPlayer DO = new SoundPlayer();
-            //DO.SoundLocation = ".\\Sons\\DO.wav";
-            //DO.LoadAsync();
-
-            //SoundPlayer RE = new SoundPlayer();
-            //RE.SoundLocation = ".\\Sons\\RE.wav";
-            //RE.LoadAsync();
-
-            //SoundPlayer MI = new SoundPlayer();
-            //MI.SoundLocation = ".\\Sons\\MI.wav";
-            //MI.LoadAsync();
-
-            //SoundPlayer FA = new SoundPlayer();
-            //FA.SoundLocation = ".\\Sons\\FA.wav";
-            //FA.LoadAsync();
-
-            //SoundPlayer SOL = new SoundPlayer();
-
+           
             SoundPlayer Note1 = new SoundPlayer();
             Note1.SoundLocation = ".\\Sons\\Note1.wav";
             Note1.LoadAsync();
@@ -381,7 +374,7 @@ namespace WinFormSample
                     for (int i = 0; i < fingersRight.Count; i++)
                     {
 
-                        Labels[i].Text = distanceToFinger[i].ToString();
+                        DistanceToPalm[i].Text = distanceToFinger[i].ToString();
 
                         Lenght[i].Text = LenghtLissé[i].ToString();
                         MinPressure[i].Text = ((int)MinPressureInt[i]).ToString();
@@ -413,7 +406,7 @@ namespace WinFormSample
                     for (int i = 5; i < fingersLeft.Count+5; i++)
                     {
 
-                        Labels[i].Text = distanceToFinger[i].ToString();
+                        DistanceToPalm[i].Text = distanceToFinger[i].ToString();
 
                         Lenght[i].Text = LenghtLissé[i].ToString();
                         MinPressure[i].Text = ((int)MinPressureInt[i]).ToString();
@@ -647,7 +640,7 @@ namespace WinFormSample
                 {
                     BufferLenghtRight[z].Clear();
                     Leds[z].BackColor = Color.Red;
-                    Labels[z].Text = "×";
+                    DistanceToPalm[z].Text = "×";
                     MinPressure[z].Text = "×";
                     Lenght[z].Text = "×";
 
@@ -685,7 +678,7 @@ namespace WinFormSample
                 {
                     BufferLenghtLeft[z].Clear();
                     Leds[z+5].BackColor = Color.Red;
-                    Labels[z + 5].Text = "×";
+                    DistanceToPalm[z + 5].Text = "×";
                     MinPressure[z+5].Text= "×";
                     Lenght[z + 5].Text = "×";
                 }
