@@ -86,28 +86,66 @@ namespace WinFormSample
             MinPressure = new Label[] { Min1, Min2, Min3, Min4, Min5,Min6,Min7,Min8,Min9,Min10 };
             //Piano = new Vector[] { PianoDoigt1, PianoDoigt2 };
 
-            SoundPlayer DO = new SoundPlayer();
-            DO.SoundLocation = ".\\Sons\\DO.wav";
-            DO.LoadAsync();
+            //SoundPlayer DO = new SoundPlayer();
+            //DO.SoundLocation = ".\\Sons\\DO.wav";
+            //DO.LoadAsync();
 
-            SoundPlayer RE = new SoundPlayer();
-            RE.SoundLocation = ".\\Sons\\RE.wav";
-            RE.LoadAsync();
+            //SoundPlayer RE = new SoundPlayer();
+            //RE.SoundLocation = ".\\Sons\\RE.wav";
+            //RE.LoadAsync();
 
-            SoundPlayer MI = new SoundPlayer();
-            MI.SoundLocation = ".\\Sons\\MI.wav";
-            MI.LoadAsync();
+            //SoundPlayer MI = new SoundPlayer();
+            //MI.SoundLocation = ".\\Sons\\MI.wav";
+            //MI.LoadAsync();
 
-            SoundPlayer FA = new SoundPlayer();
-            FA.SoundLocation = ".\\Sons\\FA.wav";
-            FA.LoadAsync();
+            //SoundPlayer FA = new SoundPlayer();
+            //FA.SoundLocation = ".\\Sons\\FA.wav";
+            //FA.LoadAsync();
 
-            SoundPlayer SOL = new SoundPlayer();
+            //SoundPlayer SOL = new SoundPlayer();
 
-            Note = new SoundPlayer[] { DO, RE, MI, FA, SOL };
-            SOL.SoundLocation = ".\\Sons\\SOL.wav";
-            Note[4].LoadCompleted += new AsyncCompletedEventHandler(SoundPlayed);
-            SOL.LoadAsync();
+            SoundPlayer Note1 = new SoundPlayer();
+            Note1.SoundLocation = ".\\Sons\\Note1.wav";
+            Note1.LoadAsync();
+
+            SoundPlayer Note2 = new SoundPlayer();
+            Note2.SoundLocation = ".\\Sons\\Note2.wav";
+            Note2.LoadAsync();
+
+            SoundPlayer Note3 = new SoundPlayer();
+            Note3.SoundLocation = ".\\Sons\\Note3.wav";
+            Note3.LoadAsync();
+
+            SoundPlayer Note4 = new SoundPlayer();
+            Note4.SoundLocation = ".\\Sons\\Note4.wav";
+            Note4.LoadAsync();
+
+            SoundPlayer Note5 = new SoundPlayer();
+            Note5.SoundLocation = ".\\Sons\\Note5.wav";
+            Note5.LoadAsync();
+
+            SoundPlayer Note6 = new SoundPlayer();
+            Note6.SoundLocation = ".\\Sons\\Note6.wav";
+            Note1.LoadAsync();
+
+            SoundPlayer Note7 = new SoundPlayer();
+            Note7.SoundLocation = ".\\Sons\\Note7.wav";
+            Note7.LoadAsync();
+
+            SoundPlayer Note8 = new SoundPlayer();
+            Note8.SoundLocation = ".\\Sons\\Note8.wav";
+            Note8.LoadAsync();
+
+            SoundPlayer Note9 = new SoundPlayer();
+            Note9.SoundLocation = ".\\Sons\\Note9.wav";
+            Note9.LoadAsync();
+
+            SoundPlayer Note10 = new SoundPlayer();
+
+            Note = new SoundPlayer[] { Note5, Note4, Note3, Note2, Note1, Note6, Note7, Note8, Note9, Note10 };
+            Note10.SoundLocation = ".\\Sons\\Note10.wav";
+            Note[9].LoadCompleted += new AsyncCompletedEventHandler(SoundPlayed);
+            Note10.LoadAsync();
 
 
             //Creation buffer droit
@@ -459,14 +497,15 @@ namespace WinFormSample
         {
 
 
-            Task.Factory.StartNew(() => {
+            Task.Factory.StartNew(() =>
+            {
                 Thread.Sleep(1000);
-                while(true)
+                while (true)
                 {
-                    if (handRight!=null)
+                    if (handRight != null)
                     {
-                        
-                        for (int i=0;i<fingersRight.Count;i++)
+
+                        for (int i = 0; i < fingersRight.Count; i++)
                         {
                             if (distanceToFinger[i] < MinPressureInt[i])
                             {
@@ -474,16 +513,17 @@ namespace WinFormSample
                             }
                             else
                             {
-                            Leds[i].Invoke((MethodInvoker)(() => Leds[i].BackColor = Color.FromArgb(28,28,28)));
+                                Leds[i].Invoke((MethodInvoker)(() => Leds[i].BackColor = Color.FromArgb(28, 28, 28)));
                             }
                         }
-                       
+
                     }
                 }
 
             });
 
-            Task.Factory.StartNew(() => {
+            Task.Factory.StartNew(() =>
+            {
                 Thread.Sleep(1000);
                 while (true)
                 {
@@ -492,13 +532,13 @@ namespace WinFormSample
 
                         for (int i = 0; i < fingersLeft.Count; i++)
                         {
-                            if (distanceToFinger[i+5] < MinPressureInt[i+5])
+                            if (distanceToFinger[i + 5] < MinPressureInt[i + 5])
                             {
-                                Leds[i+5].Invoke((MethodInvoker)(() => Leds[i+5].BackColor = Color.White));
+                                Leds[i + 5].Invoke((MethodInvoker)(() => Leds[i + 5].BackColor = Color.White));
                             }
                             else
                             {
-                                Leds[i+5].Invoke((MethodInvoker)(() => Leds[i+5].BackColor = Color.FromArgb(28, 28, 28)));
+                                Leds[i + 5].Invoke((MethodInvoker)(() => Leds[i + 5].BackColor = Color.FromArgb(28, 28, 28)));
                             }
                         }
 
@@ -507,7 +547,9 @@ namespace WinFormSample
 
             });
 
-            Task.Factory.StartNew(() => {
+            Task.Factory.StartNew(() =>
+            {
+                //Tempo attente initil
                 Thread.Sleep(1000);
                 while (true)
                 {
@@ -519,6 +561,27 @@ namespace WinFormSample
                             if (distanceToFinger[i] < MinPressureInt[i])
                             {
                                 Note[i].PlaySync();
+                            }
+
+                        }
+
+                    }
+                }
+            });
+
+            Task.Factory.StartNew(() =>
+            {
+                //Tempo attente initil
+                Thread.Sleep(1000);
+                while (true)
+                {
+                    if (handLeft != null)
+                    {
+                        for (int i = 0; i < fingersLeft.Count; i++)
+                        {
+                            if (distanceToFinger[i + 5] < MinPressureInt[i + 5])
+                            {
+                                Note[i + 5].PlaySync();
                             }
 
                         }
