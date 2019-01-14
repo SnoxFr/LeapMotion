@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Threading;
 using System.Configuration;
+using System.Diagnostics;
+using System.ServiceProcess;
 
 namespace WinFormSample
 {
@@ -77,14 +79,27 @@ namespace WinFormSample
         InteractionBox Test;
         int CptLissage=1;
         //Indique si l'appli est instancié en mode debug ou non
-        bool ModeDebug = false;
+        bool ModeDebug;
+        bool Sound;
+        ServiceController LeapMotionService = new ServiceController("Leap Service");
         //Déclaration des vecteurs pour le positionnement (16 positions)
         Vector PianoDoigt1,PianoDoigt2, PianoDoigt3, PianoDoigt4, PianoDoigt5,
             PianoDoigt6, PianoDoigt7, PianoDoigt8, PianoDoigt9, PianoDoigt10;
+
         public FrameDataForm()
         {
-
             InitializeComponent();
+            if (LeapMotionService.Status.Equals(ServiceControllerStatus.Stopped))
+            {
+                LeapMotionService.Start();
+            }
+
+            if (LeapMotionService.Status.Equals(ServiceControllerStatus.Running))
+            {
+                LeapMotionService.Stop();
+                LeapMotionService.Start();
+            }
+            
             Vector size = new Vector(200f,1f,1f);
             //Vector center = new Vector();
             Test = new InteractionBox(Test.Center,size);
@@ -180,7 +195,7 @@ namespace WinFormSample
                 Console.WriteLine("Too few arguments");
                 System.Environment.Exit(1);
             }
-            if (args.Length>3)
+            if (args.Length>4)
             {
                 Console.WriteLine("Too much arguments");
                 System.Environment.Exit(1);
@@ -221,9 +236,24 @@ namespace WinFormSample
                 }
 
             }
+            if(args.Length==4)
+            {
+                if (args[3].Equals("Sound"))
+                {
+                    Sound=true;
+                }
+
+                if (args[3].Equals("Mute"))
+                {
+                    Sound=false;
+                }
+                else
+                {
+                    Console.WriteLine("Argument 3 incorrect");
+                    System.Environment.Exit(1);
+                }
+            }
             Slider.Value = Int32.Parse(ConfigurationManager.AppSettings["LastSliderValue"]);
-
-
         }
         void isConnected( object sender, InternalFrameEventArgs eventArgs)
         {
@@ -539,50 +569,53 @@ namespace WinFormSample
                 }
 
             });
-
-            Task.Factory.StartNew(() =>
+            if (Sound==true)
             {
+                Console.WriteLine("pass");
+                Task.Factory.StartNew(() =>
+                {
                 //Tempo attente initil
                 Thread.Sleep(1000);
-                while (true)
-                {
-                    if (handRight != null)
+                    while (true)
                     {
-
-                        for (int i = 0; i < fingersRight.Count; i++)
+                        if (handRight != null)
                         {
-                            if (distanceToFinger[i] < MinPressureInt[i])
+
+                            for (int i = 0; i < fingersRight.Count; i++)
                             {
-                                Note[i].PlaySync();
+                                if (distanceToFinger[i] < MinPressureInt[i])
+                                {
+                                    Note[i].PlaySync();
+                                }
+
                             }
 
                         }
-
                     }
-                }
-            });
+                });
 
-            Task.Factory.StartNew(() =>
-            {
+                Task.Factory.StartNew(() =>
+                {
                 //Tempo attente initil
                 Thread.Sleep(1000);
-                while (true)
-                {
-                    if (handLeft != null)
+                    while (true)
                     {
-                        for (int i = 0; i < fingersLeft.Count; i++)
+                        if (handLeft != null)
                         {
-                            if (distanceToFinger[i + 5] < MinPressureInt[i + 5])
+                            for (int i = 0; i < fingersLeft.Count; i++)
                             {
-                                Note[i + 5].PlaySync();
+                                if (distanceToFinger[i + 5] < MinPressureInt[i + 5])
+                                {
+                                    Note[i + 5].PlaySync();
+                                }
+
                             }
 
                         }
-
                     }
-                }
 
-            });
+                });
+            }
         }
         int GetLenghtLisséRight(int i)
         {
@@ -593,6 +626,7 @@ namespace WinFormSample
             else
                 return BufferLenghtRight[i].ConvertAll(Convert.ToInt32).Sum() / 1;
         }
+
         int GetLenghtLisséLeft(int i)
         {
             if (BufferLenghtLeft[i].Count > 0)

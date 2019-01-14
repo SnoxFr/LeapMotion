@@ -105,6 +105,7 @@ namespace WinFormSample
             this.label5 = new System.Windows.Forms.Label();
             this.Slider = new System.Windows.Forms.TrackBar();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.FailureReason = new System.Windows.Forms.Label();
@@ -146,7 +147,7 @@ namespace WinFormSample
             this.visualStudioTabControl1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.visualStudioTabControl1.ShowClosingButton = false;
             this.visualStudioTabControl1.ShowClosingMessage = false;
-            this.visualStudioTabControl1.Size = new System.Drawing.Size(2337, 951);
+            this.visualStudioTabControl1.Size = new System.Drawing.Size(2337, 822);
             this.visualStudioTabControl1.TabIndex = 72;
             this.visualStudioTabControl1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
@@ -165,7 +166,7 @@ namespace WinFormSample
             this.tabPage4.Location = new System.Drawing.Point(4, 20);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(2329, 927);
+            this.tabPage4.Size = new System.Drawing.Size(2329, 798);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Main";
             // 
@@ -1249,6 +1250,7 @@ namespace WinFormSample
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.label29);
             this.tabPage3.Controls.Add(this.label16);
             this.tabPage3.Controls.Add(this.FailureReason);
@@ -1267,9 +1269,19 @@ namespace WinFormSample
             this.tabPage3.Location = new System.Drawing.Point(4, 20);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(2329, 927);
+            this.tabPage3.Size = new System.Drawing.Size(2329, 798);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Rendu";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.button1.Location = new System.Drawing.Point(33, 319);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(333, 41);
+            this.button1.TabIndex = 104;
+            this.button1.Text = "Restart LeapMotion Service";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label29
             // 
@@ -1552,5 +1564,6 @@ namespace WinFormSample
         private TableLayoutPanel tableLayoutPanel2;
         private Label label12;
         private Label label13;
+        private Button button1;
     }
 }
