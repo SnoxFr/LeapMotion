@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormSample", "WinFormSample\WinFormSample.csproj", "{7B947A28-BAF9-4631-912D-21B8D29BF08B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualStudioTabControl", "..\..\..\Downloads\VisualStudioTabControl\VisualStudioTabControl\VisualStudioTabControl\VisualStudioTabControl.csproj", "{EC777E43-5DDB-481C-9A70-07B4AB6AF769}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualStudioTabControl", "..\..\..\Downloads\VisualStudioTabControl\VisualStudioTabControl\VisualStudioTabControl.csproj", "{EC777E43-5DDB-481C-9A70-07B4AB6AF769}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

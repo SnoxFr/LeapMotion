@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using VisualStudioTabControl;
 
 namespace WinFormSample
 {

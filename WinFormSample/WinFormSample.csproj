@@ -165,7 +165,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Downloads\VisualStudioTabControl\VisualStudioTabControl\VisualStudioTabControl\VisualStudioTabControl.csproj">
+    <ProjectReference Include="..\..\..\..\Downloads\VisualStudioTabControl\VisualStudioTabControl\VisualStudioTabControl.csproj">
       <Project>{EC777E43-5DDB-481C-9A70-07B4AB6AF769}</Project>
       <Name>VisualStudioTabControl</Name>
     </ProjectReference>
