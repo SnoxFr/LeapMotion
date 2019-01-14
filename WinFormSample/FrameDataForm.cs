@@ -47,6 +47,8 @@ namespace WinFormSample
         Label[] MinPressure;
         //Tableau des Lables de distances entre le bout des doigts et le centre de la paume
         Label[] DistanceToPalm;
+        //Tableau des Lables de distances entre le bout des doigts et le centre de la paume
+        Label[] FakeLed;
 
         //Tableau des longueurs des doigts lissé 
         int[] LenghtLissé = new int[10];
@@ -111,6 +113,7 @@ namespace WinFormSample
             Leds = new Label[] { Led1, Led2, Led3, Led4, Led5, Led6, Led7, Led8, Led9, Led10 };
             VectorFinger = new Vector[] { Finger1, Finger2, Finger3, Finger4, Finger5,Finger6, Finger7, Finger8, Finger9, Finger1 };
             MinPressure = new Label[] { Min1, Min2, Min3, Min4, Min5,Min6,Min7,Min8,Min9,Min10 };
+            FakeLed = new Label[] { FakeLed1, FakeLed2, FakeLed3, FakeLed4, FakeLed5, FakeLed6, FakeLed7, FakeLed8, FakeLed9, FakeLed10 };
            
             SoundPlayer Note1 = new SoundPlayer();
             Note1.SoundLocation = ".\\Sons\\Note1.wav";
@@ -571,7 +574,6 @@ namespace WinFormSample
             });
             if (Sound==true)
             {
-                Console.WriteLine("pass");
                 Task.Factory.StartNew(() =>
                 {
                 //Tempo attente initil
