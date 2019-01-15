@@ -45,13 +45,25 @@ namespace WinFormSample
             this.Position10 = new System.Windows.Forms.Label();
             this.Position11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.FakeLed10 = new System.Windows.Forms.Label();
+            this.FakeLed9 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.FakeLed8 = new System.Windows.Forms.Label();
             this.lenght5 = new System.Windows.Forms.Label();
+            this.FakeLed7 = new System.Windows.Forms.Label();
             this.Min5 = new System.Windows.Forms.Label();
+            this.FakeLed6 = new System.Windows.Forms.Label();
+            this.FakeLed5 = new System.Windows.Forms.Label();
             this.Doigt5 = new System.Windows.Forms.Label();
             this.Led5 = new System.Windows.Forms.Label();
+            this.FakeLed4 = new System.Windows.Forms.Label();
+            this.FakeLed3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.FakeLed2 = new System.Windows.Forms.Label();
             this.Doigt10 = new System.Windows.Forms.Label();
             this.Led10 = new System.Windows.Forms.Label();
+            this.FakeLed1 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.Led9 = new System.Windows.Forms.Label();
@@ -120,18 +132,7 @@ namespace WinFormSample
             this.displayHandCount = new System.Windows.Forms.Label();
             this.displayFPS = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.FakeLed1 = new System.Windows.Forms.Label();
-            this.FakeLed4 = new System.Windows.Forms.Label();
-            this.FakeLed2 = new System.Windows.Forms.Label();
-            this.FakeLed3 = new System.Windows.Forms.Label();
-            this.FakeLed6 = new System.Windows.Forms.Label();
-            this.FakeLed5 = new System.Windows.Forms.Label();
-            this.FakeLed7 = new System.Windows.Forms.Label();
-            this.FakeLed8 = new System.Windows.Forms.Label();
-            this.FakeLed10 = new System.Windows.Forms.Label();
-            this.FakeLed9 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.visualStudioTabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -166,6 +167,7 @@ namespace WinFormSample
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.tabPage4.Controls.Add(this.label17);
             this.tabPage4.Controls.Add(this.tableLayoutPanel2);
             this.tabPage4.Controls.Add(this.tableLayoutPanel1);
             this.tabPage4.Controls.Add(this.label10);
@@ -523,6 +525,66 @@ namespace WinFormSample
             this.tableLayoutPanel1.Size = new System.Drawing.Size(2161, 229);
             this.tableLayoutPanel1.TabIndex = 138;
             // 
+            // FakeLed10
+            // 
+            this.FakeLed10.AutoSize = true;
+            this.FakeLed10.BackColor = System.Drawing.Color.Red;
+            this.FakeLed10.Location = new System.Drawing.Point(1976, 176);
+            this.FakeLed10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.FakeLed10.MinimumSize = new System.Drawing.Size(92, 10);
+            this.FakeLed10.Name = "FakeLed10";
+            this.FakeLed10.Size = new System.Drawing.Size(92, 32);
+            this.FakeLed10.TabIndex = 149;
+            this.FakeLed10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FakeLed9
+            // 
+            this.FakeLed9.AutoSize = true;
+            this.FakeLed9.BackColor = System.Drawing.Color.Red;
+            this.FakeLed9.Location = new System.Drawing.Point(1793, 176);
+            this.FakeLed9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.FakeLed9.MinimumSize = new System.Drawing.Size(92, 10);
+            this.FakeLed9.Name = "FakeLed9";
+            this.FakeLed9.Size = new System.Drawing.Size(92, 32);
+            this.FakeLed9.TabIndex = 150;
+            this.FakeLed9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label15.Location = new System.Drawing.Point(6, 176);
+            this.label15.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(117, 32);
+            this.label15.TabIndex = 140;
+            this.label15.Text = "Fake LED";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label14.Location = new System.Drawing.Point(6, 28);
+            this.label14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(152, 32);
+            this.label14.TabIndex = 140;
+            this.label14.Text = "Seuil atteint";
+            // 
+            // FakeLed8
+            // 
+            this.FakeLed8.AutoSize = true;
+            this.FakeLed8.BackColor = System.Drawing.Color.Red;
+            this.FakeLed8.Location = new System.Drawing.Point(1610, 176);
+            this.FakeLed8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.FakeLed8.MinimumSize = new System.Drawing.Size(92, 10);
+            this.FakeLed8.Name = "FakeLed8";
+            this.FakeLed8.Size = new System.Drawing.Size(92, 32);
+            this.FakeLed8.TabIndex = 148;
+            this.FakeLed8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lenght5
             // 
             this.lenght5.AutoSize = true;
@@ -536,6 +598,18 @@ namespace WinFormSample
             this.lenght5.Text = "lenght5";
             this.lenght5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // FakeLed7
+            // 
+            this.FakeLed7.AutoSize = true;
+            this.FakeLed7.BackColor = System.Drawing.Color.Red;
+            this.FakeLed7.Location = new System.Drawing.Point(1427, 176);
+            this.FakeLed7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.FakeLed7.MinimumSize = new System.Drawing.Size(92, 10);
+            this.FakeLed7.Name = "FakeLed7";
+            this.FakeLed7.Size = new System.Drawing.Size(92, 32);
+            this.FakeLed7.TabIndex = 147;
+            this.FakeLed7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Min5
             // 
             this.Min5.AutoSize = true;
@@ -548,6 +622,30 @@ namespace WinFormSample
             this.Min5.TabIndex = 139;
             this.Min5.Text = "Min5";
             this.Min5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FakeLed6
+            // 
+            this.FakeLed6.AutoSize = true;
+            this.FakeLed6.BackColor = System.Drawing.Color.Red;
+            this.FakeLed6.Location = new System.Drawing.Point(1244, 176);
+            this.FakeLed6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.FakeLed6.MinimumSize = new System.Drawing.Size(92, 10);
+            this.FakeLed6.Name = "FakeLed6";
+            this.FakeLed6.Size = new System.Drawing.Size(92, 32);
+            this.FakeLed6.TabIndex = 145;
+            this.FakeLed6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FakeLed5
+            // 
+            this.FakeLed5.AutoSize = true;
+            this.FakeLed5.BackColor = System.Drawing.Color.Red;
+            this.FakeLed5.Location = new System.Drawing.Point(1061, 176);
+            this.FakeLed5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.FakeLed5.MinimumSize = new System.Drawing.Size(92, 10);
+            this.FakeLed5.Name = "FakeLed5";
+            this.FakeLed5.Size = new System.Drawing.Size(92, 32);
+            this.FakeLed5.TabIndex = 146;
+            this.FakeLed5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Doigt5
             // 
@@ -574,6 +672,30 @@ namespace WinFormSample
             this.Led5.TabIndex = 139;
             this.Led5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // FakeLed4
+            // 
+            this.FakeLed4.AutoSize = true;
+            this.FakeLed4.BackColor = System.Drawing.Color.Red;
+            this.FakeLed4.Location = new System.Drawing.Point(878, 176);
+            this.FakeLed4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.FakeLed4.MinimumSize = new System.Drawing.Size(92, 10);
+            this.FakeLed4.Name = "FakeLed4";
+            this.FakeLed4.Size = new System.Drawing.Size(92, 32);
+            this.FakeLed4.TabIndex = 142;
+            this.FakeLed4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FakeLed3
+            // 
+            this.FakeLed3.AutoSize = true;
+            this.FakeLed3.BackColor = System.Drawing.Color.Red;
+            this.FakeLed3.Location = new System.Drawing.Point(695, 176);
+            this.FakeLed3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.FakeLed3.MinimumSize = new System.Drawing.Size(92, 10);
+            this.FakeLed3.Name = "FakeLed3";
+            this.FakeLed3.Size = new System.Drawing.Size(92, 32);
+            this.FakeLed3.TabIndex = 144;
+            this.FakeLed3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -586,6 +708,18 @@ namespace WinFormSample
             this.label11.TabIndex = 139;
             this.label11.Text = "AnnuaireD";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FakeLed2
+            // 
+            this.FakeLed2.AutoSize = true;
+            this.FakeLed2.BackColor = System.Drawing.Color.Red;
+            this.FakeLed2.Location = new System.Drawing.Point(512, 176);
+            this.FakeLed2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.FakeLed2.MinimumSize = new System.Drawing.Size(92, 10);
+            this.FakeLed2.Name = "FakeLed2";
+            this.FakeLed2.Size = new System.Drawing.Size(92, 32);
+            this.FakeLed2.TabIndex = 143;
+            this.FakeLed2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Doigt10
             // 
@@ -611,6 +745,18 @@ namespace WinFormSample
             this.Led10.Size = new System.Drawing.Size(92, 32);
             this.Led10.TabIndex = 113;
             this.Led10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FakeLed1
+            // 
+            this.FakeLed1.AutoSize = true;
+            this.FakeLed1.BackColor = System.Drawing.Color.Red;
+            this.FakeLed1.Location = new System.Drawing.Point(329, 176);
+            this.FakeLed1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.FakeLed1.MinimumSize = new System.Drawing.Size(92, 10);
+            this.FakeLed1.Name = "FakeLed1";
+            this.FakeLed1.Size = new System.Drawing.Size(92, 32);
+            this.FakeLed1.TabIndex = 141;
+            this.FakeLed1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label53
             // 
@@ -1466,149 +1612,18 @@ namespace WinFormSample
             this.label1.TabIndex = 17;
             this.label1.Text = "FPS:";
             // 
-            // label14
+            // label17
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label14.Location = new System.Drawing.Point(6, 28);
-            this.label14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(152, 32);
-            this.label14.TabIndex = 140;
-            this.label14.Text = "Seuil atteint";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label15.Location = new System.Drawing.Point(6, 176);
-            this.label15.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(117, 32);
-            this.label15.TabIndex = 140;
-            this.label15.Text = "Fake LED";
-            // 
-            // FakeLed1
-            // 
-            this.FakeLed1.AutoSize = true;
-            this.FakeLed1.BackColor = System.Drawing.Color.Red;
-            this.FakeLed1.Location = new System.Drawing.Point(329, 176);
-            this.FakeLed1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.FakeLed1.MinimumSize = new System.Drawing.Size(92, 10);
-            this.FakeLed1.Name = "FakeLed1";
-            this.FakeLed1.Size = new System.Drawing.Size(92, 32);
-            this.FakeLed1.TabIndex = 141;
-            this.FakeLed1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // FakeLed4
-            // 
-            this.FakeLed4.AutoSize = true;
-            this.FakeLed4.BackColor = System.Drawing.Color.Red;
-            this.FakeLed4.Location = new System.Drawing.Point(878, 176);
-            this.FakeLed4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.FakeLed4.MinimumSize = new System.Drawing.Size(92, 10);
-            this.FakeLed4.Name = "FakeLed4";
-            this.FakeLed4.Size = new System.Drawing.Size(92, 32);
-            this.FakeLed4.TabIndex = 142;
-            this.FakeLed4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // FakeLed2
-            // 
-            this.FakeLed2.AutoSize = true;
-            this.FakeLed2.BackColor = System.Drawing.Color.Red;
-            this.FakeLed2.Location = new System.Drawing.Point(512, 176);
-            this.FakeLed2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.FakeLed2.MinimumSize = new System.Drawing.Size(92, 10);
-            this.FakeLed2.Name = "FakeLed2";
-            this.FakeLed2.Size = new System.Drawing.Size(92, 32);
-            this.FakeLed2.TabIndex = 143;
-            this.FakeLed2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // FakeLed3
-            // 
-            this.FakeLed3.AutoSize = true;
-            this.FakeLed3.BackColor = System.Drawing.Color.Red;
-            this.FakeLed3.Location = new System.Drawing.Point(695, 176);
-            this.FakeLed3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.FakeLed3.MinimumSize = new System.Drawing.Size(92, 10);
-            this.FakeLed3.Name = "FakeLed3";
-            this.FakeLed3.Size = new System.Drawing.Size(92, 32);
-            this.FakeLed3.TabIndex = 144;
-            this.FakeLed3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // FakeLed6
-            // 
-            this.FakeLed6.AutoSize = true;
-            this.FakeLed6.BackColor = System.Drawing.Color.Red;
-            this.FakeLed6.Location = new System.Drawing.Point(1244, 176);
-            this.FakeLed6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.FakeLed6.MinimumSize = new System.Drawing.Size(92, 10);
-            this.FakeLed6.Name = "FakeLed6";
-            this.FakeLed6.Size = new System.Drawing.Size(92, 32);
-            this.FakeLed6.TabIndex = 145;
-            this.FakeLed6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // FakeLed5
-            // 
-            this.FakeLed5.AutoSize = true;
-            this.FakeLed5.BackColor = System.Drawing.Color.Red;
-            this.FakeLed5.Location = new System.Drawing.Point(1061, 176);
-            this.FakeLed5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.FakeLed5.MinimumSize = new System.Drawing.Size(92, 10);
-            this.FakeLed5.Name = "FakeLed5";
-            this.FakeLed5.Size = new System.Drawing.Size(92, 32);
-            this.FakeLed5.TabIndex = 146;
-            this.FakeLed5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // FakeLed7
-            // 
-            this.FakeLed7.AutoSize = true;
-            this.FakeLed7.BackColor = System.Drawing.Color.Red;
-            this.FakeLed7.Location = new System.Drawing.Point(1427, 176);
-            this.FakeLed7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.FakeLed7.MinimumSize = new System.Drawing.Size(92, 10);
-            this.FakeLed7.Name = "FakeLed7";
-            this.FakeLed7.Size = new System.Drawing.Size(92, 32);
-            this.FakeLed7.TabIndex = 147;
-            this.FakeLed7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // FakeLed8
-            // 
-            this.FakeLed8.AutoSize = true;
-            this.FakeLed8.BackColor = System.Drawing.Color.Red;
-            this.FakeLed8.Location = new System.Drawing.Point(1610, 176);
-            this.FakeLed8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.FakeLed8.MinimumSize = new System.Drawing.Size(92, 10);
-            this.FakeLed8.Name = "FakeLed8";
-            this.FakeLed8.Size = new System.Drawing.Size(92, 32);
-            this.FakeLed8.TabIndex = 148;
-            this.FakeLed8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // FakeLed10
-            // 
-            this.FakeLed10.AutoSize = true;
-            this.FakeLed10.BackColor = System.Drawing.Color.Red;
-            this.FakeLed10.Location = new System.Drawing.Point(1976, 176);
-            this.FakeLed10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.FakeLed10.MinimumSize = new System.Drawing.Size(92, 10);
-            this.FakeLed10.Name = "FakeLed10";
-            this.FakeLed10.Size = new System.Drawing.Size(92, 32);
-            this.FakeLed10.TabIndex = 149;
-            this.FakeLed10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // FakeLed9
-            // 
-            this.FakeLed9.AutoSize = true;
-            this.FakeLed9.BackColor = System.Drawing.Color.Red;
-            this.FakeLed9.Location = new System.Drawing.Point(1793, 176);
-            this.FakeLed9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.FakeLed9.MinimumSize = new System.Drawing.Size(92, 10);
-            this.FakeLed9.Name = "FakeLed9";
-            this.FakeLed9.Size = new System.Drawing.Size(92, 32);
-            this.FakeLed9.TabIndex = 150;
-            this.FakeLed9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Turquoise;
+            this.label17.Location = new System.Drawing.Point(1917, 370);
+            this.label17.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(61, 29);
+            this.label17.TabIndex = 140;
+            this.label17.Text = "Test";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrameDataForm
             // 
@@ -1746,5 +1761,6 @@ namespace WinFormSample
         private Label FakeLed3;
         private Label FakeLed2;
         private Label FakeLed1;
+        private Label label17;
     }
 }

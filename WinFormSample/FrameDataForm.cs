@@ -115,50 +115,6 @@ namespace WinFormSample
             MinPressure = new Label[] { Min1, Min2, Min3, Min4, Min5,Min6,Min7,Min8,Min9,Min10 };
             FakeLed = new Label[] { FakeLed1, FakeLed2, FakeLed3, FakeLed4, FakeLed5, FakeLed6, FakeLed7, FakeLed8, FakeLed9, FakeLed10 };
            
-            SoundPlayer Note1 = new SoundPlayer();
-            Note1.SoundLocation = ".\\Sons\\Note1.wav";
-            Note1.LoadAsync();
-
-            SoundPlayer Note2 = new SoundPlayer();
-            Note2.SoundLocation = ".\\Sons\\Note2.wav";
-            Note2.LoadAsync();
-
-            SoundPlayer Note3 = new SoundPlayer();
-            Note3.SoundLocation = ".\\Sons\\Note3.wav";
-            Note3.LoadAsync();
-
-            SoundPlayer Note4 = new SoundPlayer();
-            Note4.SoundLocation = ".\\Sons\\Note4.wav";
-            Note4.LoadAsync();
-
-            SoundPlayer Note5 = new SoundPlayer();
-            Note5.SoundLocation = ".\\Sons\\Note5.wav";
-            Note5.LoadAsync();
-
-            SoundPlayer Note6 = new SoundPlayer();
-            Note6.SoundLocation = ".\\Sons\\Note6.wav";
-            Note1.LoadAsync();
-
-            SoundPlayer Note7 = new SoundPlayer();
-            Note7.SoundLocation = ".\\Sons\\Note7.wav";
-            Note7.LoadAsync();
-
-            SoundPlayer Note8 = new SoundPlayer();
-            Note8.SoundLocation = ".\\Sons\\Note8.wav";
-            Note8.LoadAsync();
-
-            SoundPlayer Note9 = new SoundPlayer();
-            Note9.SoundLocation = ".\\Sons\\Note9.wav";
-            Note9.LoadAsync();
-
-            SoundPlayer Note10 = new SoundPlayer();
-
-            Note = new SoundPlayer[] { Note5, Note4, Note3, Note2, Note1, Note6, Note7, Note8, Note9, Note10 };
-            Note10.SoundLocation = ".\\Sons\\Note10.wav";
-            Note[9].LoadCompleted += new AsyncCompletedEventHandler(SoundPlayed);
-            Note10.LoadAsync();
-
-
             //Creation buffer droit
             for (int i = 0; i < 5; i++)
             {
@@ -246,7 +202,7 @@ namespace WinFormSample
                     Sound=true;
                 }
 
-                if (args[3].Equals("Mute"))
+                else if (args[3].Equals("Mute"))
                 {
                     Sound=false;
                 }
@@ -257,6 +213,49 @@ namespace WinFormSample
                 }
             }
             Slider.Value = Int32.Parse(ConfigurationManager.AppSettings["LastSliderValue"]);
+
+            SoundPlayer Note1 = new SoundPlayer();
+            Note1.SoundLocation = ".\\Sons\\Note1.wav";
+            Note1.LoadAsync();
+
+            SoundPlayer Note2 = new SoundPlayer();
+            Note2.SoundLocation = ".\\Sons\\Note2.wav";
+            Note2.LoadAsync();
+
+            SoundPlayer Note3 = new SoundPlayer();
+            Note3.SoundLocation = ".\\Sons\\Note3.wav";
+            Note3.LoadAsync();
+
+            SoundPlayer Note4 = new SoundPlayer();
+            Note4.SoundLocation = ".\\Sons\\Note4.wav";
+            Note4.LoadAsync();
+
+            SoundPlayer Note5 = new SoundPlayer();
+            Note5.SoundLocation = ".\\Sons\\Note5.wav";
+            Note5.LoadAsync();
+
+            SoundPlayer Note6 = new SoundPlayer();
+            Note6.SoundLocation = ".\\Sons\\Note6.wav";
+            Note1.LoadAsync();
+
+            SoundPlayer Note7 = new SoundPlayer();
+            Note7.SoundLocation = ".\\Sons\\Note7.wav";
+            Note7.LoadAsync();
+
+            SoundPlayer Note8 = new SoundPlayer();
+            Note8.SoundLocation = ".\\Sons\\Note8.wav";
+            Note8.LoadAsync();
+
+            SoundPlayer Note9 = new SoundPlayer();
+            Note9.SoundLocation = ".\\Sons\\Note9.wav";
+            Note9.LoadAsync();
+
+            SoundPlayer Note10 = new SoundPlayer();
+
+            Note = new SoundPlayer[] { Note5, Note4, Note3, Note2, Note1, Note6, Note7, Note8, Note9, Note10 };
+            Note10.SoundLocation = ".\\Sons\\Note10.wav";
+            Note[9].LoadCompleted += new AsyncCompletedEventHandler(SoundPlayed);
+            Note10.LoadAsync();
         }
         void isConnected( object sender, InternalFrameEventArgs eventArgs)
         {
@@ -282,10 +281,14 @@ namespace WinFormSample
         }
         void newFrameHandler(object sender, FrameEventArgs eventArgs)
         {
-            this.Visible = ModeDebug;
             frame = eventArgs.frame;
             handRight = null;
             handLeft = null;
+
+            if(ModeDebug==false)
+            {
+                this.Hide();
+            }
 
             // Conditionnement de 0 à 1
             int tempo=0;
@@ -300,7 +303,8 @@ namespace WinFormSample
                 }
 
             }
-            label7.Text = Math.Round(Math.Abs(((distanceToFinger[4] - MinPressureInt[4]) / (93 - MinPressureInt[4]) - 1)),3).ToString();
+            label7.Text = Math.Round(Math.Abs(((distanceToFinger[4] - MinPressureInt[4]) / ( 93 - MinPressureInt[4]) - 1)),3).ToString();
+          
             //The following are Label controls added in design view for the form
             displayFPS.Text = frame.CurrentFramesPerSecond.ToString();
             displayHandCount.Text = frame.Hands.Count.ToString();
@@ -343,14 +347,16 @@ namespace WinFormSample
                     //Roll.Text = roll.ToString();
                     //Get Fingers Vector
                     //for (int i=0; i<)
+                   
 
                     VectorFinger[0] = fingersRight[0].StabilizedTipPosition;
                     VectorFinger[1] = fingersRight[1].StabilizedTipPosition;
                     VectorFinger[2] = fingersRight[2].StabilizedTipPosition;
                     VectorFinger[3] = fingersRight[3].StabilizedTipPosition;
                     VectorFinger[4] = fingersRight[4].StabilizedTipPosition;
-                    
 
+                    //Vector boneMetacarpal = fingersRight[0].Bone(Bone.BoneType.TYPE_METACARPAL).PrevJoint;
+                    //label17.Text = boneMetaCarpal.Center.DistanceTo(handRight.PalmPosition).ToString() + GetLenghtLisséRight(4);
                     //Finger 2 appui 1er Solution
                     //int Finger2x = (int)VectorFinger[1].x;
                     //int Finger2y = (int)VectorFinger[1].y;
@@ -521,8 +527,6 @@ namespace WinFormSample
         }
         void SoundPlayed(object sender, EventArgs e)
         {
-
-
             Task.Factory.StartNew(() =>
             {
                 Thread.Sleep(1000);
@@ -572,8 +576,10 @@ namespace WinFormSample
                 }
 
             });
+
             if (Sound==true)
             {
+                Console.WriteLine("pass");
                 Task.Factory.StartNew(() =>
                 {
                 //Tempo attente initil
@@ -676,10 +682,9 @@ namespace WinFormSample
                 {
                     BufferLenghtRight[z].Clear();
                     Leds[z].BackColor = Color.Red;
-                    DistanceToPalm[z].Text = "×";
-                    MinPressure[z].Text = "×";
-                    Lenght[z].Text = "×";
-
+                    DistanceToPalm[z].Invoke((MethodInvoker)(() => DistanceToPalm[z].Text = "×"));
+                    MinPressure[z].Invoke((MethodInvoker)(() => MinPressure[z].Text = "×"));
+                    Lenght[z].Invoke((MethodInvoker)(() => Lenght[z].Text = "×"));
                 }
             if (handLeft != null)
             {
@@ -714,9 +719,9 @@ namespace WinFormSample
                 {
                     BufferLenghtLeft[z].Clear();
                     Leds[z+5].BackColor = Color.Red;
-                    DistanceToPalm[z + 5].Text = "×";
-                    MinPressure[z+5].Text= "×";
-                    Lenght[z + 5].Text = "×";
+                    DistanceToPalm[z+5].Invoke((MethodInvoker)(() => DistanceToPalm[z + 5].Text = "×"));
+                    MinPressure[z+5].Invoke((MethodInvoker)(() => MinPressure[z + 5].Text = "×"));
+                    Lenght[z+5].Invoke((MethodInvoker)(() => Lenght[z + 5].Text = "×"));
                 }
         }
 
