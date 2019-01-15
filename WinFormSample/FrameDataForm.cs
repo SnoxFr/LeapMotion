@@ -45,7 +45,7 @@ namespace WinFormSample
         //Tableau des Leds de position des doigts (16 positions)
         Label[] Position;
         //Tableau des Labels de seuil minimales d'appui 
-        Label[] MinPressure;
+        Label[] Treshold;
         //Tableau des Lables de distances entre le bout des doigts et le centre de la paume
         Label[] DistanceToPalm;
         //Tableau des Lables de distances entre le bout des doigts et le centre de la paume
@@ -54,7 +54,7 @@ namespace WinFormSample
         //Tableau des longueurs des doigts lissé 
         int[] LenghtLissé = new int[10];
         //Tableau des seuils minimales d'appui pour chaque doigt
-        double[] MinPressureInt = new double[10];
+        double[] ThresholdInt = new double[10];
         //Tableau des distances entre le bout des doigts et le centre de la paume
         int[] distanceToFinger = new int[10];
 
@@ -84,6 +84,7 @@ namespace WinFormSample
         Bone boneMetaCarpal, boneProximal, boneIntermediate, boneDistal;
         InteractionBox Test;
         int CptLissage=1;
+        int[] MinPressure;
         //Indique si l'appli est instancié en mode debug ou non
         bool ModeDebug;
         bool Sound;
@@ -116,10 +117,11 @@ namespace WinFormSample
             Leds = new Label[] { Led1, Led2, Led3, Led4, Led5, Led6, Led7, Led8, Led9, Led10 };
             VectorFingerRight = new Vector[] { Finger1, Finger2, Finger3, Finger4, Finger5};
             VectorFingerLeft = new Vector[] { Finger6, Finger7, Finger8, Finger9, Finger10};
-            MinPressure = new Label[] { Min1, Min2, Min3, Min4, Min5,Min6,Min7,Min8,Min9,Min10 };
+            Treshold = new Label[] { Min1, Min2, Min3, Min4, Min5,Min6,Min7,Min8,Min9,Min10 };
             FakeLed = new Label[] { FakeLed1, FakeLed2, FakeLed3, FakeLed4, FakeLed5, FakeLed6, FakeLed7, FakeLed8, FakeLed9, FakeLed10 };
             PianoDoigtRight = new Vector[] {PianoDoigt1,PianoDoigt2, PianoDoigt3, PianoDoigt4, PianoDoigt5};
             PianoDoigtLeft = new Vector[] { PianoDoigt6, PianoDoigt7, PianoDoigt8, PianoDoigt9, PianoDoigt10 };
+            MinPressure= new int[10];
             //Creation buffer droit
             for (int i = 0; i < 5; i++)
             {
@@ -308,7 +310,7 @@ namespace WinFormSample
                 }
 
             }
-            label7.Text = Math.Round(Math.Abs(((distanceToFinger[4] - MinPressureInt[4]) / ( 93 - MinPressureInt[4]) - 1)),3).ToString();
+            //label7.Text = Math.Round(Math.Abs(((distanceToFinger[4] - ThresholdInt[4]) / ( 93 - ThresholdInt[4]) - 1)),3).ToString();
           
             //The following are Label controls added in design view for the form
             displayFPS.Text = frame.CurrentFramesPerSecond.ToString();
@@ -351,6 +353,7 @@ namespace WinFormSample
                     label60.Text = (boneMetacarpal1.DistanceTo(handRight.PalmPosition) + GetLenghtLisséRight(0)).ToString();
                     boneMetacarpal2 = fingersRight[1].Bone(Bone.BoneType.TYPE_METACARPAL).NextJoint;
                     label61.Text = (boneMetacarpal2.DistanceTo(handRight.PalmPosition) + GetLenghtLisséRight(1)).ToString();
+                    MinPressure[1] = (int)boneMetacarpal2.DistanceTo(handRight.PalmPosition) + GetLenghtLisséRight(1);
                     boneMetacarpal3 = fingersRight[2].Bone(Bone.BoneType.TYPE_METACARPAL).NextJoint;
                     label62.Text = (boneMetacarpal3.DistanceTo(handRight.PalmPosition) + GetLenghtLisséRight(2)).ToString();
                     boneMetacarpal4 = fingersRight[3].Bone(Bone.BoneType.TYPE_METACARPAL).NextJoint;
@@ -358,7 +361,7 @@ namespace WinFormSample
 
                     boneMetacarpal5 = fingersRight[4].Bone(Bone.BoneType.TYPE_METACARPAL).NextJoint;
                     label64.Text = (boneMetacarpal5.DistanceTo(handRight.PalmPosition) + GetLenghtLisséRight(4)).ToString();
-
+                   
                     for (int x = 0; x < 16; x++)
                     {
                         Position[x].BackColor = Color.LightGray;
@@ -391,7 +394,7 @@ namespace WinFormSample
                     {
                         DistanceToPalm[i].Text = distanceToFinger[i].ToString();
                         Lenght[i].Text = LenghtLissé[i].ToString();
-                        MinPressure[i].Text = ((int)MinPressureInt[i]).ToString();
+                        Treshold[i].Text = ((int)ThresholdInt[i]).ToString();
                     }
                 }
                 else
@@ -416,7 +419,7 @@ namespace WinFormSample
 
                         DistanceToPalm[i].Text = distanceToFinger[i].ToString();
                         Lenght[i].Text = LenghtLissé[i].ToString();
-                        MinPressure[i].Text = ((int)MinPressureInt[i]).ToString();
+                        Treshold[i].Text = ((int)ThresholdInt[i]).ToString();
 
                     }
 
@@ -505,7 +508,7 @@ namespace WinFormSample
 
                         for (int i = 0; i < fingersRight.Count; i++)
                         {
-                            if (distanceToFinger[i] < MinPressureInt[i])
+                            if (distanceToFinger[i] < ThresholdInt[i])
                             {
                                 Leds[i].Invoke((MethodInvoker)(() => Leds[i].BackColor = Color.White));
                             }
@@ -514,6 +517,22 @@ namespace WinFormSample
                                 Leds[i].Invoke((MethodInvoker)(() => Leds[i].BackColor = Color.FromArgb(28, 28, 28)));
                             }
                         }
+                        if((MinPressure[1] - ThresholdInt[1]) > 0)
+                        {
+                            double calc = Math.Abs((distanceToFinger[1] - ThresholdInt[1]) / (MinPressure[1] - ThresholdInt[1])-1);
+                            Calc.Invoke((MethodInvoker)(() => Calc.Text = calc.ToString()));
+                            if(calc > 1)
+                            {
+                                FakeLed7.BackColor = Color.FromArgb(0, 0, 255);
+                            }
+                            else
+                            {
+                                FakeLed7.BackColor = Color.FromArgb(0, 0, ((int)(calc*255D)));
+                            }
+                        }
+
+
+
 
                     }
                 }
@@ -530,7 +549,7 @@ namespace WinFormSample
 
                         for (int i = 0; i < fingersLeft.Count; i++)
                         {
-                            if (distanceToFinger[i + 5] < MinPressureInt[i + 5])
+                            if (distanceToFinger[i + 5] < ThresholdInt[i + 5])
                             {
                                 Leds[i + 5].Invoke((MethodInvoker)(() => Leds[i + 5].BackColor = Color.White));
                             }
@@ -559,7 +578,7 @@ namespace WinFormSample
 
                             for (int i = 0; i < fingersRight.Count; i++)
                             {
-                                if (distanceToFinger[i] < MinPressureInt[i])
+                                if (distanceToFinger[i] < ThresholdInt[i])
                                 {
                                     Note[i].PlaySync();
                                 }
@@ -580,7 +599,7 @@ namespace WinFormSample
                         {
                             for (int i = 0; i < fingersLeft.Count; i++)
                             {
-                                if (distanceToFinger[i + 5] < MinPressureInt[i + 5])
+                                if (distanceToFinger[i + 5] < ThresholdInt[i + 5])
                                 {
                                     Note[i + 5].PlaySync();
                                 }
@@ -634,12 +653,12 @@ namespace WinFormSample
                         boneIntermediate = fingersRight[0].Bone(Bone.BoneType.TYPE_INTERMEDIATE);
                         boneDistal = fingersRight[0].Bone(Bone.BoneType.TYPE_DISTAL);
                         BufferLenghtRight[z].Add( boneProximal.Center.DistanceTo(boneIntermediate.Center) + boneIntermediate.Center.DistanceTo(boneDistal.Center));
-                        MinPressureInt[z] = GetLenghtLisséRight(z)*((100f+ SliderValue) /100f);
+                        ThresholdInt[z] = (int)(GetLenghtLisséRight(z)*((100f+ SliderValue) /100f));
                     }
                     else
                     {
                         BufferLenghtRight[z].Add(fingersRight[z].Length);
-                        MinPressureInt[z] = ((100f + SliderValue) /100f)* (Math.Sqrt(Math.Pow(GetLenghtLisséRight(z), 2) + Math.Pow(handTempo.PalmPosition.DistanceTo(fingersRight[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2)));
+                        ThresholdInt[z] = (int)(((100f + SliderValue) /100f)* (Math.Sqrt(Math.Pow(GetLenghtLisséRight(z), 2) + Math.Pow(handTempo.PalmPosition.DistanceTo(fingersRight[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2))));
                     }
                     LenghtLissé[z] = BufferLenghtRight[z].ConvertAll(Convert.ToInt32).Sum() / BufferLenghtRight[z].Count;
                     
@@ -651,7 +670,7 @@ namespace WinFormSample
                     BufferLenghtRight[z].Clear();
                     Leds[z].BackColor = Color.Red;
                     DistanceToPalm[z].Invoke((MethodInvoker)(() => DistanceToPalm[z].Text = "×"));
-                    MinPressure[z].Invoke((MethodInvoker)(() => MinPressure[z].Text = "×"));
+                    Treshold[z].Invoke((MethodInvoker)(() => Treshold[z].Text = "×"));
                     Lenght[z].Invoke((MethodInvoker)(() => Lenght[z].Text = "×"));
                 }
             if (handLeft != null)
@@ -671,12 +690,12 @@ namespace WinFormSample
                         boneIntermediate = fingersLeft[0].Bone(Bone.BoneType.TYPE_INTERMEDIATE);
                         boneDistal = fingersLeft[0].Bone(Bone.BoneType.TYPE_DISTAL);
                         BufferLenghtLeft[z].Add(boneProximal.Center.DistanceTo(boneIntermediate.Center) + boneIntermediate.Center.DistanceTo(boneDistal.Center));
-                        MinPressureInt[z + 5] = GetLenghtLisséLeft(z) * ((100f + SliderValue) / 100f);
+                        ThresholdInt[z + 5] =(int)( GetLenghtLisséLeft(z) * ((100f + SliderValue) / 100f));
                     }
                     else
                     {
                         BufferLenghtLeft[z].Add(fingersLeft[z].Length);
-                        MinPressureInt[z+5] = ((100f + SliderValue) / 100f)*Math.Sqrt(Math.Pow(GetLenghtLisséLeft(z), 2) + Math.Pow(handLeft.PalmPosition.DistanceTo(fingersLeft[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2));
+                        ThresholdInt[z+5] = (int)(((100f + SliderValue) / 100f)*Math.Sqrt(Math.Pow(GetLenghtLisséLeft(z), 2) + Math.Pow(handLeft.PalmPosition.DistanceTo(fingersLeft[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2)));
                     }
                     LenghtLissé[z+5] = BufferLenghtLeft[z].ConvertAll(Convert.ToInt32).Sum() / BufferLenghtLeft[z].Count;
 
@@ -688,7 +707,7 @@ namespace WinFormSample
                     BufferLenghtLeft[z].Clear();
                     Leds[z+5].BackColor = Color.Red;
                     DistanceToPalm[z+5].Invoke((MethodInvoker)(() => DistanceToPalm[z + 5].Text = "×"));
-                    MinPressure[z+5].Invoke((MethodInvoker)(() => MinPressure[z + 5].Text = "×"));
+                    Treshold[z+5].Invoke((MethodInvoker)(() => Treshold[z + 5].Text = "×"));
                     Lenght[z+5].Invoke((MethodInvoker)(() => Lenght[z + 5].Text = "×"));
                 }
         }
