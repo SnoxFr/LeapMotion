@@ -58,6 +58,8 @@ namespace WinFormSample
         //Tableau des distances entre le bout des doigts et le centre de la paume
         int[] distanceToFinger = new int[10];
 
+        double[] LedCommand = new double[10];
+
         //Intanciation de l'objet frame (Une image traité par le sdk)
         Frame frame = new Frame();
         int SliderValue = 0;
@@ -73,12 +75,14 @@ namespace WinFormSample
         Hand handLeft = new Hand();
         //Même fonction 
         Hand handTempo = new Hand();
+        Hand handTempo2 = new Hand();
 
         //Tableau stockant les l'ensemble des doigts de type Vector
         Vector[] VectorFingerRight;
         Vector[] VectorFingerLeft;
         Vector[] PianoDoigtRight;
         Vector[] PianoDoigtLeft;
+        Vector[] BoneMetaCarpalList;
         //Instanciation des Vector de l'ensemble des doigts 
         Vector Finger1,Finger2, Finger3, Finger4, Finger5, Finger6, Finger7, Finger8, Finger9, Finger10;
         Bone boneMetaCarpal, boneProximal, boneIntermediate, boneDistal;
@@ -121,6 +125,7 @@ namespace WinFormSample
             FakeLed = new Label[] { FakeLed1, FakeLed2, FakeLed3, FakeLed4, FakeLed5, FakeLed6, FakeLed7, FakeLed8, FakeLed9, FakeLed10 };
             PianoDoigtRight = new Vector[] {PianoDoigt1,PianoDoigt2, PianoDoigt3, PianoDoigt4, PianoDoigt5};
             PianoDoigtLeft = new Vector[] { PianoDoigt6, PianoDoigt7, PianoDoigt8, PianoDoigt9, PianoDoigt10 };
+            BoneMetaCarpalList = new Vector[] { boneMetacarpal1, boneMetacarpal2, boneMetacarpal3, boneMetacarpal4, boneMetacarpal5 };
             MinPressure= new int[10];
             //Creation buffer droit
             for (int i = 0; i < 5; i++)
@@ -310,8 +315,7 @@ namespace WinFormSample
                 }
 
             }
-            //label7.Text = Math.Round(Math.Abs(((distanceToFinger[4] - ThresholdInt[4]) / ( 93 - ThresholdInt[4]) - 1)),3).ToString();
-          
+
             //The following are Label controls added in design view for the form
             displayFPS.Text = frame.CurrentFramesPerSecond.ToString();
             displayHandCount.Text = frame.Hands.Count.ToString();
@@ -346,22 +350,13 @@ namespace WinFormSample
                     {
                         VectorFingerRight[i] = fingersRight[i].StabilizedTipPosition;
                         distanceToFinger[i] = (int)VectorFingerRight[i].DistanceTo(handRight.PalmPosition);
-                        PianoDoigtRight[i]= Test.NormalizePoint(VectorFingerRight[i], true);
+                        PianoDoigtRight[i] = Test.NormalizePoint(VectorFingerRight[i], true);
+                        BoneMetaCarpalList[i] = fingersRight[i].Bone(Bone.BoneType.TYPE_METACARPAL).NextJoint;
+                        MinPressure[i] = (int)BoneMetaCarpalList[i].DistanceTo(handRight.PalmPosition) + GetLenghtLisséRight(i);
                     }
-         
-                    boneMetacarpal1 = fingersRight[0].Bone(Bone.BoneType.TYPE_PROXIMAL).NextJoint;
-                    label60.Text = (boneMetacarpal1.DistanceTo(handRight.PalmPosition) + GetLenghtLisséRight(0)).ToString();
-                    boneMetacarpal2 = fingersRight[1].Bone(Bone.BoneType.TYPE_METACARPAL).NextJoint;
-                    label61.Text = (boneMetacarpal2.DistanceTo(handRight.PalmPosition) + GetLenghtLisséRight(1)).ToString();
-                    MinPressure[1] = (int)boneMetacarpal2.DistanceTo(handRight.PalmPosition) + GetLenghtLisséRight(1);
-                    boneMetacarpal3 = fingersRight[2].Bone(Bone.BoneType.TYPE_METACARPAL).NextJoint;
-                    label62.Text = (boneMetacarpal3.DistanceTo(handRight.PalmPosition) + GetLenghtLisséRight(2)).ToString();
-                    boneMetacarpal4 = fingersRight[3].Bone(Bone.BoneType.TYPE_METACARPAL).NextJoint;
-                    label63.Text = (boneMetacarpal4.DistanceTo(handRight.PalmPosition) + GetLenghtLisséRight(3)).ToString();
 
-                    boneMetacarpal5 = fingersRight[4].Bone(Bone.BoneType.TYPE_METACARPAL).NextJoint;
-                    label64.Text = (boneMetacarpal5.DistanceTo(handRight.PalmPosition) + GetLenghtLisséRight(4)).ToString();
-                   
+                    label60.Text = (BoneMetaCarpalList[0].DistanceTo(handRight.PalmPosition) + GetLenghtLisséRight(0)).ToString();
+
                     for (int x = 0; x < 16; x++)
                     {
                         Position[x].BackColor = Color.LightGray;
@@ -505,6 +500,36 @@ namespace WinFormSample
                 {
                     if (handRight != null)
                     {
+                        handTempo = handRight;
+
+                        for (int i = 0; i < fingersRight.Count; i++)
+                        {
+                            Thread.Sleep(10);
+                            if ((MinPressure[i] - ThresholdInt[i]) > 0)
+                            {
+                                LedCommand[i] = Math.Abs((distanceToFinger[i] - ThresholdInt[i]) / (MinPressure[i] - ThresholdInt[i]) - 1);
+                                if (LedCommand[i] > 1)
+                                {
+                                    FakeLed[i].Invoke((MethodInvoker)(() => FakeLed[i+5].BackColor = Color.FromArgb(255, 255, 255)));
+                                }
+                                else
+                                {
+                                    FakeLed[i].Invoke((MethodInvoker)(() => FakeLed[i+5].BackColor = Color.FromArgb((int)(LedCommand[i] * 255D), (int)(LedCommand[i] * 255D), (int)(LedCommand[i] * 255D))));
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+            });
+            Task.Factory.StartNew(() =>
+            {
+                Thread.Sleep(1000);
+                while (true)
+                {
+                    if (handRight != null)
+                    {
 
                         for (int i = 0; i < fingersRight.Count; i++)
                         {
@@ -517,23 +542,6 @@ namespace WinFormSample
                                 Leds[i].Invoke((MethodInvoker)(() => Leds[i].BackColor = Color.FromArgb(28, 28, 28)));
                             }
                         }
-                        if((MinPressure[1] - ThresholdInt[1]) > 0)
-                        {
-                            double calc = Math.Abs((distanceToFinger[1] - ThresholdInt[1]) / (MinPressure[1] - ThresholdInt[1])-1);
-                            Calc.Invoke((MethodInvoker)(() => Calc.Text = calc.ToString()));
-                            if(calc > 1)
-                            {
-                                FakeLed7.BackColor = Color.FromArgb(0, 0, 255);
-                            }
-                            else
-                            {
-                                FakeLed7.BackColor = Color.FromArgb(0, 0, ((int)(calc*255D)));
-                            }
-                        }
-
-
-
-
                     }
                 }
 
@@ -566,7 +574,6 @@ namespace WinFormSample
 
             if (Sound==true)
             {
-                Console.WriteLine("pass");
                 Task.Factory.StartNew(() =>
                 {
                 //Tempo attente initil

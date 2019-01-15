@@ -26,6 +26,7 @@ namespace WinFormSample
         {
             this.visualStudioTabControl1 = new VisualStudioTabControl.VisualStudioTabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.Calc = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
@@ -115,10 +116,8 @@ namespace WinFormSample
             this.lenght1 = new System.Windows.Forms.Label();
             this.Doigt8 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Slider = new System.Windows.Forms.TrackBar();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -137,7 +136,6 @@ namespace WinFormSample
             this.displayHandCount = new System.Windows.Forms.Label();
             this.displayFPS = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Calc = new System.Windows.Forms.Label();
             this.visualStudioTabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -180,10 +178,8 @@ namespace WinFormSample
             this.tabPage4.Controls.Add(this.label64);
             this.tabPage4.Controls.Add(this.tableLayoutPanel2);
             this.tabPage4.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage4.Controls.Add(this.label10);
             this.tabPage4.Controls.Add(this.label9);
             this.tabPage4.Controls.Add(this.label8);
-            this.tabPage4.Controls.Add(this.label7);
             this.tabPage4.Controls.Add(this.label5);
             this.tabPage4.Controls.Add(this.Slider);
             this.tabPage4.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -193,6 +189,18 @@ namespace WinFormSample
             this.tabPage4.Size = new System.Drawing.Size(2329, 798);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Main";
+            // 
+            // Calc
+            // 
+            this.Calc.AutoSize = true;
+            this.Calc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Calc.ForeColor = System.Drawing.Color.Turquoise;
+            this.Calc.Location = new System.Drawing.Point(1559, 383);
+            this.Calc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Calc.Name = "Calc";
+            this.Calc.Size = new System.Drawing.Size(0, 29);
+            this.Calc.TabIndex = 145;
+            this.Calc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label60
             // 
@@ -1421,19 +1429,6 @@ namespace WinFormSample
             this.label27.Text = "AuriculaireD";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label10.Location = new System.Drawing.Point(1531, 453);
-            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(342, 29);
-            this.label10.TabIndex = 137;
-            this.label10.Text = "Test de conditionnement 0 à 1:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -1455,19 +1450,6 @@ namespace WinFormSample
             this.label8.Size = new System.Drawing.Size(64, 32);
             this.label8.TabIndex = 135;
             this.label8.Text = "+0%";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Turquoise;
-            this.label7.Location = new System.Drawing.Point(1917, 453);
-            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 29);
-            this.label7.TabIndex = 134;
-            this.label7.Text = "Test";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -1686,19 +1668,6 @@ namespace WinFormSample
             this.label1.Size = new System.Drawing.Size(57, 25);
             this.label1.TabIndex = 17;
             this.label1.Text = "FPS:";
-            // 
-            // Calc
-            // 
-            this.Calc.AutoSize = true;
-            this.Calc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Calc.ForeColor = System.Drawing.Color.Turquoise;
-            this.Calc.Location = new System.Drawing.Point(1559, 383);
-            this.Calc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Calc.Name = "Calc";
-            this.Calc.Size = new System.Drawing.Size(61, 29);
-            this.Calc.TabIndex = 145;
-            this.Calc.Text = "Calc";
-            this.Calc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrameDataForm
             // 
