@@ -352,8 +352,14 @@ namespace WinFormSample
                         distanceToFinger[i] = (int)VectorFingerRight[i].DistanceTo(handRight.PalmPosition);
                         if (i==0)
                         {
-                            distanceToFinger[i] = (int) (handRight.PalmPosition.y - VectorFingerRight[i].y);
-                            distanceToFinger[i]=Math.Abs(distanceToFinger[i]);
+                            if (handRight.PalmPosition.y - VectorFingerRight[i].y > 0)
+                            {
+                                distanceToFinger[i] = (int)(handRight.PalmPosition.y - VectorFingerRight[i].y);
+                            }
+                            else
+                            {
+                                distanceToFinger[i] = 0;
+                            }
 
                         }
 
@@ -424,8 +430,16 @@ namespace WinFormSample
                         distanceToFinger[i] = (int)VectorFingerLeft[i-5].DistanceTo(handLeft.PalmPosition);
                         if (i == 5)
                         {
-                            distanceToFinger[i] = (int)(handLeft.PalmPosition.y - VectorFingerLeft[0].y);
-                            distanceToFinger[i] = Math.Abs(distanceToFinger[i]);
+                            if(handLeft.PalmPosition.y - VectorFingerLeft[0].y>0)
+                            {
+                                distanceToFinger[i] = (int)(handLeft.PalmPosition.y - VectorFingerLeft[0].y);
+                            }
+                            else
+                            {
+                                distanceToFinger[i] = 0;
+                            }
+                                
+                            
                         }
                         BoneMetaCarpalList[i] = fingersLeft[i-5].Bone(Bone.BoneType.TYPE_METACARPAL).NextJoint;
                         MinPressure[i] = (int)BoneMetaCarpalList[i].DistanceTo(handLeft.PalmPosition) + GetLenghtLisséLeft(i-5);
@@ -538,6 +552,11 @@ namespace WinFormSample
                                 {
                                     FakeLed[i].Invoke((MethodInvoker)(() => FakeLed[i].BackColor = Color.FromArgb((int)(LedCommand[i+5] * 255D), (int)(LedCommand[i+5] * 255D), (int)(LedCommand[i+5] * 255D))));
                                 }
+
+                                if (distanceToFinger[5] == 0)
+                                {
+                                    FakeLed[0].Invoke((MethodInvoker)(() => FakeLed[0].BackColor = Color.FromArgb(0, 0, 0)));
+                                }
                             }
                         }
 
@@ -570,9 +589,15 @@ namespace WinFormSample
                                 {
                                     FakeLed[i + 5].Invoke((MethodInvoker)(() => FakeLed[i+5].BackColor = Color.FromArgb(255, 255, 255)));
                                 }
+                                
                                 else
                                 {
                                     FakeLed[i + 5].Invoke((MethodInvoker)(() => FakeLed[i+5].BackColor = Color.FromArgb((int)(LedCommand[i] * 255D), (int)(LedCommand[i] * 255D), (int)(LedCommand[i] * 255D))));
+                                }
+
+                                if (distanceToFinger[0] == 0)
+                                {
+                                    FakeLed[5].Invoke((MethodInvoker)(() => FakeLed[5].BackColor = Color.FromArgb(0, 0, 0)));
                                 }
                             }
                         }
@@ -608,6 +633,7 @@ namespace WinFormSample
                             {
                                 Leds[i].Invoke((MethodInvoker)(() => Leds[i].BackColor = Color.FromArgb(28, 28, 28)));
                             }
+
                         }
                     }
                 }
