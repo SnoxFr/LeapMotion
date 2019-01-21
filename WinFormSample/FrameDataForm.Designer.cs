@@ -136,6 +136,8 @@ namespace WinFormSample
             this.displayHandCount = new System.Windows.Forms.Label();
             this.displayFPS = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
             this.visualStudioTabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -170,6 +172,8 @@ namespace WinFormSample
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.tabPage4.Controls.Add(this.label71);
+            this.tabPage4.Controls.Add(this.label70);
             this.tabPage4.Controls.Add(this.Calc);
             this.tabPage4.Controls.Add(this.label60);
             this.tabPage4.Controls.Add(this.label61);
@@ -1669,6 +1673,32 @@ namespace WinFormSample
             this.label1.TabIndex = 17;
             this.label1.Text = "FPS:";
             // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.ForeColor = System.Drawing.Color.Turquoise;
+            this.label70.Location = new System.Drawing.Point(1434, 329);
+            this.label70.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(61, 29);
+            this.label70.TabIndex = 146;
+            this.label70.Text = "Test";
+            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label71.ForeColor = System.Drawing.Color.Turquoise;
+            this.label71.Location = new System.Drawing.Point(1985, 342);
+            this.label71.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(61, 29);
+            this.label71.TabIndex = 147;
+            this.label71.Text = "Test";
+            this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrameDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -1811,5 +1841,7 @@ namespace WinFormSample
         private Label label62;
         private Label label63;
         private Label Calc;
+        private Label label71;
+        private Label label70;
     }
 }
