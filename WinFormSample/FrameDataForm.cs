@@ -520,8 +520,12 @@ namespace WinFormSample
         }
         void SoundPlayed(object sender, EventArgs e)
         {
-            Task.Factory.StartNew(() =>
+            if (ModeDebug)
             {
+                //Thread commande Led main gauche
+                Task.Factory.StartNew(() =>
+            {
+            
                 Thread.Sleep(1000);
                 while (true)
                 {
@@ -532,25 +536,23 @@ namespace WinFormSample
 
                         for (int i = 0; i < fingersLeft.Count; i++)
                         {
-                    
+
                             Thread.Sleep(10);
-                            if ((MinPressure[i+5] - ThresholdInt[i+5]) > 0)
+                            if ((MinPressure[i + 5] - ThresholdInt[i + 5]) > 0)
                             {
-
-
                                 LedCommand[5] = Math.Abs((distanceToFinger[5] - ThresholdInt[5]) / (20 - ThresholdInt[5]) - 1);
                                 LedCommand[6] = Math.Abs((distanceToFinger[6] - ThresholdInt[6]) / (MinPressure[6] * 0.95f - ThresholdInt[6]) - 1);
                                 LedCommand[7] = Math.Abs((distanceToFinger[7] - ThresholdInt[7]) / (MinPressure[7] - ThresholdInt[7]) - 1);
                                 LedCommand[8] = Math.Abs((distanceToFinger[8] - ThresholdInt[8]) / (MinPressure[8] - ThresholdInt[8]) - 1);
                                 LedCommand[9] = Math.Abs((distanceToFinger[9] - ThresholdInt[9]) / (MinPressure[9] * 0.95f - ThresholdInt[9]) - 1);
 
-                                if (LedCommand[i+5] > 1)
+                                if (LedCommand[i + 5] > 1)
                                 {
                                     FakeLed[i].Invoke((MethodInvoker)(() => FakeLed[i].BackColor = Color.FromArgb(255, 255, 255)));
                                 }
                                 else
                                 {
-                                    FakeLed[i].Invoke((MethodInvoker)(() => FakeLed[i].BackColor = Color.FromArgb((int)(LedCommand[i+5] * 255D), (int)(LedCommand[i+5] * 255D), (int)(LedCommand[i+5] * 255D))));
+                                    FakeLed[i].Invoke((MethodInvoker)(() => FakeLed[i].BackColor = Color.FromArgb((int)(LedCommand[i + 5] * 255D), (int)(LedCommand[i + 5] * 255D), (int)(LedCommand[i + 5] * 255D))));
                                 }
 
                                 if (distanceToFinger[5] == 0)
@@ -564,6 +566,7 @@ namespace WinFormSample
                 }
             });
 
+            //Thread commande Led main droite
             Task.Factory.StartNew(() =>
             {
                 Thread.Sleep(1000);
@@ -579,20 +582,20 @@ namespace WinFormSample
                             if ((MinPressure[i] - ThresholdInt[i]) > 0)
                             {
                                 LedCommand[0] = Math.Abs((distanceToFinger[0] - ThresholdInt[0]) / (20 - ThresholdInt[0]) - 1);
-                                LedCommand[1] = Math.Abs((distanceToFinger[1] - ThresholdInt[1]) / (MinPressure[1]* 0.95f - ThresholdInt[1]) - 1);
+                                LedCommand[1] = Math.Abs((distanceToFinger[1] - ThresholdInt[1]) / (MinPressure[1] * 0.95f - ThresholdInt[1]) - 1);
                                 LedCommand[2] = Math.Abs((distanceToFinger[2] - ThresholdInt[2]) / (MinPressure[2] - ThresholdInt[2]) - 1);
                                 LedCommand[3] = Math.Abs((distanceToFinger[3] - ThresholdInt[3]) / (MinPressure[3] - ThresholdInt[3]) - 1);
-                                LedCommand[4] = Math.Abs((distanceToFinger[4] - ThresholdInt[4]) / (MinPressure[4]* 0.95f - ThresholdInt[4]) - 1);
+                                LedCommand[4] = Math.Abs((distanceToFinger[4] - ThresholdInt[4]) / (MinPressure[4] * 0.95f - ThresholdInt[4]) - 1);
 
-      
+
                                 if (LedCommand[i] > 1)
                                 {
-                                    FakeLed[i + 5].Invoke((MethodInvoker)(() => FakeLed[i+5].BackColor = Color.FromArgb(255, 255, 255)));
+                                    FakeLed[i + 5].Invoke((MethodInvoker)(() => FakeLed[i + 5].BackColor = Color.FromArgb(255, 255, 255)));
                                 }
-                                
+
                                 else
                                 {
-                                    FakeLed[i + 5].Invoke((MethodInvoker)(() => FakeLed[i+5].BackColor = Color.FromArgb((int)(LedCommand[i] * 255D), (int)(LedCommand[i] * 255D), (int)(LedCommand[i] * 255D))));
+                                    FakeLed[i + 5].Invoke((MethodInvoker)(() => FakeLed[i + 5].BackColor = Color.FromArgb((int)(LedCommand[i] * 255D), (int)(LedCommand[i] * 255D), (int)(LedCommand[i] * 255D))));
                                 }
 
                                 if (distanceToFinger[0] == 0)
@@ -606,6 +609,8 @@ namespace WinFormSample
                 }
 
             });
+
+            //Thread indicateur seuil droite
             Task.Factory.StartNew(() =>
             {
                 Thread.Sleep(1000);
@@ -621,7 +626,6 @@ namespace WinFormSample
                         {
                             Leds[0].Invoke((MethodInvoker)(() => Leds[0].BackColor = Color.FromArgb(28, 28, 28)));
                         }
-
 
                         for (int i = 1; i < fingersRight.Count; i++)
                         {
@@ -640,6 +644,7 @@ namespace WinFormSample
 
             });
 
+            //Thread indicateur seuil gauche
             Task.Factory.StartNew(() =>
             {
                 Thread.Sleep(1000);
@@ -673,41 +678,50 @@ namespace WinFormSample
                 }
 
             });
-
-            if (Sound==true)
+        }
+            //Thread SoundPlayer main droigt
+            if (Sound)
             {
                 Task.Factory.StartNew(() =>
                 {
-                //Tempo attente initil
                 Thread.Sleep(1000);
                     while (true)
                     {
                         if (handRight != null)
                         {
+                            Thread.Sleep(5);
 
-                            for (int i = 0; i < fingersRight.Count; i++)
+                            if (distanceToFinger[0] > ThresholdInt[0])
+                            {
+                                Note[0].PlaySync();
+                            }
+
+                            for (int i = 1; i < fingersRight.Count; i++)
                             {
                                 if (distanceToFinger[i] < ThresholdInt[i])
                                 {
                                     Note[i].PlaySync();
                                 }
-
                             }
-
                         }
                     }
                 });
 
+                //Thread SoundPlayer main gauche
                 Task.Factory.StartNew(() =>
                 {
-                //Tempo attente initil
                 Thread.Sleep(1000);
                     while (true)
                     {
                         if (handLeft != null)
                         {
-                            for (int i = 0; i < fingersLeft.Count; i++)
+                            Thread.Sleep(5);
+                            for (int i = 1; i < fingersLeft.Count; i++)
                             {
+                                if (distanceToFinger[5] > ThresholdInt[5])
+                                {
+                                    Note[5].PlaySync();
+                                }
                                 if (distanceToFinger[i + 5] < ThresholdInt[i + 5])
                                 {
                                     Note[i + 5].PlaySync();
@@ -719,8 +733,10 @@ namespace WinFormSample
                     }
 
                 });
+
             }
         }
+
         int GetLenghtLisséRight(int i)
         {
             if(BufferLenghtRight[i].Count>0)
@@ -762,7 +778,7 @@ namespace WinFormSample
                         boneIntermediate = fingersRight[0].Bone(Bone.BoneType.TYPE_INTERMEDIATE);
                         boneDistal = fingersRight[0].Bone(Bone.BoneType.TYPE_DISTAL);
                         BufferLenghtRight[z].Add( boneProximal.Center.DistanceTo(boneIntermediate.Center) + boneIntermediate.Center.DistanceTo(boneDistal.Center));
-                        ThresholdInt[z] = (int)(GetLenghtLisséRight(z)*((100f- SliderValue) /100f)*0.9f);
+                        ThresholdInt[z] = (int)((GetLenghtLisséRight(z)*((100f- SliderValue) /100f))*0.8f);
 
                     }
                     else
@@ -802,12 +818,12 @@ namespace WinFormSample
                         boneIntermediate = fingersLeft[0].Bone(Bone.BoneType.TYPE_INTERMEDIATE);
                         boneDistal = fingersLeft[0].Bone(Bone.BoneType.TYPE_DISTAL);
                         BufferLenghtLeft[z].Add(boneProximal.Center.DistanceTo(boneIntermediate.Center) + boneIntermediate.Center.DistanceTo(boneDistal.Center));
-                        ThresholdInt[z+5] = (int)(GetLenghtLisséLeft(z) * ((100f - SliderValue) / 100f) * 0.9f);
+                        ThresholdInt[z+5] = (int)((GetLenghtLisséLeft(z) * ((100f - SliderValue) / 100f)) * 0.8f);
                     }
                     else
                     {
                         BufferLenghtLeft[z].Add(fingersLeft[z].Length);
-                        ThresholdInt[z+5] = (int)(((100f + SliderValue) / 100f)*Math.Sqrt(Math.Pow(GetLenghtLisséLeft(z), 2) + Math.Pow(handLeft.PalmPosition.DistanceTo(fingersLeft[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2)));
+                        ThresholdInt[z+5] = (int)(((100f + SliderValue) / 100f)*Math.Sqrt(Math.Pow(GetLenghtLisséLeft(z), 2) + Math.Pow(handTempo.PalmPosition.DistanceTo(fingersLeft[z].Bone(Bone.BoneType.TYPE_METACARPAL).Center), 2)));
                     }
                     LenghtLissé[z+5] = BufferLenghtLeft[z].ConvertAll(Convert.ToInt32).Sum() / BufferLenghtLeft[z].Count;
 
