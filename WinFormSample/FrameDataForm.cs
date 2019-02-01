@@ -226,9 +226,9 @@ namespace WinFormSample
             }
             Slider.Value = Int32.Parse(ConfigurationManager.AppSettings["LastSliderValue"]);
 
-            SoundPlayer Note1 = new SoundPlayer();
-            Note1.SoundLocation = ".\\Sons\\Note1.wav";
-            Note1.LoadAsync();
+            SoundPlayer Note5 = new SoundPlayer();
+            Note5.SoundLocation = ".\\Sons\\Note5.wav";
+            Note5.LoadAsync();
 
             SoundPlayer Note2 = new SoundPlayer();
             Note2.SoundLocation = ".\\Sons\\Note2.wav";
@@ -242,13 +242,13 @@ namespace WinFormSample
             Note4.SoundLocation = ".\\Sons\\Note4.wav";
             Note4.LoadAsync();
 
-            SoundPlayer Note5 = new SoundPlayer();
-            Note5.SoundLocation = ".\\Sons\\Note5.wav";
-            Note5.LoadAsync();
+            SoundPlayer Note10 = new SoundPlayer();
+            Note10.SoundLocation = ".\\Sons\\Note10.wav";
+            Note10.LoadAsync();
 
             SoundPlayer Note6 = new SoundPlayer();
             Note6.SoundLocation = ".\\Sons\\Note6.wav";
-            Note1.LoadAsync();
+            Note6.LoadAsync();
 
             SoundPlayer Note7 = new SoundPlayer();
             Note7.SoundLocation = ".\\Sons\\Note7.wav";
@@ -262,12 +262,14 @@ namespace WinFormSample
             Note9.SoundLocation = ".\\Sons\\Note9.wav";
             Note9.LoadAsync();
 
-            SoundPlayer Note10 = new SoundPlayer();
+            SoundPlayer Note1 = new SoundPlayer();
 
-            Note = new SoundPlayer[] { Note5, Note4, Note3, Note2, Note1, Note6, Note7, Note8, Note9, Note10 };
-            Note10.SoundLocation = ".\\Sons\\Note10.wav";
+           // Note = new SoundPlayer[] { Note5, Note4, Note3, Note2, Note1, Note6, Note7, Note8, Note9, Note10 };
+            Note = new SoundPlayer[] { Note6, Note7, Note8, Note9, Note10, Note5, Note4, Note3, Note2, Note1 };
+   
+            Note1.SoundLocation = ".\\Sons\\Note1.wav";
             Note[9].LoadCompleted += new AsyncCompletedEventHandler(SoundPlayed);
-            Note10.LoadAsync();
+            Note1.LoadAsync();
         }
         void isConnected( object sender, InternalFrameEventArgs eventArgs)
         {
@@ -302,19 +304,6 @@ namespace WinFormSample
                 this.Hide();
             }
 
-            // Conditionnement de 0 à 1
-            int tempo=0;
-
-            if(distanceToFinger[4]>tempo && distanceToFinger[4]<100)
-            {
-                CptLissage = CptLissage + 1;
-                if(CptLissage>10)
-                {
-                    CptLissage=0;
-                    tempo = distanceToFinger[4];
-                }
-
-            }
 
             //The following are Label controls added in design view for the form
             displayFPS.Text = frame.CurrentFramesPerSecond.ToString();
@@ -369,7 +358,7 @@ namespace WinFormSample
                         MinPressure[i] = (int)BoneMetaCarpalList[i].DistanceTo(handRight.PalmPosition) + GetLenghtLisséRight(i);
                     }
 
-                 
+                 /*
                     for (int x = 0; x < 16; x++)
                     {
                         Position[x].BackColor = Color.LightGray;
@@ -397,6 +386,7 @@ namespace WinFormSample
                             Position[x].BackColor = Color.Purple;
                         }
                     }
+                    */
 
                     for (int i = 0; i < fingersRight.Count; i++)
                     {
