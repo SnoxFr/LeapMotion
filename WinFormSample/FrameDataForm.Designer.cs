@@ -48,67 +48,34 @@ namespace WinFormSample
             this.FakeLed10 = new System.Windows.Forms.Label();
             this.FakeLed9 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.FakeLed8 = new System.Windows.Forms.Label();
             this.lenght5 = new System.Windows.Forms.Label();
             this.FakeLed7 = new System.Windows.Forms.Label();
-            this.Min5 = new System.Windows.Forms.Label();
             this.FakeLed6 = new System.Windows.Forms.Label();
             this.FakeLed5 = new System.Windows.Forms.Label();
-            this.Doigt5 = new System.Windows.Forms.Label();
-            this.Led5 = new System.Windows.Forms.Label();
             this.FakeLed4 = new System.Windows.Forms.Label();
             this.FakeLed3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.FakeLed2 = new System.Windows.Forms.Label();
-            this.Doigt10 = new System.Windows.Forms.Label();
-            this.Led10 = new System.Windows.Forms.Label();
             this.FakeLed1 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
-            this.Led9 = new System.Windows.Forms.Label();
-            this.Doigt9 = new System.Windows.Forms.Label();
-            this.Min9 = new System.Windows.Forms.Label();
-            this.Min10 = new System.Windows.Forms.Label();
-            this.Min6 = new System.Windows.Forms.Label();
             this.lenght10 = new System.Windows.Forms.Label();
-            this.Min7 = new System.Windows.Forms.Label();
             this.lenght9 = new System.Windows.Forms.Label();
-            this.Min8 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.Led8 = new System.Windows.Forms.Label();
-            this.Led7 = new System.Windows.Forms.Label();
-            this.Led6 = new System.Windows.Forms.Label();
             this.lenght6 = new System.Windows.Forms.Label();
             this.lenght8 = new System.Windows.Forms.Label();
             this.lenght7 = new System.Windows.Forms.Label();
-            this.Led1 = new System.Windows.Forms.Label();
-            this.Led2 = new System.Windows.Forms.Label();
-            this.Led3 = new System.Windows.Forms.Label();
-            this.Led4 = new System.Windows.Forms.Label();
-            this.Doigt4 = new System.Windows.Forms.Label();
-            this.Min4 = new System.Windows.Forms.Label();
             this.lenght4 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.Doigt3 = new System.Windows.Forms.Label();
-            this.Min3 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.lenght3 = new System.Windows.Forms.Label();
-            this.Doigt7 = new System.Windows.Forms.Label();
-            this.Doigt2 = new System.Windows.Forms.Label();
-            this.Min2 = new System.Windows.Forms.Label();
             this.lenght2 = new System.Windows.Forms.Label();
-            this.Doigt1 = new System.Windows.Forms.Label();
-            this.Doigt6 = new System.Windows.Forms.Label();
-            this.Min1 = new System.Windows.Forms.Label();
             this.lenght1 = new System.Windows.Forms.Label();
-            this.Doigt8 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -130,6 +97,28 @@ namespace WinFormSample
             this.displayHandCount = new System.Windows.Forms.Label();
             this.displayFPS = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Doigt8 = new System.Windows.Forms.Label();
+            this.Doigt6 = new System.Windows.Forms.Label();
+            this.Doigt1 = new System.Windows.Forms.Label();
+            this.Doigt2 = new System.Windows.Forms.Label();
+            this.Doigt7 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.Doigt3 = new System.Windows.Forms.Label();
+            this.Doigt4 = new System.Windows.Forms.Label();
+            this.Doigt9 = new System.Windows.Forms.Label();
+            this.Doigt10 = new System.Windows.Forms.Label();
+            this.Doigt5 = new System.Windows.Forms.Label();
+            this.Led4 = new System.Windows.Forms.Label();
+            this.Led3 = new System.Windows.Forms.Label();
+            this.Led2 = new System.Windows.Forms.Label();
+            this.Led1 = new System.Windows.Forms.Label();
+            this.Led6 = new System.Windows.Forms.Label();
+            this.Led7 = new System.Windows.Forms.Label();
+            this.Led8 = new System.Windows.Forms.Label();
+            this.Led9 = new System.Windows.Forms.Label();
+            this.Led10 = new System.Windows.Forms.Label();
+            this.Led5 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.visualStudioTabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -440,36 +429,30 @@ namespace WinFormSample
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0001F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0001F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0001F));
-            this.tableLayoutPanel1.Controls.Add(this.FakeLed10, 10, 6);
-            this.tableLayoutPanel1.Controls.Add(this.FakeLed9, 9, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.FakeLed10, 10, 5);
+            this.tableLayoutPanel1.Controls.Add(this.FakeLed9, 9, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.label14, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.FakeLed8, 8, 6);
-            this.tableLayoutPanel1.Controls.Add(this.lenght5, 10, 5);
-            this.tableLayoutPanel1.Controls.Add(this.FakeLed7, 7, 6);
-            this.tableLayoutPanel1.Controls.Add(this.Min5, 10, 4);
-            this.tableLayoutPanel1.Controls.Add(this.FakeLed6, 6, 6);
-            this.tableLayoutPanel1.Controls.Add(this.FakeLed5, 5, 6);
+            this.tableLayoutPanel1.Controls.Add(this.FakeLed8, 8, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lenght5, 10, 4);
+            this.tableLayoutPanel1.Controls.Add(this.FakeLed7, 7, 5);
+            this.tableLayoutPanel1.Controls.Add(this.FakeLed6, 6, 5);
+            this.tableLayoutPanel1.Controls.Add(this.FakeLed5, 5, 5);
             this.tableLayoutPanel1.Controls.Add(this.Doigt5, 10, 3);
             this.tableLayoutPanel1.Controls.Add(this.Led5, 10, 2);
-            this.tableLayoutPanel1.Controls.Add(this.FakeLed4, 4, 6);
-            this.tableLayoutPanel1.Controls.Add(this.FakeLed3, 3, 6);
+            this.tableLayoutPanel1.Controls.Add(this.FakeLed4, 4, 5);
+            this.tableLayoutPanel1.Controls.Add(this.FakeLed3, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.label11, 9, 1);
-            this.tableLayoutPanel1.Controls.Add(this.FakeLed2, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.FakeLed2, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.Doigt10, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.Led10, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.FakeLed1, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.FakeLed1, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label53, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label52, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.Led9, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.Doigt9, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Min9, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.Min10, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.Min6, 5, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lenght10, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.Min7, 4, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lenght9, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.Min8, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lenght10, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lenght9, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.label51, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.label50, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.label49, 5, 1);
@@ -479,42 +462,37 @@ namespace WinFormSample
             this.tableLayoutPanel1.Controls.Add(this.Led8, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.Led7, 4, 2);
             this.tableLayoutPanel1.Controls.Add(this.Led6, 5, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lenght6, 5, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lenght8, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lenght7, 4, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lenght6, 5, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lenght8, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lenght7, 4, 4);
             this.tableLayoutPanel1.Controls.Add(this.Led1, 6, 2);
             this.tableLayoutPanel1.Controls.Add(this.Led2, 7, 2);
             this.tableLayoutPanel1.Controls.Add(this.Led3, 8, 2);
             this.tableLayoutPanel1.Controls.Add(this.Led4, 9, 2);
             this.tableLayoutPanel1.Controls.Add(this.Doigt4, 9, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Min4, 9, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lenght4, 9, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label22, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label23, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lenght4, 9, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label22, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.Doigt3, 8, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Min3, 8, 4);
             this.tableLayoutPanel1.Controls.Add(this.label20, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lenght3, 8, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lenght3, 8, 4);
             this.tableLayoutPanel1.Controls.Add(this.Doigt7, 4, 3);
             this.tableLayoutPanel1.Controls.Add(this.Doigt2, 7, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Min2, 7, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lenght2, 7, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lenght2, 7, 4);
             this.tableLayoutPanel1.Controls.Add(this.Doigt1, 6, 3);
             this.tableLayoutPanel1.Controls.Add(this.Doigt6, 5, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Min1, 6, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lenght1, 6, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lenght1, 6, 4);
             this.tableLayoutPanel1.Controls.Add(this.Doigt8, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.label27, 10, 1);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(7, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(2161, 229);
             this.tableLayoutPanel1.TabIndex = 138;
@@ -523,7 +501,7 @@ namespace WinFormSample
             // 
             this.FakeLed10.AutoSize = true;
             this.FakeLed10.BackColor = System.Drawing.Color.Red;
-            this.FakeLed10.Location = new System.Drawing.Point(1976, 176);
+            this.FakeLed10.Location = new System.Drawing.Point(1976, 137);
             this.FakeLed10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.FakeLed10.MinimumSize = new System.Drawing.Size(92, 10);
             this.FakeLed10.Name = "FakeLed10";
@@ -535,7 +513,7 @@ namespace WinFormSample
             // 
             this.FakeLed9.AutoSize = true;
             this.FakeLed9.BackColor = System.Drawing.Color.Red;
-            this.FakeLed9.Location = new System.Drawing.Point(1793, 176);
+            this.FakeLed9.Location = new System.Drawing.Point(1793, 137);
             this.FakeLed9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.FakeLed9.MinimumSize = new System.Drawing.Size(92, 10);
             this.FakeLed9.Name = "FakeLed9";
@@ -548,30 +526,18 @@ namespace WinFormSample
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label15.Location = new System.Drawing.Point(6, 176);
+            this.label15.Location = new System.Drawing.Point(6, 137);
             this.label15.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(117, 32);
             this.label15.TabIndex = 140;
             this.label15.Text = "Fake LED";
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label14.Location = new System.Drawing.Point(6, 28);
-            this.label14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(152, 32);
-            this.label14.TabIndex = 140;
-            this.label14.Text = "Seuil atteint";
-            // 
             // FakeLed8
             // 
             this.FakeLed8.AutoSize = true;
             this.FakeLed8.BackColor = System.Drawing.Color.Red;
-            this.FakeLed8.Location = new System.Drawing.Point(1610, 176);
+            this.FakeLed8.Location = new System.Drawing.Point(1610, 137);
             this.FakeLed8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.FakeLed8.MinimumSize = new System.Drawing.Size(92, 10);
             this.FakeLed8.Name = "FakeLed8";
@@ -584,7 +550,7 @@ namespace WinFormSample
             this.lenght5.AutoSize = true;
             this.lenght5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght5.Location = new System.Drawing.Point(1976, 137);
+            this.lenght5.Location = new System.Drawing.Point(1976, 98);
             this.lenght5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght5.Name = "lenght5";
             this.lenght5.Size = new System.Drawing.Size(129, 39);
@@ -596,7 +562,7 @@ namespace WinFormSample
             // 
             this.FakeLed7.AutoSize = true;
             this.FakeLed7.BackColor = System.Drawing.Color.Red;
-            this.FakeLed7.Location = new System.Drawing.Point(1427, 176);
+            this.FakeLed7.Location = new System.Drawing.Point(1427, 137);
             this.FakeLed7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.FakeLed7.MinimumSize = new System.Drawing.Size(92, 10);
             this.FakeLed7.Name = "FakeLed7";
@@ -604,24 +570,11 @@ namespace WinFormSample
             this.FakeLed7.TabIndex = 147;
             this.FakeLed7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Min5
-            // 
-            this.Min5.AutoSize = true;
-            this.Min5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Min5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min5.Location = new System.Drawing.Point(1976, 98);
-            this.Min5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Min5.Name = "Min5";
-            this.Min5.Size = new System.Drawing.Size(91, 39);
-            this.Min5.TabIndex = 139;
-            this.Min5.Text = "Min5";
-            this.Min5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FakeLed6
             // 
             this.FakeLed6.AutoSize = true;
             this.FakeLed6.BackColor = System.Drawing.Color.Red;
-            this.FakeLed6.Location = new System.Drawing.Point(1244, 176);
+            this.FakeLed6.Location = new System.Drawing.Point(1244, 137);
             this.FakeLed6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.FakeLed6.MinimumSize = new System.Drawing.Size(92, 10);
             this.FakeLed6.Name = "FakeLed6";
@@ -633,7 +586,7 @@ namespace WinFormSample
             // 
             this.FakeLed5.AutoSize = true;
             this.FakeLed5.BackColor = System.Drawing.Color.Red;
-            this.FakeLed5.Location = new System.Drawing.Point(1061, 176);
+            this.FakeLed5.Location = new System.Drawing.Point(1061, 137);
             this.FakeLed5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.FakeLed5.MinimumSize = new System.Drawing.Size(92, 10);
             this.FakeLed5.Name = "FakeLed5";
@@ -641,36 +594,11 @@ namespace WinFormSample
             this.FakeLed5.TabIndex = 146;
             this.FakeLed5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Doigt5
-            // 
-            this.Doigt5.AutoSize = true;
-            this.Doigt5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Doigt5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt5.Location = new System.Drawing.Point(1976, 60);
-            this.Doigt5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Doigt5.Name = "Doigt5";
-            this.Doigt5.Size = new System.Drawing.Size(111, 38);
-            this.Doigt5.TabIndex = 139;
-            this.Doigt5.Text = "Doigt5";
-            this.Doigt5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Led5
-            // 
-            this.Led5.AutoSize = true;
-            this.Led5.BackColor = System.Drawing.Color.Red;
-            this.Led5.Location = new System.Drawing.Point(1976, 28);
-            this.Led5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Led5.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Led5.Name = "Led5";
-            this.Led5.Size = new System.Drawing.Size(92, 32);
-            this.Led5.TabIndex = 139;
-            this.Led5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FakeLed4
             // 
             this.FakeLed4.AutoSize = true;
             this.FakeLed4.BackColor = System.Drawing.Color.Red;
-            this.FakeLed4.Location = new System.Drawing.Point(878, 176);
+            this.FakeLed4.Location = new System.Drawing.Point(878, 137);
             this.FakeLed4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.FakeLed4.MinimumSize = new System.Drawing.Size(92, 10);
             this.FakeLed4.Name = "FakeLed4";
@@ -682,7 +610,7 @@ namespace WinFormSample
             // 
             this.FakeLed3.AutoSize = true;
             this.FakeLed3.BackColor = System.Drawing.Color.Red;
-            this.FakeLed3.Location = new System.Drawing.Point(695, 176);
+            this.FakeLed3.Location = new System.Drawing.Point(695, 137);
             this.FakeLed3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.FakeLed3.MinimumSize = new System.Drawing.Size(92, 10);
             this.FakeLed3.Name = "FakeLed3";
@@ -707,7 +635,7 @@ namespace WinFormSample
             // 
             this.FakeLed2.AutoSize = true;
             this.FakeLed2.BackColor = System.Drawing.Color.Red;
-            this.FakeLed2.Location = new System.Drawing.Point(512, 176);
+            this.FakeLed2.Location = new System.Drawing.Point(512, 137);
             this.FakeLed2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.FakeLed2.MinimumSize = new System.Drawing.Size(92, 10);
             this.FakeLed2.Name = "FakeLed2";
@@ -715,36 +643,11 @@ namespace WinFormSample
             this.FakeLed2.TabIndex = 143;
             this.FakeLed2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Doigt10
-            // 
-            this.Doigt10.AutoSize = true;
-            this.Doigt10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Doigt10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt10.Location = new System.Drawing.Point(329, 60);
-            this.Doigt10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Doigt10.Name = "Doigt10";
-            this.Doigt10.Size = new System.Drawing.Size(129, 38);
-            this.Doigt10.TabIndex = 102;
-            this.Doigt10.Text = "Doigt10";
-            this.Doigt10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Led10
-            // 
-            this.Led10.AutoSize = true;
-            this.Led10.BackColor = System.Drawing.Color.Red;
-            this.Led10.Location = new System.Drawing.Point(329, 28);
-            this.Led10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Led10.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Led10.Name = "Led10";
-            this.Led10.Size = new System.Drawing.Size(92, 32);
-            this.Led10.TabIndex = 113;
-            this.Led10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FakeLed1
             // 
             this.FakeLed1.AutoSize = true;
             this.FakeLed1.BackColor = System.Drawing.Color.Red;
-            this.FakeLed1.Location = new System.Drawing.Point(329, 176);
+            this.FakeLed1.Location = new System.Drawing.Point(329, 137);
             this.FakeLed1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.FakeLed1.MinimumSize = new System.Drawing.Size(92, 10);
             this.FakeLed1.Name = "FakeLed1";
@@ -778,76 +681,12 @@ namespace WinFormSample
             this.label52.Text = "AnnuaireG";
             this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Led9
-            // 
-            this.Led9.AutoSize = true;
-            this.Led9.BackColor = System.Drawing.Color.Red;
-            this.Led9.Location = new System.Drawing.Point(512, 28);
-            this.Led9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Led9.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Led9.Name = "Led9";
-            this.Led9.Size = new System.Drawing.Size(92, 32);
-            this.Led9.TabIndex = 114;
-            this.Led9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Doigt9
-            // 
-            this.Doigt9.AutoSize = true;
-            this.Doigt9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Doigt9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt9.Location = new System.Drawing.Point(512, 60);
-            this.Doigt9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Doigt9.Name = "Doigt9";
-            this.Doigt9.Size = new System.Drawing.Size(111, 38);
-            this.Doigt9.TabIndex = 104;
-            this.Doigt9.Text = "Doigt9";
-            this.Doigt9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Min9
-            // 
-            this.Min9.AutoSize = true;
-            this.Min9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Min9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min9.Location = new System.Drawing.Point(512, 98);
-            this.Min9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Min9.Name = "Min9";
-            this.Min9.Size = new System.Drawing.Size(91, 39);
-            this.Min9.TabIndex = 129;
-            this.Min9.Text = "Min9";
-            this.Min9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Min10
-            // 
-            this.Min10.AutoSize = true;
-            this.Min10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Min10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min10.Location = new System.Drawing.Point(329, 98);
-            this.Min10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Min10.Name = "Min10";
-            this.Min10.Size = new System.Drawing.Size(110, 39);
-            this.Min10.TabIndex = 128;
-            this.Min10.Text = "Min10";
-            this.Min10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Min6
-            // 
-            this.Min6.AutoSize = true;
-            this.Min6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Min6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min6.Location = new System.Drawing.Point(1061, 98);
-            this.Min6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Min6.Name = "Min6";
-            this.Min6.Size = new System.Drawing.Size(91, 39);
-            this.Min6.TabIndex = 132;
-            this.Min6.Text = "Min6";
-            this.Min6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lenght10
             // 
             this.lenght10.AutoSize = true;
             this.lenght10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght10.Location = new System.Drawing.Point(329, 137);
+            this.lenght10.Location = new System.Drawing.Point(329, 98);
             this.lenght10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght10.Name = "lenght10";
             this.lenght10.Size = new System.Drawing.Size(148, 39);
@@ -855,44 +694,18 @@ namespace WinFormSample
             this.lenght10.Text = "lenght10";
             this.lenght10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Min7
-            // 
-            this.Min7.AutoSize = true;
-            this.Min7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Min7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min7.Location = new System.Drawing.Point(878, 98);
-            this.Min7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Min7.Name = "Min7";
-            this.Min7.Size = new System.Drawing.Size(91, 39);
-            this.Min7.TabIndex = 131;
-            this.Min7.Text = "Min7";
-            this.Min7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lenght9
             // 
             this.lenght9.AutoSize = true;
             this.lenght9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght9.Location = new System.Drawing.Point(512, 137);
+            this.lenght9.Location = new System.Drawing.Point(512, 98);
             this.lenght9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght9.Name = "lenght9";
             this.lenght9.Size = new System.Drawing.Size(129, 39);
             this.lenght9.TabIndex = 119;
             this.lenght9.Text = "lenght9";
             this.lenght9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Min8
-            // 
-            this.Min8.AutoSize = true;
-            this.Min8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Min8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min8.Location = new System.Drawing.Point(695, 98);
-            this.Min8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Min8.Name = "Min8";
-            this.Min8.Size = new System.Drawing.Size(91, 39);
-            this.Min8.TabIndex = 130;
-            this.Min8.Text = "Min8";
-            this.Min8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label51
             // 
@@ -972,48 +785,12 @@ namespace WinFormSample
             this.label26.Text = "MajeurD";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Led8
-            // 
-            this.Led8.AutoSize = true;
-            this.Led8.BackColor = System.Drawing.Color.Red;
-            this.Led8.Location = new System.Drawing.Point(695, 28);
-            this.Led8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Led8.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Led8.Name = "Led8";
-            this.Led8.Size = new System.Drawing.Size(92, 32);
-            this.Led8.TabIndex = 115;
-            this.Led8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Led7
-            // 
-            this.Led7.AutoSize = true;
-            this.Led7.BackColor = System.Drawing.Color.Red;
-            this.Led7.Location = new System.Drawing.Point(878, 28);
-            this.Led7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Led7.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Led7.Name = "Led7";
-            this.Led7.Size = new System.Drawing.Size(92, 32);
-            this.Led7.TabIndex = 116;
-            this.Led7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Led6
-            // 
-            this.Led6.AutoSize = true;
-            this.Led6.BackColor = System.Drawing.Color.Red;
-            this.Led6.Location = new System.Drawing.Point(1061, 28);
-            this.Led6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Led6.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Led6.Name = "Led6";
-            this.Led6.Size = new System.Drawing.Size(92, 32);
-            this.Led6.TabIndex = 117;
-            this.Led6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lenght6
             // 
             this.lenght6.AutoSize = true;
             this.lenght6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght6.Location = new System.Drawing.Point(1061, 137);
+            this.lenght6.Location = new System.Drawing.Point(1061, 98);
             this.lenght6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght6.Name = "lenght6";
             this.lenght6.Size = new System.Drawing.Size(129, 39);
@@ -1026,7 +803,7 @@ namespace WinFormSample
             this.lenght8.AutoSize = true;
             this.lenght8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght8.Location = new System.Drawing.Point(695, 137);
+            this.lenght8.Location = new System.Drawing.Point(695, 98);
             this.lenght8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght8.Name = "lenght8";
             this.lenght8.Size = new System.Drawing.Size(129, 39);
@@ -1039,7 +816,7 @@ namespace WinFormSample
             this.lenght7.AutoSize = true;
             this.lenght7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght7.Location = new System.Drawing.Point(878, 137);
+            this.lenght7.Location = new System.Drawing.Point(878, 98);
             this.lenght7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght7.Name = "lenght7";
             this.lenght7.Size = new System.Drawing.Size(129, 39);
@@ -1047,86 +824,12 @@ namespace WinFormSample
             this.lenght7.Text = "lenght7";
             this.lenght7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Led1
-            // 
-            this.Led1.AutoSize = true;
-            this.Led1.BackColor = System.Drawing.Color.Red;
-            this.Led1.Location = new System.Drawing.Point(1244, 28);
-            this.Led1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Led1.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Led1.Name = "Led1";
-            this.Led1.Size = new System.Drawing.Size(92, 32);
-            this.Led1.TabIndex = 50;
-            this.Led1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Led2
-            // 
-            this.Led2.AutoSize = true;
-            this.Led2.BackColor = System.Drawing.Color.Red;
-            this.Led2.Location = new System.Drawing.Point(1427, 28);
-            this.Led2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Led2.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Led2.Name = "Led2";
-            this.Led2.Size = new System.Drawing.Size(92, 32);
-            this.Led2.TabIndex = 51;
-            this.Led2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Led3
-            // 
-            this.Led3.AutoSize = true;
-            this.Led3.BackColor = System.Drawing.Color.Red;
-            this.Led3.Location = new System.Drawing.Point(1610, 28);
-            this.Led3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Led3.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Led3.Name = "Led3";
-            this.Led3.Size = new System.Drawing.Size(92, 32);
-            this.Led3.TabIndex = 52;
-            this.Led3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Led4
-            // 
-            this.Led4.AutoSize = true;
-            this.Led4.BackColor = System.Drawing.Color.Red;
-            this.Led4.Location = new System.Drawing.Point(1793, 28);
-            this.Led4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Led4.MinimumSize = new System.Drawing.Size(92, 10);
-            this.Led4.Name = "Led4";
-            this.Led4.Size = new System.Drawing.Size(92, 32);
-            this.Led4.TabIndex = 53;
-            this.Led4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Doigt4
-            // 
-            this.Doigt4.AutoSize = true;
-            this.Doigt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Doigt4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt4.Location = new System.Drawing.Point(1793, 60);
-            this.Doigt4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Doigt4.Name = "Doigt4";
-            this.Doigt4.Size = new System.Drawing.Size(111, 38);
-            this.Doigt4.TabIndex = 43;
-            this.Doigt4.Text = "Doigt4";
-            this.Doigt4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Min4
-            // 
-            this.Min4.AutoSize = true;
-            this.Min4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Min4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min4.Location = new System.Drawing.Point(1793, 98);
-            this.Min4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Min4.Name = "Min4";
-            this.Min4.Size = new System.Drawing.Size(91, 39);
-            this.Min4.TabIndex = 90;
-            this.Min4.Text = "Min4";
-            this.Min4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lenght4
             // 
             this.lenght4.AutoSize = true;
             this.lenght4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght4.Location = new System.Drawing.Point(1793, 137);
+            this.lenght4.Location = new System.Drawing.Point(1793, 98);
             this.lenght4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght4.Name = "lenght4";
             this.lenght4.Size = new System.Drawing.Size(129, 39);
@@ -1139,70 +842,19 @@ namespace WinFormSample
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label22.Location = new System.Drawing.Point(6, 137);
+            this.label22.Location = new System.Drawing.Point(6, 98);
             this.label22.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(170, 32);
             this.label22.TabIndex = 77;
             this.label22.Text = "Length Lissée:";
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label23.Location = new System.Drawing.Point(6, 98);
-            this.label23.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(77, 32);
-            this.label23.TabIndex = 92;
-            this.label23.Text = "Seuil:";
-            // 
-            // Doigt3
-            // 
-            this.Doigt3.AutoSize = true;
-            this.Doigt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Doigt3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt3.Location = new System.Drawing.Point(1610, 60);
-            this.Doigt3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Doigt3.Name = "Doigt3";
-            this.Doigt3.Size = new System.Drawing.Size(111, 38);
-            this.Doigt3.TabIndex = 42;
-            this.Doigt3.Text = "Doigt3";
-            this.Doigt3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Min3
-            // 
-            this.Min3.AutoSize = true;
-            this.Min3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Min3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min3.Location = new System.Drawing.Point(1610, 98);
-            this.Min3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Min3.Name = "Min3";
-            this.Min3.Size = new System.Drawing.Size(91, 39);
-            this.Min3.TabIndex = 89;
-            this.Min3.Text = "Min3";
-            this.Min3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI Black", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label20.Location = new System.Drawing.Point(6, 60);
-            this.label20.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(223, 32);
-            this.label20.TabIndex = 75;
-            this.label20.Text = "Distance to Palm:";
-            // 
             // lenght3
             // 
             this.lenght3.AutoSize = true;
             this.lenght3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght3.Location = new System.Drawing.Point(1610, 137);
+            this.lenght3.Location = new System.Drawing.Point(1610, 98);
             this.lenght3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght3.Name = "lenght3";
             this.lenght3.Size = new System.Drawing.Size(129, 39);
@@ -1210,51 +862,12 @@ namespace WinFormSample
             this.lenght3.Text = "lenght3";
             this.lenght3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Doigt7
-            // 
-            this.Doigt7.AutoSize = true;
-            this.Doigt7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Doigt7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt7.Location = new System.Drawing.Point(878, 60);
-            this.Doigt7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Doigt7.Name = "Doigt7";
-            this.Doigt7.Size = new System.Drawing.Size(111, 38);
-            this.Doigt7.TabIndex = 106;
-            this.Doigt7.Text = "Doigt7";
-            this.Doigt7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Doigt2
-            // 
-            this.Doigt2.AutoSize = true;
-            this.Doigt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Doigt2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt2.Location = new System.Drawing.Point(1427, 60);
-            this.Doigt2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Doigt2.Name = "Doigt2";
-            this.Doigt2.Size = new System.Drawing.Size(111, 38);
-            this.Doigt2.TabIndex = 41;
-            this.Doigt2.Text = "Doigt2";
-            this.Doigt2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Min2
-            // 
-            this.Min2.AutoSize = true;
-            this.Min2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Min2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min2.Location = new System.Drawing.Point(1427, 98);
-            this.Min2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Min2.Name = "Min2";
-            this.Min2.Size = new System.Drawing.Size(91, 39);
-            this.Min2.TabIndex = 88;
-            this.Min2.Text = "Min2";
-            this.Min2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lenght2
             // 
             this.lenght2.AutoSize = true;
             this.lenght2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght2.Location = new System.Drawing.Point(1427, 137);
+            this.lenght2.Location = new System.Drawing.Point(1427, 98);
             this.lenght2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght2.Name = "lenght2";
             this.lenght2.Size = new System.Drawing.Size(129, 39);
@@ -1262,70 +875,18 @@ namespace WinFormSample
             this.lenght2.Text = "lenght2";
             this.lenght2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Doigt1
-            // 
-            this.Doigt1.AutoSize = true;
-            this.Doigt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Doigt1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt1.Location = new System.Drawing.Point(1244, 60);
-            this.Doigt1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Doigt1.Name = "Doigt1";
-            this.Doigt1.Size = new System.Drawing.Size(120, 38);
-            this.Doigt1.TabIndex = 35;
-            this.Doigt1.Text = "Doigt 1";
-            this.Doigt1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Doigt6
-            // 
-            this.Doigt6.AutoSize = true;
-            this.Doigt6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Doigt6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt6.Location = new System.Drawing.Point(1061, 60);
-            this.Doigt6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Doigt6.Name = "Doigt6";
-            this.Doigt6.Size = new System.Drawing.Size(111, 38);
-            this.Doigt6.TabIndex = 107;
-            this.Doigt6.Text = "Doigt6";
-            this.Doigt6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Min1
-            // 
-            this.Min1.AutoSize = true;
-            this.Min1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Min1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Min1.Location = new System.Drawing.Point(1244, 98);
-            this.Min1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Min1.Name = "Min1";
-            this.Min1.Size = new System.Drawing.Size(91, 39);
-            this.Min1.TabIndex = 87;
-            this.Min1.Text = "Min1";
-            this.Min1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // lenght1
             // 
             this.lenght1.AutoSize = true;
             this.lenght1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lenght1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lenght1.Location = new System.Drawing.Point(1244, 137);
+            this.lenght1.Location = new System.Drawing.Point(1244, 98);
             this.lenght1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lenght1.Name = "lenght1";
             this.lenght1.Size = new System.Drawing.Size(129, 39);
             this.lenght1.TabIndex = 63;
             this.lenght1.Text = "lenght1";
             this.lenght1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Doigt8
-            // 
-            this.Doigt8.AutoSize = true;
-            this.Doigt8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Doigt8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Doigt8.Location = new System.Drawing.Point(695, 60);
-            this.Doigt8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Doigt8.Name = "Doigt8";
-            this.Doigt8.Size = new System.Drawing.Size(111, 38);
-            this.Doigt8.TabIndex = 105;
-            this.Doigt8.Text = "Doigt8";
-            this.Doigt8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label27
             // 
@@ -1580,6 +1141,280 @@ namespace WinFormSample
             this.label1.TabIndex = 17;
             this.label1.Text = "FPS:";
             // 
+            // Doigt8
+            // 
+            this.Doigt8.AutoSize = true;
+            this.Doigt8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Doigt8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Doigt8.Location = new System.Drawing.Point(695, 60);
+            this.Doigt8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Doigt8.Name = "Doigt8";
+            this.Doigt8.Size = new System.Drawing.Size(111, 38);
+            this.Doigt8.TabIndex = 105;
+            this.Doigt8.Text = "Doigt8";
+            this.Doigt8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Doigt6
+            // 
+            this.Doigt6.AutoSize = true;
+            this.Doigt6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Doigt6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Doigt6.Location = new System.Drawing.Point(1061, 60);
+            this.Doigt6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Doigt6.Name = "Doigt6";
+            this.Doigt6.Size = new System.Drawing.Size(111, 38);
+            this.Doigt6.TabIndex = 107;
+            this.Doigt6.Text = "Doigt6";
+            this.Doigt6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Doigt1
+            // 
+            this.Doigt1.AutoSize = true;
+            this.Doigt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Doigt1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Doigt1.Location = new System.Drawing.Point(1244, 60);
+            this.Doigt1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Doigt1.Name = "Doigt1";
+            this.Doigt1.Size = new System.Drawing.Size(120, 38);
+            this.Doigt1.TabIndex = 35;
+            this.Doigt1.Text = "Doigt 1";
+            this.Doigt1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Doigt2
+            // 
+            this.Doigt2.AutoSize = true;
+            this.Doigt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Doigt2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Doigt2.Location = new System.Drawing.Point(1427, 60);
+            this.Doigt2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Doigt2.Name = "Doigt2";
+            this.Doigt2.Size = new System.Drawing.Size(111, 38);
+            this.Doigt2.TabIndex = 41;
+            this.Doigt2.Text = "Doigt2";
+            this.Doigt2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Doigt7
+            // 
+            this.Doigt7.AutoSize = true;
+            this.Doigt7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Doigt7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Doigt7.Location = new System.Drawing.Point(878, 60);
+            this.Doigt7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Doigt7.Name = "Doigt7";
+            this.Doigt7.Size = new System.Drawing.Size(111, 38);
+            this.Doigt7.TabIndex = 106;
+            this.Doigt7.Text = "Doigt7";
+            this.Doigt7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI Black", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label20.Location = new System.Drawing.Point(6, 60);
+            this.label20.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(227, 32);
+            this.label20.TabIndex = 75;
+            this.label20.Text = "Instant  Pressure :";
+            // 
+            // Doigt3
+            // 
+            this.Doigt3.AutoSize = true;
+            this.Doigt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Doigt3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Doigt3.Location = new System.Drawing.Point(1610, 60);
+            this.Doigt3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Doigt3.Name = "Doigt3";
+            this.Doigt3.Size = new System.Drawing.Size(111, 38);
+            this.Doigt3.TabIndex = 42;
+            this.Doigt3.Text = "Doigt3";
+            this.Doigt3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Doigt4
+            // 
+            this.Doigt4.AutoSize = true;
+            this.Doigt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Doigt4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Doigt4.Location = new System.Drawing.Point(1793, 60);
+            this.Doigt4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Doigt4.Name = "Doigt4";
+            this.Doigt4.Size = new System.Drawing.Size(111, 38);
+            this.Doigt4.TabIndex = 43;
+            this.Doigt4.Text = "Doigt4";
+            this.Doigt4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Doigt9
+            // 
+            this.Doigt9.AutoSize = true;
+            this.Doigt9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Doigt9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Doigt9.Location = new System.Drawing.Point(512, 60);
+            this.Doigt9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Doigt9.Name = "Doigt9";
+            this.Doigt9.Size = new System.Drawing.Size(111, 38);
+            this.Doigt9.TabIndex = 104;
+            this.Doigt9.Text = "Doigt9";
+            this.Doigt9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Doigt10
+            // 
+            this.Doigt10.AutoSize = true;
+            this.Doigt10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Doigt10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Doigt10.Location = new System.Drawing.Point(329, 60);
+            this.Doigt10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Doigt10.Name = "Doigt10";
+            this.Doigt10.Size = new System.Drawing.Size(129, 38);
+            this.Doigt10.TabIndex = 102;
+            this.Doigt10.Text = "Doigt10";
+            this.Doigt10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Doigt5
+            // 
+            this.Doigt5.AutoSize = true;
+            this.Doigt5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Doigt5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Doigt5.Location = new System.Drawing.Point(1976, 60);
+            this.Doigt5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Doigt5.Name = "Doigt5";
+            this.Doigt5.Size = new System.Drawing.Size(111, 38);
+            this.Doigt5.TabIndex = 139;
+            this.Doigt5.Text = "Doigt5";
+            this.Doigt5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Led4
+            // 
+            this.Led4.AutoSize = true;
+            this.Led4.BackColor = System.Drawing.Color.Red;
+            this.Led4.Location = new System.Drawing.Point(1793, 28);
+            this.Led4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Led4.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Led4.Name = "Led4";
+            this.Led4.Size = new System.Drawing.Size(92, 32);
+            this.Led4.TabIndex = 53;
+            this.Led4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Led3
+            // 
+            this.Led3.AutoSize = true;
+            this.Led3.BackColor = System.Drawing.Color.Red;
+            this.Led3.Location = new System.Drawing.Point(1610, 28);
+            this.Led3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Led3.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Led3.Name = "Led3";
+            this.Led3.Size = new System.Drawing.Size(92, 32);
+            this.Led3.TabIndex = 52;
+            this.Led3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Led2
+            // 
+            this.Led2.AutoSize = true;
+            this.Led2.BackColor = System.Drawing.Color.Red;
+            this.Led2.Location = new System.Drawing.Point(1427, 28);
+            this.Led2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Led2.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Led2.Name = "Led2";
+            this.Led2.Size = new System.Drawing.Size(92, 32);
+            this.Led2.TabIndex = 51;
+            this.Led2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Led1
+            // 
+            this.Led1.AutoSize = true;
+            this.Led1.BackColor = System.Drawing.Color.Red;
+            this.Led1.Location = new System.Drawing.Point(1244, 28);
+            this.Led1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Led1.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Led1.Name = "Led1";
+            this.Led1.Size = new System.Drawing.Size(92, 32);
+            this.Led1.TabIndex = 50;
+            this.Led1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Led6
+            // 
+            this.Led6.AutoSize = true;
+            this.Led6.BackColor = System.Drawing.Color.Red;
+            this.Led6.Location = new System.Drawing.Point(1061, 28);
+            this.Led6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Led6.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Led6.Name = "Led6";
+            this.Led6.Size = new System.Drawing.Size(92, 32);
+            this.Led6.TabIndex = 117;
+            this.Led6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Led7
+            // 
+            this.Led7.AutoSize = true;
+            this.Led7.BackColor = System.Drawing.Color.Red;
+            this.Led7.Location = new System.Drawing.Point(878, 28);
+            this.Led7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Led7.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Led7.Name = "Led7";
+            this.Led7.Size = new System.Drawing.Size(92, 32);
+            this.Led7.TabIndex = 116;
+            this.Led7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Led8
+            // 
+            this.Led8.AutoSize = true;
+            this.Led8.BackColor = System.Drawing.Color.Red;
+            this.Led8.Location = new System.Drawing.Point(695, 28);
+            this.Led8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Led8.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Led8.Name = "Led8";
+            this.Led8.Size = new System.Drawing.Size(92, 32);
+            this.Led8.TabIndex = 115;
+            this.Led8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Led9
+            // 
+            this.Led9.AutoSize = true;
+            this.Led9.BackColor = System.Drawing.Color.Red;
+            this.Led9.Location = new System.Drawing.Point(512, 28);
+            this.Led9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Led9.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Led9.Name = "Led9";
+            this.Led9.Size = new System.Drawing.Size(92, 32);
+            this.Led9.TabIndex = 114;
+            this.Led9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Led10
+            // 
+            this.Led10.AutoSize = true;
+            this.Led10.BackColor = System.Drawing.Color.Red;
+            this.Led10.Location = new System.Drawing.Point(329, 28);
+            this.Led10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Led10.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Led10.Name = "Led10";
+            this.Led10.Size = new System.Drawing.Size(92, 32);
+            this.Led10.TabIndex = 113;
+            this.Led10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Led5
+            // 
+            this.Led5.AutoSize = true;
+            this.Led5.BackColor = System.Drawing.Color.Red;
+            this.Led5.Location = new System.Drawing.Point(1976, 28);
+            this.Led5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Led5.MinimumSize = new System.Drawing.Size(92, 10);
+            this.Led5.Name = "Led5";
+            this.Led5.Size = new System.Drawing.Size(92, 32);
+            this.Led5.TabIndex = 139;
+            this.Led5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label14.Location = new System.Drawing.Point(6, 28);
+            this.label14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(152, 32);
+            this.label14.TabIndex = 140;
+            this.label14.Text = "Seuil atteint";
+            // 
             // FrameDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -1616,15 +1451,10 @@ namespace WinFormSample
         private Label label1;
         private TabPage tabPage4;
         private Label Position1;
-        private Label Min6;
         private Label Position2;
-        private Label Min7;
         private Label Position3;
-        private Label Min8;
         private Label Position4;
-        private Label Min9;
         private Label Position5;
-        private Label Min10;
         private Label Position6;
         private Label lenght6;
         private Label Position7;
@@ -1636,48 +1466,24 @@ namespace WinFormSample
         private Label Position13;
         private Label lenght10;
         private Label Position12;
-        private Label Led6;
         private Label Position10;
-        private Label Led7;
         private Label Position11;
-        private Label Led8;
-        private Label Led9;
         private Label Position16;
-        private Label Led10;
         private Label Position14;
         private Label label49;
         private Label label50;
-        private Label Doigt1;
         private Label label51;
-        private Label Doigt2;
         private Label label52;
-        private Label Doigt3;
         private Label label53;
-        private Label Doigt4;
-        private Label Doigt6;
-        private Label Doigt7;
         private Label label24;
-        private Label Doigt8;
         private Label label25;
-        private Label Doigt9;
         private Label label26;
         private Label label27;
-        private Label Doigt10;
-        private Label Led1;
-        private Label label23;
-        private Label Led2;
-        private Label Led3;
-        private Label Min4;
-        private Label Led4;
-        private Label Min3;
-        private Label Min2;
         private Label lenght1;
-        private Label Min1;
         private Label lenght2;
         private Label label22;
         private Label lenght3;
         private Label lenght4;
-        private Label label20;
         private TrackBar Slider;
         private Label label5;
         private Label label7;
@@ -1687,9 +1493,6 @@ namespace WinFormSample
         private TableLayoutPanel tableLayoutPanel1;
         private Label label11;
         private Label lenght5;
-        private Label Min5;
-        private Label Doigt5;
-        private Label Led5;
         private Label label29;
         private Label label16;
         private Label FailureReason;
@@ -1707,7 +1510,6 @@ namespace WinFormSample
         private Label FakeLed10;
         private Label FakeLed9;
         private Label label15;
-        private Label label14;
         private Label FakeLed8;
         private Label FakeLed7;
         private Label FakeLed6;
@@ -1716,5 +1518,27 @@ namespace WinFormSample
         private Label FakeLed3;
         private Label FakeLed2;
         private Label FakeLed1;
+        private Label label14;
+        private Label Doigt5;
+        private Label Led5;
+        private Label Doigt10;
+        private Label Led10;
+        private Label Led9;
+        private Label Doigt9;
+        private Label Led8;
+        private Label Led7;
+        private Label Led6;
+        private Label Led1;
+        private Label Led2;
+        private Label Led3;
+        private Label Led4;
+        private Label Doigt4;
+        private Label Doigt3;
+        private Label label20;
+        private Label Doigt7;
+        private Label Doigt2;
+        private Label Doigt1;
+        private Label Doigt6;
+        private Label Doigt8;
     }
 }

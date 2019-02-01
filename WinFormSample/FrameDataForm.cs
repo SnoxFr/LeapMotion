@@ -121,7 +121,6 @@ namespace WinFormSample
             Leds = new Label[] { Led1, Led2, Led3, Led4, Led5, Led6, Led7, Led8, Led9, Led10 };
             VectorFingerRight = new Vector[] { Finger1, Finger2, Finger3, Finger4, Finger5};
             VectorFingerLeft = new Vector[] { Finger6, Finger7, Finger8, Finger9, Finger10};
-            Treshold = new Label[] { Min1, Min2, Min3, Min4, Min5,Min6,Min7,Min8,Min9,Min10 };
             FakeLed = new Label[] { FakeLed5, FakeLed4, FakeLed3, FakeLed2, FakeLed1, FakeLed6, FakeLed7, FakeLed8, FakeLed9, FakeLed10 };
             PianoDoigtRight = new Vector[] {PianoDoigt1,PianoDoigt2, PianoDoigt3, PianoDoigt4, PianoDoigt5};
             PianoDoigtLeft = new Vector[] { PianoDoigt6, PianoDoigt7, PianoDoigt8, PianoDoigt9, PianoDoigt10 };
@@ -264,7 +263,6 @@ namespace WinFormSample
 
             SoundPlayer Note1 = new SoundPlayer();
 
-           // Note = new SoundPlayer[] { Note5, Note4, Note3, Note2, Note1, Note6, Note7, Note8, Note9, Note10 };
             Note = new SoundPlayer[] { Note6, Note7, Note8, Note9, Note10, Note5, Note4, Note3, Note2, Note1 };
    
             Note1.SoundLocation = ".\\Sons\\Note1.wav";
@@ -277,7 +275,6 @@ namespace WinFormSample
             {
                 ConnectionUSB.BackColor = Color.Green;
             }
-            
 
         }
         void isDisconnected(object sender, DeviceEventArgs eventArgs)
@@ -291,7 +288,6 @@ namespace WinFormSample
             config.AppSettings.Settings["LastSliderValue"].Value = Slider.Value.ToString();
             config.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection("appSettings");
-
         }
         void newFrameHandler(object sender, FrameEventArgs eventArgs)
         {
@@ -334,7 +330,6 @@ namespace WinFormSample
                 if (handRight != null)
                 {
                     //Confidence.Text = hand.Confidence.ToString();
-
                    for(int i=0;i<5;i++)
                     {
                         VectorFingerRight[i] = fingersRight[i].StabilizedTipPosition;
@@ -390,9 +385,10 @@ namespace WinFormSample
 
                     for (int i = 0; i < fingersRight.Count; i++)
                     {
-                        DistanceToPalm[i].Text = distanceToFinger[i].ToString();
+
+                        DistanceToPalm[i].Text = LedCommand[i].ToString("0.00");
                         Lenght[i].Text = LenghtLissé[i].ToString();
-                        Treshold[i].Text = ((int)ThresholdInt[i]).ToString();
+            
                     }
                 }
                 else
@@ -413,10 +409,8 @@ namespace WinFormSample
 
                     for (int i = 5; i < fingersLeft.Count+5; i++)
                     {
-
-                        DistanceToPalm[i].Text = distanceToFinger[i].ToString();
+                        DistanceToPalm[i].Text = LedCommand[i].ToString("0.00");
                         Lenght[i].Text = LenghtLissé[i].ToString();
-                        Treshold[i].Text = ((int)ThresholdInt[i]).ToString();
                         distanceToFinger[i] = (int)VectorFingerLeft[i-5].DistanceTo(handLeft.PalmPosition);
                         if (i == 5)
                         {
@@ -576,7 +570,6 @@ namespace WinFormSample
                                 LedCommand[2] = Math.Abs((distanceToFinger[2] - ThresholdInt[2]) / (MinPressure[2] - ThresholdInt[2]) - 1);
                                 LedCommand[3] = Math.Abs((distanceToFinger[3] - ThresholdInt[3]) / (MinPressure[3] - ThresholdInt[3]) - 1);
                                 LedCommand[4] = Math.Abs((distanceToFinger[4] - ThresholdInt[4]) / (MinPressure[4] * 0.95f - ThresholdInt[4]) - 1);
-
 
                                 if (LedCommand[i] > 1)
                                 {
@@ -786,7 +779,6 @@ namespace WinFormSample
                     BufferLenghtRight[z].Clear();
                     Leds[z].BackColor = Color.Red;
                     DistanceToPalm[z].Invoke((MethodInvoker)(() => DistanceToPalm[z].Text = "×"));
-                    Treshold[z].Invoke((MethodInvoker)(() => Treshold[z].Text = "×"));
                     Lenght[z].Invoke((MethodInvoker)(() => Lenght[z].Text = "×"));
                     FakeLed[z+5].Invoke((MethodInvoker)(() => FakeLed[z+5].BackColor=Color.Red ));
         }
@@ -825,7 +817,6 @@ namespace WinFormSample
                     BufferLenghtLeft[z].Clear();
                     Leds[z+5].BackColor = Color.Red;
                     DistanceToPalm[z+5].Invoke((MethodInvoker)(() => DistanceToPalm[z + 5].Text = "×"));
-                    Treshold[z+5].Invoke((MethodInvoker)(() => Treshold[z + 5].Text = "×"));
                     Lenght[z+5].Invoke((MethodInvoker)(() => Lenght[z + 5].Text = "×"));
                     FakeLed[z].Invoke((MethodInvoker)(() => FakeLed[z].BackColor = Color.Red));
                 }
