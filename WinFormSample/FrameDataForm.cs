@@ -12,6 +12,8 @@ using System.Configuration;
 using System.Diagnostics;
 using System.ServiceProcess;
 
+using System.IO.Ports;
+
 namespace WinFormSample
 {
 
@@ -77,6 +79,9 @@ namespace WinFormSample
         Hand handTempo = new Hand();
         Hand handTempo2 = new Hand();
 
+        //serial com
+        private SerialPort port = new SerialPort("COM1", 9600, Parity.None, 8, StopBits.One);
+
         //Tableau stockant les l'ensemble des doigts de type Vector
         Vector[] VectorFingerRight;
         Vector[] VectorFingerLeft;
@@ -100,6 +105,20 @@ namespace WinFormSample
         public FrameDataForm()
         {
             InitializeComponent();
+            try
+            {
+                port.Open();
+            }
+
+            catch (UnauthorizedAccessException ex)
+            {
+                Console.WriteLine("Error: Port {0} is in use Com1");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Uart exception: " + ex);
+            }
+
             if (LeapMotionService.Status.Equals(ServiceControllerStatus.Stopped))
             {
                 LeapMotionService.Start();
@@ -115,8 +134,6 @@ namespace WinFormSample
             //Vector center = new Vector();
             Test = new InteractionBox(Test.Center,size);
             Lenght = new Label[] { lenght1, lenght2, lenght3, lenght4, lenght5, lenght6, lenght7, lenght8, lenght9, lenght10 };
-            Position = new Label[] { Position1, Position2, Position3, Position4, Position5, Position6, Position7, Position8,
-                Position9, Position10, Position11, Position12, Position13, Position14, Position16, Position16 };
             DistanceToPalm = new Label[] { Doigt1, Doigt2, Doigt3, Doigt4, Doigt5, Doigt6, Doigt7, Doigt8, Doigt9, Doigt10 };
             Leds = new Label[] { Led1, Led2, Led3, Led4, Led5, Led6, Led7, Led8, Led9, Led10 };
             VectorFingerRight = new Vector[] { Finger1, Finger2, Finger3, Finger4, Finger5};
@@ -159,6 +176,7 @@ namespace WinFormSample
             Slider.ValueChanged += SliderChanged;
 
             string[] args = Environment.GetCommandLineArgs();
+
 
             if (args.Length == 1)
             {
@@ -574,11 +592,36 @@ namespace WinFormSample
                                 if (LedCommand[i] > 1)
                                 {
                                     FakeLed[i + 5].Invoke((MethodInvoker)(() => FakeLed[i + 5].BackColor = Color.FromArgb(255, 255, 255)));
+
+                                    try
+                                    {
+                                        port.Write("i" + (255).ToString());
+                                    }
+                                    catch (UnauthorizedAccessException ex)
+                                    {
+                                        Console.WriteLine("Error: Port {0} is in use Com1");
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        Console.WriteLine("Uart exception: " + ex);
+                                    }
                                 }
 
                                 else
                                 {
                                     FakeLed[i + 5].Invoke((MethodInvoker)(() => FakeLed[i + 5].BackColor = Color.FromArgb((int)(LedCommand[i] * 255D), (int)(LedCommand[i] * 255D), (int)(LedCommand[i] * 255D))));
+                                    try
+                                    {
+                                        port.Write("i"+(LedCommand[i] * 255D).ToString());
+                                    }
+                                    catch (UnauthorizedAccessException ex)
+                                    {
+                                        Console.WriteLine("Error: Port {0} is in use Com1");
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        Console.WriteLine("Uart exception: " + ex);
+                                    }
                                 }
 
                                 if (distanceToFinger[0] == 0)
@@ -601,6 +644,8 @@ namespace WinFormSample
                 {
                     if (handRight != null)
                     {
+                        
+
                         if (distanceToFinger[0] > ThresholdInt[0])
                         {
                             Leds[0].Invoke((MethodInvoker)(() => Leds[0].BackColor = Color.White));
@@ -761,8 +806,7 @@ namespace WinFormSample
                         boneIntermediate = fingersRight[0].Bone(Bone.BoneType.TYPE_INTERMEDIATE);
                         boneDistal = fingersRight[0].Bone(Bone.BoneType.TYPE_DISTAL);
                         BufferLenghtRight[z].Add( boneProximal.Center.DistanceTo(boneIntermediate.Center) + boneIntermediate.Center.DistanceTo(boneDistal.Center));
-                        ThresholdInt[z] = (int)((GetLenghtLisséRight(z)*((100f- SliderValue) /100f))*0.8f);
-
+                        ThresholdInt[z] = (int)((GetLenghtLisséRight(z)*((100f- SliderValue) /100f))*0.9f);
                     }
                     else
                     {
@@ -800,7 +844,7 @@ namespace WinFormSample
                         boneIntermediate = fingersLeft[0].Bone(Bone.BoneType.TYPE_INTERMEDIATE);
                         boneDistal = fingersLeft[0].Bone(Bone.BoneType.TYPE_DISTAL);
                         BufferLenghtLeft[z].Add(boneProximal.Center.DistanceTo(boneIntermediate.Center) + boneIntermediate.Center.DistanceTo(boneDistal.Center));
-                        ThresholdInt[z+5] = (int)((GetLenghtLisséLeft(z) * ((100f - SliderValue) / 100f)) * 0.8f);
+                        ThresholdInt[z+5] = (int)((GetLenghtLisséLeft(z) * ((100f - SliderValue) / 100f)) * 0.9f);
                     }
                     else
                     {
