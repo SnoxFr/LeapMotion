@@ -87,6 +87,8 @@ namespace WinFormSample
             this.label5 = new System.Windows.Forms.Label();
             this.Slider = new System.Windows.Forms.TrackBar();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.Confidence = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -957,6 +959,8 @@ namespace WinFormSample
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.tabPage3.Controls.Add(this.Confidence);
+            this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.label29);
             this.tabPage3.Controls.Add(this.label16);
@@ -980,10 +984,32 @@ namespace WinFormSample
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Rendu";
             // 
+            // Confidence
+            // 
+            this.Confidence.AutoSize = true;
+            this.Confidence.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Confidence.Location = new System.Drawing.Point(271, 328);
+            this.Confidence.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.Confidence.Name = "Confidence";
+            this.Confidence.Size = new System.Drawing.Size(121, 25);
+            this.Confidence.TabIndex = 106;
+            this.Confidence.Text = "Confidence";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label12.Location = new System.Drawing.Point(35, 328);
+            this.label12.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(127, 25);
+            this.label12.TabIndex = 105;
+            this.label12.Text = "Confidence:";
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button1.Location = new System.Drawing.Point(36, 332);
+            this.button1.Location = new System.Drawing.Point(36, 422);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(363, 43);
             this.button1.TabIndex = 104;
@@ -1016,7 +1042,7 @@ namespace WinFormSample
             // 
             this.FailureReason.AutoSize = true;
             this.FailureReason.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FailureReason.Location = new System.Drawing.Point(271, 261);
+            this.FailureReason.Location = new System.Drawing.Point(271, 251);
             this.FailureReason.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.FailureReason.Name = "FailureReason";
             this.FailureReason.Size = new System.Drawing.Size(111, 25);
@@ -1154,7 +1180,7 @@ namespace WinFormSample
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(2412, 858);
+            this.ClientSize = new System.Drawing.Size(2346, 697);
             this.Controls.Add(this.visualStudioTabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
@@ -1254,5 +1280,7 @@ namespace WinFormSample
         private Label Doigt1;
         private Label Doigt6;
         private Label Doigt8;
+        private Label Confidence;
+        private Label label12;
     }
 }
